@@ -58,8 +58,3 @@ class NovaGridUtils(Package):
         env.set("SAM_STATION", "nova")
         env.set("CONDOR_EXEC", f"/exp/nova/app/condor-exec/{os.environ.get('USER')}")
         env.set("IFDH_BASE_URI", "http://samweb.fnal.gov:8480/sam/nova/api")
-
-        # hacked UPS env vars for UPS compatibility
-        env.set("SETUP_IFDH_ART", "1")
-        env.set("SETUP_SAM_WEB_CLIENT", "1")
-        env.set("SETUP_JOBSUB_CLIENT", "1")
