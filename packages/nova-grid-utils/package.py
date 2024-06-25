@@ -30,6 +30,7 @@ class NovaGridUtils(Package):
         install("NovaGridUtils/bin/setup_fnal_security", prefix.bin)
         install("NovaGridUtils/bin/testrel_tarball", prefix.bin)
         install("NovaGridUtils/bin/cache_state.py", prefix.bin)
+        install("NovaGridUtils/bin/dropbox_path", prefix.bin)
         install("NovaGridUtils/bin/sl7-nova", prefix.bin)
         install("NovaGridUtils/bin/submit_cafana.py", prefix.bin)
         install("NovaGridUtils/bin/cafe_grid_script.sh", prefix.bin)
