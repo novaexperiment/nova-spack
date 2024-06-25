@@ -40,6 +40,8 @@ class NovaGridUtils(Package):
         install("NovaGridUtils/bin/submit_production_jobs.py", prefix.bin)
         install("NovaGridUtils/bin/which_fts", prefix.bin)
         install("novaproduction/bin/samweb2xrootd", prefix.bin)
+        install("novaproduction/bin/pnfs2xrootd", prefix.bin)
+        install("novaproduction/bin/prodjob-summary", prefix.bin)
 
         # python libraries
         install("NovaGridUtils/lib/python/NovaGridUtils.py", python_platlib)
