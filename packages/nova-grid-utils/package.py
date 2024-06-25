@@ -38,6 +38,7 @@ class NovaGridUtils(Package):
         install("NovaGridUtils/bin/art_sam_wrap.sh", prefix.bin)
         install("NovaGridUtils/bin/stashcache.sh", prefix.bin)
         install("NovaGridUtils/bin/submit_production_jobs.py", prefix.bin)
+        install("novaproduction/bin/samweb2xrootd", prefix.bin)
 
         # python libraries
         install("NovaGridUtils/lib/python/NovaGridUtils.py", python_platlib)
