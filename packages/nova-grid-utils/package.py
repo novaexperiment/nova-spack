@@ -19,6 +19,7 @@ class NovaGridUtils(Package):
 
     depends_on("py-future")
     depends_on("sam-web-client")
+    depends_on("ifdhc")
 
     extends("python")
 
