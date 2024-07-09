@@ -54,7 +54,10 @@ class NovaGridUtils(Package):
         install("novaproduction/lib/python/redirect_allout.py", python_platlib)
 
         # configuration files
-        mkdirp(prefix.configs.station, prefix.keepup.ConfigFile)
+        mkdirp(prefix.configs.base, prefix.configs.station, prefix.keepup.ConfigFile)
+        install("NovaGridUtils/configs/*.cfg", prefix.configs)
+        install("NovaGridUtils/configs/*.inc", prefix.configs)
+        install("NovaGridUtils/configs/base/*.inc", prefix.configs.base)
         install("NovaGridUtils/configs/station/*.cfg", prefix.configs.station)
         install("novaproduction/keepup/ConfigFile/*.cfg", prefix.keepup.ConfigFile)
 
@@ -65,7 +68,9 @@ class NovaGridUtils(Package):
         env.set("NOVAGRIDUTILS_VERSION", self.version)
 
         # config directories
-        env.set("NOVA_ART_CONFIG", self.prefix.configs.station)
+        env.set("NOVA_ART_CONFIG", self.prefix.configs)
+        env.set("NOVA_ART_CONFIG_BASE", self.prefix.configs.base)
+        env.set("NOVA_ART_CONFIG_STATION", self.prefix.configs.station)
         env.set("NOVA_KEEPUP_CONFIG", self.prefix.keepup.ConfigFile)
 
         # jobsub env vars
