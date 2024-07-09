@@ -15,7 +15,6 @@ class NovaGridUtils(Package):
     maintainers("vhewes")
 
     version("develop", branch="main")
-    version("v05.77", tag="NovaGridUtils-v05.77")
 
     depends_on("py-future")
     depends_on("sam-web-client")
