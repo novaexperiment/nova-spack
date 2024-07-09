@@ -52,11 +52,20 @@ class NovaGridUtils(Package):
         install("novaproduction/lib/python/progbar.py", python_platlib)
         install("novaproduction/lib/python/redirect_allout.py", python_platlib)
 
+        # configuration files
+        mkdirp(prefix.configs.station, prefix.keepup.ConfigFile)
+        install("NovaGridUtils/configs/station/*.cfg", prefix.configs.station)
+        install("novaproduction/keepup/ConfigFile/*.cfg", prefix.keepup.ConfigFile)
+
     def setup_run_environment(self, env):
         """set up novagridutils run environment"""
         # UPS-style NGU env vars
         env.set("NOVAGRIDUTILS_DIR", self.prefix)
         env.set("NOVAGRIDUTILS_VERSION", self.version)
+
+        # config directories
+        env.set("NOVA_ART_CONFIG", self.prefix.configs.station)
+        env.set("NOVA_KEEPUP_CONFIG", self.prefix.keepup.ConfigFile)
 
         # jobsub env vars
         env.set("GROUP", "nova")
