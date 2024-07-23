@@ -7,7 +7,7 @@ from spack.package import *
 import os
 
 class NovaGridUtils(Package):
-    """NOvA grid utilities"""
+    """NOvA experiment grid utilities"""
 
     homepage = "https://www.github.com/novaexperiment/novaprod"
     git = "git@github.com:novaexperiment/novaprod"
@@ -23,7 +23,7 @@ class NovaGridUtils(Package):
     extends("python")
 
     def install(self, spec, prefix):
-        """novagridutils installer"""
+        """nova-grid-utils installer"""
         mkdirp(prefix.bin, python_platlib)
 
         # binaries
