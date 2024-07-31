@@ -30,8 +30,6 @@ class NovaGridUtils(Package):
         # python libraries
         mkdirp(python_platlib)
         install("NovaGridUtils/lib/python/*.py", python_platlib)
-        install("NovaGridUtils/bin/recommended_sites.py", python_platlib)
-        install("novaproduction/lib/python/fake_sam.py", python_platlib)
 
     def setup_run_environment(self, env):
         """set up nova-grid-utils run environment"""

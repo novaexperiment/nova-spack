@@ -28,7 +28,6 @@ class NovaProduction(Package):
         # python libraries
         mkdirp(python_platlib)
         install("novaproduction/lib/python/*.py", python_platlib)
-        remove(python_platlib+"/fake_sam.py")
 
     def setup_run_environment(self, env):
         """set up nova-production run environment"""
