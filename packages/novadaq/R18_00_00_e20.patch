@@ -1,0 +1,65 @@
+diff --git a/pkgs/DatabaseUtils/cxx/src/DAQAppMgr/CMakeLists.txt b/pkgs/DatabaseUtils/cxx/src/DAQAppMgr/CMakeLists.txt
+index 14633a94d..3b58fbff7 100644
+--- a/pkgs/DatabaseUtils/cxx/src/DAQAppMgr/CMakeLists.txt
++++ b/pkgs/DatabaseUtils/cxx/src/DAQAppMgr/CMakeLists.txt
+@@ -7,7 +7,7 @@ cet_make_library( SOURCE        ${srcs}
+ 	  	        	            Boost::regex
+ 	  	        	            Boost::thread
+ 		        	            XercesC::XercesC
+-		        	            pq
++		        	            PostgreSQL::PostgreSQL
+ 		        	            NovaDAQUtilities
+ 		        	            NovaDatabase
+ 		        	            DatabaseUtils
+diff --git a/pkgs/DatabaseUtils/cxx/src/DAQConfig/CMakeLists.txt b/pkgs/DatabaseUtils/cxx/src/DAQConfig/CMakeLists.txt
+index eca012e03..87d0e310f 100644
+--- a/pkgs/DatabaseUtils/cxx/src/DAQConfig/CMakeLists.txt
++++ b/pkgs/DatabaseUtils/cxx/src/DAQConfig/CMakeLists.txt
+@@ -7,7 +7,7 @@ cet_make_library( SOURCE        ${srcs}
+ 	  	        	            Boost::regex
+ 	  	        	            Boost::thread
+ 	  	        	            XercesC::XercesC
+-		        	            pq
++		        	            PostgreSQL::PostgreSQL
+ 		        	            NovaDAQUtilities
+ 		        	            DatabaseUtils
+ 		        	            NovaDatabase
+diff --git a/pkgs/DatabaseUtils/cxx/src/DCS/CMakeLists.txt b/pkgs/DatabaseUtils/cxx/src/DCS/CMakeLists.txt
+index 18a255f03..7f3a377d5 100644
+--- a/pkgs/DatabaseUtils/cxx/src/DCS/CMakeLists.txt
++++ b/pkgs/DatabaseUtils/cxx/src/DCS/CMakeLists.txt
+@@ -7,7 +7,7 @@ cet_make_library( SOURCE  APDSettings.cpp
+ 	  	        	Boost::regex
+ 	  	        	Boost::thread
+ 	  	        	XercesC::XercesC
+-			        pq
++			        PostgreSQL::PostgreSQL
+ 			        NovaDAQUtilities
+ 			        DatabaseUtils
+ 			        DatabaseUtilsDAQConfig
+diff --git a/pkgs/DatabaseUtils/cxx/src/RunHistory/CMakeLists.txt b/pkgs/DatabaseUtils/cxx/src/RunHistory/CMakeLists.txt
+index e7b3a7b07..a41f0a32a 100644
+--- a/pkgs/DatabaseUtils/cxx/src/RunHistory/CMakeLists.txt
++++ b/pkgs/DatabaseUtils/cxx/src/RunHistory/CMakeLists.txt
+@@ -7,7 +7,7 @@ cet_make_library( SOURCE RunHistory.cpp
+ 	            		Boost::regex
+ 	            		Boost::thread
+ 	            		XercesC::XercesC
+-	        		    pq
++	        		    PostgreSQL::PostgreSQL
+ 	        		    NovaDAQUtilities
+ 	        		    DatabaseUtils
+ 	        		    DatabaseUtilsDCS
+diff --git a/pkgs/NovaDatabase/cxx/src/CMakeLists.txt b/pkgs/NovaDatabase/cxx/src/CMakeLists.txt
+index 8bfabe8eb..1a9e87134 100644
+--- a/pkgs/NovaDatabase/cxx/src/CMakeLists.txt
++++ b/pkgs/NovaDatabase/cxx/src/CMakeLists.txt
+@@ -27,7 +27,7 @@ cet_make_library( LIBRARY_NAME  NovaDatabase
+ 	  	   		                 Boost::thread
+ 	  	   		                 XercesC::XercesC
+ 		   		                 cstxsd::cstxsd
+-		   		                 pq
++		   		                 PostgreSQL::PostgreSQL
+ 		   		                 NovaDAQUtilities
+ 		   		BASENAME_ONLY)
+ 

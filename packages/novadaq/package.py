@@ -9,14 +9,14 @@ from spack.package import *
 class Novadaq(CMakePackage):
     """NOvA DAQ package"""
 
-    homepage = "https://www.github.com/novaexperiment/novasoft"
+    homepage = "https://www.github.com/novaexperiment/novadaq"
     git = "git@github.com:novaexperiment/novadaq"
 
     root_cmakelists_dir = "pkgs"
 
     maintainers("vhewes")
 
-    version("develop", branch="main")
+    version("18.0.0", branch="R18_00_00_e20")
 
     variant(
         "cxxstd",
@@ -35,3 +35,13 @@ class Novadaq(CMakePackage):
     depends_on("postgresql")
     depends_on("xerces-c")
     depends_on("xsd")
+
+    patch("R18_00_00_e20.patch", when="@18.0.0")
+
+    def cmake_args(self):
+        return [self.define_from_variant("CMAKE_CXX_STANDARD", "cxxstd")]
+
+    def setup_build_environment(self, env):
+      env.set("CSTXSD_FQ_DIR", self.spec["xsd"].prefix)
+      version = "v{}".format(self.spec["xsd"].version.underscored)
+      env.set("CSTXSD_VERSION", version)
