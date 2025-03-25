@@ -14,7 +14,7 @@ class NovaProduction(Package):
 
     maintainers("vhewes")
 
-    version("develop", branch="main")
+    version("main", branch="main")
 
     depends_on("nova-grid-utils")
 
