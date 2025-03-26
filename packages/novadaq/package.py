@@ -43,5 +43,5 @@ class Novadaq(CMakePackage):
 
     def setup_build_environment(self, env):
       env.set("CSTXSD_FQ_DIR", self.spec["xsd"].prefix)
-      version = "v{}".format(self.spec["xsd"].version.underscored)
-      env.set("CSTXSD_VERSION", version)
+      xsd_version = "v{}".format(self.spec["xsd"].version.underscored)
+      env.set("CSTXSD_VERSION", xsd_version)

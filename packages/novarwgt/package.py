@@ -45,9 +45,9 @@ class Novarwgt(CMakePackage):
     depends_on("nusimdata", when="+nusimdata")
 
     def cmake_args(self):
-        args = [
+        return [
+            self.define_from_variant("CMAKE_CXX_STANDARD", "cxxstd"),
             self.define_from_variant("NOVARWGT_USE_CETLIB", "cetlib"),
             self.define_from_variant("NOVARWGT_USE_GENIE", "genie"),
             self.define_from_variant("NOVARWGT_USE_NUSIMDATA", "nusimdata"),
         ]
-        return args
