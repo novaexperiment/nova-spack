@@ -1,0 +1,24 @@
+diff --git a/source/materials/src/G4DensityEffectData.cc b/source/materials/src/G4DensityEffectData.cc
+--- a/source/materials/src/G4DensityEffectData.cc
++++ b/source/materials/src/G4DensityEffectData.cc
+@@ -106,7 +106,7 @@ void G4DensityEffectData::Initialize()
+   indexZ[5]=5;
+ 
+ //G4_C  index=6
+-  G4double M6[NDENSARRAY]={28.803,2.376,2.9925,-0.0351,2.486,0.2024,3.0036,0.1,0.038,78.0 };
++  G4double M6[NDENSARRAY]={28.803,2.376,2.9925,-0.0351,2.486,0.2024,3.0036,0.1,0.038,81.0 };
+   AddMaterial(M6,"G4_C");
+   indexZ[6]=6;
+ 
+diff --git a/source/materials/src/G4NistMaterialBuilder.cc b/source/materials/src/G4NistMaterialBuilder.cc
+--- a/source/materials/src/G4NistMaterialBuilder.cc
++++ b/source/materials/src/G4NistMaterialBuilder.cc
+@@ -734,7 +734,7 @@ void G4NistMaterialBuilder::NistSimpleMaterials()
+   AddMaterial("G4_Li",  0.534     ,  3,  40. );
+   AddMaterial("G4_Be",  1.848     ,  4,  63.7);
+   AddMaterial("G4_B" ,  2.37      ,  5,  76. );
+-  AddMaterial("G4_C" ,  2.        ,  6,  78. );
++  AddMaterial("G4_C" ,  2.        ,  6,  81. );
+   AddMaterial("G4_N" ,  1.16520e-3,  7,  82. , 1, kStateGas);
+   AddMaterial("G4_O" ,  1.33151e-3,  8,  95. , 1, kStateGas);
+   AddMaterial("G4_F" ,  1.58029e-3,  9, 115. , 1, kStateGas);
