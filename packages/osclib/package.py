@@ -11,9 +11,12 @@ class Osclib(CMakePackage):
 
     homepage = "https://github.com/cafana/OscLib"
     url = "https://github.com/cafana/OscLib/archive/v00.25.tar.gz"
+    git = "https://github.com/cafana/OscLib"
 
     maintainers("vhewes")
 
+    version("main", branch="main")
+    version("00.26", sha256="e5eb84641428d4dcb59e3ac1f082d3d9dc18a13ee598aee9def82c0b1861de42")
     version("00.25", sha256="ee4f4120e414acb065ad967bda9de12e7a5594e6539b25b721084c8f112a3f4c")
 
     depends_on("cetmodules", type="build")
@@ -24,7 +27,16 @@ class Osclib(CMakePackage):
 
     with when("+stan"):
         depends_on("stan-math")
-        depends_on("intel-tbb@2020.3")
+        depends_on("tbb")
+
+    patch("tbb.patch")
+    
+    def patch(self):
+        # fix numeric version string in CMakeLists.txt
+        if not self.version.isdevelop():
+            filter_file(r"project\(osclib VERSION .+?\)",
+                        f"project(osclib VERSION {self.version})",
+                        "CMakeLists.txt")
 
     variant("stan", default=True, description="Build with Stan dependency")
 
@@ -34,4 +46,7 @@ class Osclib(CMakePackage):
             env.set("STAN_MATH_INC", self.spec["stan-math"].prefix)
 
     def cmake_args(self):
-        return [self.define_from_variant("STAN", "stan")]
+        return [
+            self.define_from_variant("STAN", "stan"),
+            self.define("TBB_ONEAPI", "intel-tbb-oneapi" in self.spec),
+        ]

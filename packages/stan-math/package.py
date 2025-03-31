@@ -26,7 +26,7 @@ class StanMath(Package):
 
     depends_on("boost")
     depends_on("eigen")
-    depends_on("intel-tbb@2020.3")
+    depends_on("tbb")
     depends_on("sundials@6.1 ~examples ~examples-install")
 
     def install(self, spec, prefix):
