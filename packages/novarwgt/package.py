@@ -14,6 +14,7 @@ class Novarwgt(CMakePackage):
 
     maintainers("vhewes")
 
+    version("3.0.12", tag="v3.0-dev12")
     version("3.0.6", tag="v3.0-dev6")
 
     variant(
@@ -29,6 +30,7 @@ class Novarwgt(CMakePackage):
 
     depends_on("cetmodules", type="build")
 
+    patch("patch/v3-0-12.patch", when="@3.0.12")
     patch("patch/v3-0-6.p", when="@3.0.6")
 
     # optional cetlib dependency
