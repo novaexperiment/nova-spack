@@ -29,7 +29,7 @@ class Osclib(CMakePackage):
         depends_on("stan-math")
         depends_on("tbb")
 
-    patch("tbb.patch")
+    patch("tbb.patch", when="@:00.26")
     
     def patch(self):
         # fix numeric version string in CMakeLists.txt
