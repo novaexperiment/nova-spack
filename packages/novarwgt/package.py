@@ -28,10 +28,11 @@ class Novarwgt(CMakePackage):
 
     depends_on("root")
 
+    depends_on("cetbuildtools", type="build")
     depends_on("cetmodules", type="build")
 
-    patch("patch/v3-0-12.patch", when="@3.0.12")
-    patch("patch/v3-0-6.p", when="@3.0.6")
+    def patch(self):
+        filter_file("/src", "/include/GENIE", "cmake/Modules/FindGENIE.cmake")
 
     # optional cetlib dependency
     variant("cetlib", default=False, description="Enable CETLib dependency")
@@ -53,3 +54,13 @@ class Novarwgt(CMakePackage):
             self.define_from_variant("NOVARWGT_USE_GENIE", "genie"),
             self.define_from_variant("NOVARWGT_USE_NUSIMDATA", "nusimdata"),
         ]
+
+    def setup_build_environment(self, env):
+        if self.spec.satisfies("+genie"):
+            env.set("PYTHIA6_LIBRARY", self.spec["pythia6"].prefix.lib)
+            env.set("GENIE_REWEIGHT", self.spec["genie"].prefix)
+        if self.spec.satisfies("+nusimdata"):
+            nusimdata_version = "v{}".format(self.spec["nusimdata"].version.underscored)
+            env.set("NUSIMDATA_VERSION", nusimdata_version)
+            env.set("NUSIMDATA_INC", self.spec["nusimdata"].prefix.include)
+            env.set("NUSIMDATA_LIB", self.spec["nusimdata"].prefix.lib)
