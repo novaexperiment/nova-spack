@@ -6,7 +6,7 @@
 from spack.package import *
 
 
-class Novarwgt(CMakePackage):
+class NovaReweight(CMakePackage):
     """NOvA cross-section reweighting toolkit"""
 
     homepage = "https://www.github.com/novaexperiment/novarwgt"

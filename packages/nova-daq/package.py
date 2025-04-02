@@ -6,7 +6,7 @@
 from spack.package import *
 
 
-class Novadaq(CMakePackage):
+class NovaDaq(CMakePackage):
     """NOvA DAQ package"""
 
     homepage = "https://www.github.com/novaexperiment/novadaq"
