@@ -15,6 +15,7 @@ class Cafanacore(CMakePackage):
     maintainers("vhewes")
 
     version("02.01", sha256="cb747ef71586bead03233ef58ad038c8e133b7c210971e8e6ba6df0cbef7e1ae")
+    version("01.36", sha256="f8441698fa89aab33da6a9044c267138ef56e58d06023b7027a6632738e81841")
 
     variant("stan", default=True, description="Build with Stan Math support")
     variant("ifdhc", default=True, description="Build with IFDHC support")
@@ -27,6 +28,14 @@ class Cafanacore(CMakePackage):
     depends_on("osclib+stan", when="+stan")
     depends_on("stan-math")
     depends_on("ifdhc", when="+ifdhc")
+
+    # add std::optional include
+    patch("https://github.com/cafana/CAFAnaCore/commit/6dbb3ca66d3baed477c5659b3403f7d1a2f88ef4.patch",
+          sha256="5f034e885b92d3f8000d4156c2b0e08d78b53e362194b21c1952acc8bf013030", when="@:1")
+
+    # update CMake build for spack
+    patch("https://github.com/cafana/CAFAnaCore/commit/fe2f843d73d7acfb6ba4a9c90e3c068c734ee5c1.patch",
+          sha256="2bbecfd1b7bdce5450afcb294d0ee826e3c45fef7fb8fe7b3bd6c7192422776a", when="@:1")
 
     def setup_build_environment(self, env):
 
@@ -54,3 +63,8 @@ class Cafanacore(CMakePackage):
             self.define_from_variant("STAN", "stan"),
             self.define_from_variant("CMAKE_CXX_STANDARD", "cxxstd"),
         ]
+
+    @run_after("install")
+    def alias_include_paths(self):
+        mkdir(prefix.inc.CAFAnaCore) 
+        symlink("../CAFAna", prefix.inc.CAFAnaCore.CAFAna)
