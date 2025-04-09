@@ -130,3 +130,9 @@ class Novasoft(CMakePackage):
         # pytorch
         torch_dir = self.spec["py-torch"].prefix.join(site_packages).torch
         env.set("LIBTORCH_INC", torch_dir.include)
+    
+    def setup_run_environment(self, env):
+        env.set("NOVASOFT_DIR", self.prefix)
+        cafanacore_version = "v{}".format(self.spec["cafanacore"].version)
+        env.set("CAFANACORE_VERSION", cafanacore_version)
+
