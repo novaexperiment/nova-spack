@@ -15,6 +15,7 @@ class Novasoft(CMakePackage):
     maintainers("vhewes")
 
     version("main", branch="main")
+    version("spack-develop", branch="spack-develop")
     version("S25-03-19", tag="S25-03-19")
 
     variant(
