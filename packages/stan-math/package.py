@@ -31,4 +31,4 @@ class StanMath(Package):
 
     def install(self, spec, prefix):
         mkdir(prefix.stan)
-        install_tree("stan", prefix.stan)
+        install_tree("stan", prefix.include.stan)
