@@ -64,3 +64,8 @@ class NovaReweight(CMakePackage):
             env.set("NUSIMDATA_VERSION", nusimdata_version)
             env.set("NUSIMDATA_INC", self.spec["nusimdata"].prefix.include)
             env.set("NUSIMDATA_LIB", self.spec["nusimdata"].prefix.lib)
+
+    @run_after("install")
+    def alias_include_paths(self):
+        mkdirp(prefix.inc.StandardRecord) 
+        symlink("../NOvARwgt", prefix.inc.StandardRecord.NOvARwgt)
