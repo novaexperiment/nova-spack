@@ -24,6 +24,7 @@ class NovaEnv(BundlePackage):
         env.set("GROUP", "nova")
         env.set("EXPERIMENT", "nova")
         env.set("IFDH_DEBUG", "0")
+        env.set("IFDH_PROXY_ENABLE", "0")
         env.set("SAM_STATION", "nova")
         env.set("CONDOR_EXEC", "/exp/nova/app/condor-exec/"+os.environ.get("USER"))
         env.set("IFDH_BASE_URI", "http://samweb.fnal.gov:8480/sam/nova/api")
