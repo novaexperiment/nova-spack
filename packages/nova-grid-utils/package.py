@@ -15,6 +15,7 @@ class NovaGridUtils(Package):
     maintainers("vhewes")
 
     version("main", branch="main")
+    version("25.5.0", commit="8d00138120e2ddf23010c6689a0a979a8a287aef")
 
     depends_on("ifdhc")
     depends_on("nova-env")
