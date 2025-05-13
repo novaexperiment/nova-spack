@@ -27,8 +27,7 @@ class StanMath(Package):
     depends_on("boost")
     depends_on("eigen")
     depends_on("tbb")
-    depends_on("sundials@6.1 ~examples ~examples-install")
+    depends_on("sundials")
 
     def install(self, spec, prefix):
-        mkdir(prefix.stan)
         install_tree("stan", prefix.include.stan)
