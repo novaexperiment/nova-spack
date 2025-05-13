@@ -25,8 +25,10 @@ class Cafanacore(CMakePackage):
     depends_on("cetmodules", type="build")
     depends_on("boost")
     depends_on("osclib")
-    depends_on("osclib+stan", when="+stan")
-    depends_on("stan-math")
+    with when("+stan"):
+        depends_on("osclib+stan")
+        depends_on("stan-math")
+        depends_on("sundials")
     depends_on("ifdhc", when="+ifdhc")
 
     # add std::optional include
