@@ -28,7 +28,7 @@ class NovaEnv(BundlePackage):
         env.set("SAM_STATION", "nova")
         env.set("CONDOR_EXEC", "/exp/nova/app/condor-exec/"+os.environ.get("USER"))
         env.set("IFDH_BASE_URI", "http://samweb.fnal.gov:8480/sam/nova/api")
-        env.set("JOBSUB_AUTH_METHODS", "proxy,token")
+        env.set("JOBSUB_AUTH_METHODS", "token")
 
         # database env vars
         env.set("NOVADBHOST", "ifdb12.fnal.gov") # replication host
