@@ -63,6 +63,7 @@ class Novasoft(CMakePackage):
     depends_on("ppfx")
     depends_on("protobuf")
     depends_on("python")
+    depends_on("py-condb2")
     depends_on("py-matplotlib")
     depends_on("py-numpy")
     depends_on("py-oracledb")
