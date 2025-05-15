@@ -40,4 +40,4 @@ class NovaProduction(Package):
         """set up nova-production run environment"""
 
         env.set("NOVAPRODUCTION_DIR", self.prefix)
-        env.set("NOVAPRODUCTION_VERSION", self.version)
+        env.set("NOVAPRODUCTION_VERSION", str(self.version))
