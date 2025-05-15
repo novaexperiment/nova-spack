@@ -7,6 +7,7 @@ from spack.package import *
 import spack
 
 VERSIONS = {
+    "25.5.1": "8c384e8a8ad761a5ece836e0128dac9cca3364cb",
     "25.5.0": "8d00138120e2ddf23010c6689a0a979a8a287aef",
 }
 
