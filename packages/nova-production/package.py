@@ -6,6 +6,10 @@
 from spack.package import *
 import spack
 
+VERSIONS = {
+    "25.5.0": "8d00138120e2ddf23010c6689a0a979a8a287aef",
+}
+
 class NovaProduction(Package):
     """NOvA experiment production tools"""
 
@@ -14,7 +18,10 @@ class NovaProduction(Package):
 
     maintainers("vhewes")
 
-    version("develop", branch="main")
+    version("main", branch="main")
+    for v, c in VERSIONS.items():
+        version(v, commit=c)
+        depends_on(f"nova-grid-utils@{v}", when=f"@{v}")
 
     depends_on("nova-grid-utils")
 

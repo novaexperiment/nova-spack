@@ -1,0 +1,116 @@
+diff --git a/source/processes/electromagnetic/standard/include/G4BetheHeitlerModel.hh b/source/processes/electromagnetic/standard/include/G4BetheHeitlerModel.hh
+--- a/source/processes/electromagnetic/standard/include/G4BetheHeitlerModel.hh
++++ b/source/processes/electromagnetic/standard/include/G4BetheHeitlerModel.hh
+@@ -113,6 +113,8 @@ protected:
+   G4ParticleChangeForGamma*         fParticleChange;
+ 
+   static std::vector<ElementData*>  gElementData;
++
++  static std::size_t                gInstanceCounter;
+ };
+ 
+ //
+diff --git a/source/processes/electromagnetic/standard/include/G4PairProductionRelModel.hh b/source/processes/electromagnetic/standard/include/G4PairProductionRelModel.hh
+--- a/source/processes/electromagnetic/standard/include/G4PairProductionRelModel.hh
++++ b/source/processes/electromagnetic/standard/include/G4PairProductionRelModel.hh
+@@ -167,6 +167,8 @@ protected:
+   //  
+   static std::vector<ElementData*>  gElementData;  
+   static LPMFuncs                   gLPMFuncs;
++  //
++  static std::size_t                gInstanceCounter;
+   // 
+   G4bool                            fIsUseLPMCorrection;
+   G4bool                            fIsUseCompleteScreening;
+diff --git a/source/processes/electromagnetic/standard/include/G4eBremsstrahlungRelModel.hh b/source/processes/electromagnetic/standard/include/G4eBremsstrahlungRelModel.hh
+--- a/source/processes/electromagnetic/standard/include/G4eBremsstrahlungRelModel.hh
++++ b/source/processes/electromagnetic/standard/include/G4eBremsstrahlungRelModel.hh
+@@ -219,6 +219,7 @@ private:
+   static LPMFuncs                   gLPMFuncs;
+   static std::vector<ElementData*>  gElementData;
+ 
++  static std::size_t                gInstanceCounter;
+ };
+ 
+ #endif
+diff --git a/source/processes/electromagnetic/standard/src/G4BetheHeitlerModel.cc b/source/processes/electromagnetic/standard/src/G4BetheHeitlerModel.cc
+--- a/source/processes/electromagnetic/standard/src/G4BetheHeitlerModel.cc
++++ b/source/processes/electromagnetic/standard/src/G4BetheHeitlerModel.cc
+@@ -54,6 +54,8 @@
+ #include "G4Exp.hh"
+ #include "G4ModifiedTsai.hh"
+ 
++std::size_t G4BetheHeitlerModel::gInstanceCounter = 0;
++
+ const G4int G4BetheHeitlerModel::gMaxZet = 120; 
+ std::vector<G4BetheHeitlerModel::ElementData*> G4BetheHeitlerModel::gElementData;
+ 
+@@ -64,12 +66,14 @@ G4BetheHeitlerModel::G4BetheHeitlerModel(const G4ParticleDefinition*,
+   fTheElectron(G4Electron::Electron()), fThePositron(G4Positron::Positron()),
+   fParticleChange(nullptr) 
+ {
++  gInstanceCounter++;
+   SetAngularDistribution(new G4ModifiedTsai());
+ }
+ 
+ G4BetheHeitlerModel::~G4BetheHeitlerModel()
+ {
+-  if (IsMaster()) {
++  gInstanceCounter--;
++  if (gInstanceCounter == 0 && IsMaster()) {
+     // clear ElementData container
+     for (size_t iz = 0; iz < gElementData.size(); ++iz) {
+       if (gElementData[iz]) delete gElementData[iz];
+diff --git a/source/processes/electromagnetic/standard/src/G4PairProductionRelModel.cc b/source/processes/electromagnetic/standard/src/G4PairProductionRelModel.cc
+--- a/source/processes/electromagnetic/standard/src/G4PairProductionRelModel.cc
++++ b/source/processes/electromagnetic/standard/src/G4PairProductionRelModel.cc
+@@ -66,6 +66,7 @@
+ #include "G4LossTableManager.hh"
+ #include "G4ModifiedTsai.hh"
+ 
++std::size_t G4PairProductionRelModel::gInstanceCounter = 0;
+ 
+ const G4int G4PairProductionRelModel::gMaxZet = 120; 
+ 
+@@ -117,6 +118,8 @@ G4PairProductionRelModel::G4PairProductionRelModel(const G4ParticleDefinition*,
+   fTheElectron(G4Electron::Electron()), fThePositron(G4Positron::Positron()),
+   fParticleChange(nullptr) 
+ {
++  gInstanceCounter++;
++
+   // gamma energy below which the parametrized atomic x-section is used (80 GeV) 
+   fParametrizedXSectionThreshold = 30.0*CLHEP::GeV;
+   // gamma energy below the Coulomb correction is turned off (50 MeV)
+@@ -128,7 +131,9 @@ G4PairProductionRelModel::G4PairProductionRelModel(const G4ParticleDefinition*,
+ // DTR
+ G4PairProductionRelModel::~G4PairProductionRelModel()
+ {
+-  if (IsMaster()) {
++  gInstanceCounter--;
++
++  if (gInstanceCounter == 0 && IsMaster()) {
+     // clear ElementData container
+     for (size_t iz = 0; iz < gElementData.size(); ++iz) {
+       if (gElementData[iz]) delete gElementData[iz];
+diff --git a/source/processes/electromagnetic/standard/src/G4eBremsstrahlungRelModel.cc b/source/processes/electromagnetic/standard/src/G4eBremsstrahlungRelModel.cc
+--- a/source/processes/electromagnetic/standard/src/G4eBremsstrahlungRelModel.cc
++++ b/source/processes/electromagnetic/standard/src/G4eBremsstrahlungRelModel.cc
+@@ -70,6 +70,8 @@
+ #include "G4ModifiedTsai.hh"
+ //#include "G4DipBustGenerator.hh"
+ 
++std::size_t G4eBremsstrahlungRelModel::gInstanceCounter = 0;
++
+ const G4int G4eBremsstrahlungRelModel::gMaxZet = 120;
+ 
+ // constant DCS factor: 16\alpha r_0^2/3
+@@ -117,6 +119,8 @@ G4eBremsstrahlungRelModel::G4eBremsstrahlungRelModel(const G4ParticleDefinition*
+                                                      const G4String& nam)
+ : G4VEmModel(nam)
+ {
++  gInstanceCounter++;
++
+   fGammaParticle       = G4Gamma::Gamma();
+   //
+   fLowestKinEnergy     = 1.0*MeV;
+@@ -136,7 +140,9 @@ G4eBremsstrahlungRelModel::G4eBremsstrahlungRelModel(const G4ParticleDefinition*
