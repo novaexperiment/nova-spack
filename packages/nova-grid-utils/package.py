@@ -37,4 +37,4 @@ class NovaGridUtils(Package):
         """set up nova-grid-utils run environment"""
 
         env.set("NOVAGRIDUTILS_DIR", self.prefix)
-        env.set("NOVAGRIDUTILS_VERSION", self.version)
+        env.set("NOVAGRIDUTILS_VERSION", str(self.version))
