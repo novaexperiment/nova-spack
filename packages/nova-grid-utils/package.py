@@ -4,7 +4,25 @@
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
 from spack.package import *
-import os
+
+
+NOVAPROD_VERSIONS = {
+    "25.5.3": {
+        "commit": "8b4bfb57aa295fb4f96088aa4f8b3b49e1e376e2",
+    },
+    "25.5.2": {
+        "commit": "e42579c41ac6c2537cf1b280f55cdb35dbf084ff",
+        "deprecated": True,
+    },
+    "25.5.1": {
+        "commit": "8c384e8a8ad761a5ece836e0128dac9cca3364cb",
+        "deprecated": True,
+    },
+    "25.5.0": {
+        "commit": "8d00138120e2ddf23010c6689a0a979a8a287aef",
+        "deprecated": True,
+    },
+}
 
 class NovaGridUtils(Package):
     """NOvA experiment grid utilities"""
@@ -15,9 +33,8 @@ class NovaGridUtils(Package):
     maintainers("vhewes")
 
     version("main", branch="main")
-    version("25.5.2", commit="e42579c41ac6c2537cf1b280f55cdb35dbf084ff")
-    version("25.5.1", commit="8c384e8a8ad761a5ece836e0128dac9cca3364cb", deprecated=True)
-    version("25.5.0", commit="8d00138120e2ddf23010c6689a0a979a8a287aef", deprecated=True)
+    for v, c in NOVAPROD_VERSIONS.items():
+        version(v, **c)
 
     depends_on("ifdhc")
     depends_on("nova-env")
