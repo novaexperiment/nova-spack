@@ -7,8 +7,17 @@ from spack.package import *
 import spack
 
 VERSIONS = {
-    "25.5.1": "8c384e8a8ad761a5ece836e0128dac9cca3364cb",
-    "25.5.0": "8d00138120e2ddf23010c6689a0a979a8a287aef",
+    "25.5.2": {
+        "commit": "e42579c41ac6c2537cf1b280f55cdb35dbf084ff"
+    },
+    "25.5.1": {
+        "commit": "8c384e8a8ad761a5ece836e0128dac9cca3364cb",
+        "deprecated": True,
+    },
+    "25.5.0": {
+        "commit": "8d00138120e2ddf23010c6689a0a979a8a287aef",
+        "deprecated": True,
+    },
 }
 
 class NovaProduction(Package):
@@ -21,7 +30,7 @@ class NovaProduction(Package):
 
     version("main", branch="main")
     for v, c in VERSIONS.items():
-        version(v, commit=c)
+        version(v, **c)
         depends_on(f"nova-grid-utils@{v}", when=f"@{v}")
 
     depends_on("nova-grid-utils")
