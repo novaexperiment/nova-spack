@@ -6,6 +6,24 @@
 from spack.package import *
 
 
+NOVAPROD_VERSIONS = {
+    "25.5.3": {
+        "commit": "8b4bfb57aa295fb4f96088aa4f8b3b49e1e376e2",
+    },
+    "25.5.2": {
+        "commit": "e42579c41ac6c2537cf1b280f55cdb35dbf084ff",
+        "deprecated": True,
+    },
+    "25.5.1": {
+        "commit": "8c384e8a8ad761a5ece836e0128dac9cca3364cb",
+        "deprecated": True,
+    },
+    "25.5.0": {
+        "commit": "8d00138120e2ddf23010c6689a0a979a8a287aef",
+        "deprecated": True,
+    },
+}
+
 class NovaFcl(Package):
     """NOvA experiment FHICL repository"""
 
@@ -14,7 +32,9 @@ class NovaFcl(Package):
 
     maintainers("vhewes")
 
-    version("develop", branch="main")
+    version("main", branch="main")
+    for v, c in NOVAPROD_VERSIONS.items():
+        version(v, **c)
 
     def install(self, spec, prefix):
         """nova-fcl installer"""
