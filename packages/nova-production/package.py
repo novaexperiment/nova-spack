@@ -7,8 +7,12 @@ from spack.package import *
 
 
 NOVAPROD_VERSIONS = {
+    "25.5.6": {
+        "commit": "05b0b5d658267e87ab71006419d7063f4425b19c",
+    },
     "25.5.5": {
         "commit": "04d6a33abbd47bbb1181ecfee502c717d6dae327",
+        "deprecated": True,
     },
     "25.5.4": {
         "commit": "87a04f76a248bfaa9ada943e893caed0b6d57cc5",
