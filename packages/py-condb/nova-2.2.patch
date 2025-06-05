@@ -1,0 +1,23 @@
+diff --git a/NOvA_API/ConDB.py b/NOvA_API/ConDB.py
+index f92cc52..78e42b7 100644
+--- a/NOvA_API/ConDB.py
++++ b/NOvA_API/ConDB.py
+@@ -2,8 +2,8 @@
+ import psycopg2, sys, time
+ import io
+ 
+-from trace import Tracer
+-from dbdig import DbDig
++from .trace import Tracer
++from .dbdig import DbDig
+ 
+ def cursor_iterator(c):
+     tup = c.fetchone()
+diff --git a/NOvA_API/__init__.py b/NOvA_API/__init__.py
+new file mode 100644
+index 0000000..0a8a27d
+--- /dev/null
++++ b/NOvA_API/__init__.py
+@@ -0,0 +1,2 @@
++from .ConDB import ConDB
++from . import timelib
