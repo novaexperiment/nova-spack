@@ -14,8 +14,10 @@ class G4numi(CMakePackage):
 
     maintainers("vhewes")
 
-    version("develop", branch="main_modern_g4", get_full_repo=True)
+    version("main_modern_g4", branch="main_modern_g4", get_full_repo=True)
     version("24.10.1", tag="v24.10.1", get_full_repo=True)
+
+    patch("geant4-10.patch", when="^geant4@:10")
 
     depends_on("cetmodules", type="build")
 

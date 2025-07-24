@@ -1,0 +1,65 @@
+diff --git a/src/NA49PhysicsList.cc b/src/NA49PhysicsList.cc
+index cc7ed10..3740b70 100644
+--- a/src/NA49PhysicsList.cc
++++ b/src/NA49PhysicsList.cc
+@@ -15,7 +15,7 @@
+ #include "G4IonBinaryCascadePhysics.hh"
+ #include "G4IonPhysics.hh"
+ #include "G4EmExtraPhysics.hh"
+-#include "G4UnitsTable.hh"
++#include "G4EmProcessOptions.hh"
+ 
+ #include "G4HadronInelasticQBBC.hh"
+ #include "G4HadronPhysicsFTF_BIC.hh"
+diff --git a/src/NumiAnalysis.cc b/src/NumiAnalysis.cc
+index e2e2b8d..00ce7bf 100644
+--- a/src/NumiAnalysis.cc
++++ b/src/NumiAnalysis.cc
+@@ -507,8 +507,8 @@ void NumiAnalysis::FillMeta(){
+   int NPots = pRunManager->GetCurrentRun()->GetNumberOfEventToBeProcessed();
+ 
+   G4String namentp = (NumiData->nuNtupleName);
+-  G4int pos_last = namentp.find_last_of('_');
+-  namentp.erase(0,pos_last+1);
++  G4int pos_last = namentp.last('_');
++  namentp.remove(0,pos_last+1);
+   istringstream buffer(namentp);
+   int valjob;
+   buffer >> valjob;
+@@ -558,8 +558,8 @@ void NumiAnalysis::FillMeta(){
+   G4String hornC = NumiData->GetBeamConfig();
+   G4String tgtC  = NumiData->GetBeamConfig();
+   G4int confsize = (NumiData->GetBeamConfig()).length();
+-  hornC.erase(0,6);
+-  tgtC.erase(6,confsize);
++  hornC.remove(0,6);
++  tgtC.remove(6,confsize);
+   G4String playlist  = NumiData->GetPlaylist();
+ 
+   G4bool isHe = NumiData->HeInDecayPipe;
+@@ -1860,8 +1860,8 @@ void NumiAnalysis::FillNeutrinoNtuple(const G4Track& track, const std::vector<G4
+ 
+   //calculating the job number:
+   G4String namentp = (NumiData->nuNtupleName);
+-  G4int namesize = (NumiData->nuNtupleName).find_last_of('_');
+-  namentp.erase(0,namesize+1);
++  G4int namesize = (NumiData->nuNtupleName).last('_');
++  namentp.remove(0,namesize+1);
+   istringstream buffer(namentp);
+   int valjob;
+   buffer >> valjob;
+diff --git a/studies/G4MinervaPionIXS.cc b/studies/G4MinervaPionIXS.cc
+index 585b9d1..fcf1cd2 100755
+--- a/studies/G4MinervaPionIXS.cc
++++ b/studies/G4MinervaPionIXS.cc
+@@ -307,8 +307,8 @@
+ G4MinervaPionIXS::
+ ~G4MinervaPionIXS()
+ {
+-  for (G4PiData* it : thePimData) delete it;
+-  for (G4PiData* it : thePipData) delete it;
++  std::for_each(thePimData.begin(), thePimData.end(), G4PiData::Delete());
++  std::for_each(thePipData.begin(), thePipData.end(), G4PiData::Delete());
+ }
+ 
+ 
