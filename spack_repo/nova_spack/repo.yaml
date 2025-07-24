@@ -1,0 +1,4 @@
+repo:
+  namespace: nova_spack
+  api: v2.0
+
