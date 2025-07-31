@@ -28,6 +28,7 @@ class Osclib(CMakePackage):
 
     with when("+stan"):
         depends_on("stan-math")
+        depends_on("sundials")
         depends_on("tbb")
 
     patch("tbb.patch", when="@:00.26")
@@ -44,7 +45,7 @@ class Osclib(CMakePackage):
     def setup_build_environment(self, env):
         # need to set up STAN_MATH_INC so Findstan_math.cmake will work as-is
         if self.spec.satisfies("+stan"):
-            env.set("STAN_MATH_INC", self.spec["stan-math"].prefix)
+            env.set("STAN_MATH_INC", self.spec["stan-math"].prefix.include)
 
     def cmake_args(self):
         return [
