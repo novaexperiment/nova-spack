@@ -23,7 +23,10 @@ class Cafanacore(CMakePackage):
     variant("cxxstd", values=("17", "20", "23"), default="17", multi=False,
             sticky=True, description="C++ standard")
 
+    depends_on("c", type="build")
+    depends_on("cxx", type="build")
     depends_on("cetmodules", type="build")
+
     depends_on("boost")
     depends_on("osclib")
     with when("+stan"):

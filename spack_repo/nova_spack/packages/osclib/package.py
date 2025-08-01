@@ -19,6 +19,8 @@ class Osclib(CMakePackage):
     version("main", branch="main")
     version("01.00", sha256="0e46970f017890727c4c1f38dafc7bc2603cb45a050e3c59732b12768b32d4a4")
 
+    depends_on("c", type="build")
+    depends_on("cxx", type="build")
     depends_on("cetmodules", type="build")
 
     depends_on("root")

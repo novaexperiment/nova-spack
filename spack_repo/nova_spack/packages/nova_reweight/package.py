@@ -27,6 +27,9 @@ class NovaReweight(CMakePackage):
         description="C++ standard",
     )
 
+    depends_on("c", type="build")
+    depends_on("cxx", type="build")
+
     depends_on("root")
 
     depends_on("cetbuildtools", type="build")
