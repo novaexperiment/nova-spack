@@ -63,6 +63,8 @@ class NovaReweight(CMakePackage):
         if self.spec.satisfies("+genie"):
             env.set("PYTHIA6_LIBRARY", self.spec["pythia6"].prefix.lib)
             env.set("GENIE_REWEIGHT", self.spec["genie"].prefix)
+            env.set("LOG4CPP_INC", self.spec["log4cpp"].prefix.include)
+            env.set("LOG4CPP_LIB", self.spec["log4cpp"].prefix.lib)
         if self.spec.satisfies("+nusimdata"):
             nusimdata_version = "v{}".format(self.spec["nusimdata"].version.underscored)
             env.set("NUSIMDATA_VERSION", nusimdata_version)
