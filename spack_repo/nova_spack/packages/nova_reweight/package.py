@@ -15,8 +15,7 @@ class NovaReweight(CMakePackage):
 
     maintainers("vhewes")
 
-    version("3.0.12", tag="v3.0-dev12")
-    version("3.0.6", tag="v3.0-dev6")
+    version("3.0.16", tag="v3.0-dev16")
 
     variant(
         "cxxstd",
@@ -29,11 +28,13 @@ class NovaReweight(CMakePackage):
 
     depends_on("c", type="build")
     depends_on("cxx", type="build")
-
-    depends_on("root")
-
     depends_on("cetbuildtools", type="build")
     depends_on("cetmodules", type="build")
+
+    depends_on("nufinder")
+    depends_on("root")
+
+    patch("cmake-3.0.16.patch", when="@3.0.16")
 
     def patch(self):
         filter_file("/src", "/include/GENIE", "cmake/Modules/FindGENIE.cmake")
