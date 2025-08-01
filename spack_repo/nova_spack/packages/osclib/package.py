@@ -11,14 +11,13 @@ class Osclib(CMakePackage):
     """Neutrino oscillation probability tools."""
 
     homepage = "https://github.com/cafana/OscLib"
-    url = "https://github.com/cafana/OscLib/archive/v00.25.tar.gz"
+    url = "https://github.com/cafana/OscLib/archive/v01.00.tar.gz"
     git = "https://github.com/cafana/OscLib"
 
     maintainers("vhewes")
 
     version("main", branch="main")
-    version("00.26", sha256="e5eb84641428d4dcb59e3ac1f082d3d9dc18a13ee598aee9def82c0b1861de42")
-    version("00.25", sha256="ee4f4120e414acb065ad967bda9de12e7a5594e6539b25b721084c8f112a3f4c")
+    version("01.00", sha256="0e46970f017890727c4c1f38dafc7bc2603cb45a050e3c59732b12768b32d4a4")
 
     depends_on("cetmodules", type="build")
 
@@ -31,7 +30,9 @@ class Osclib(CMakePackage):
         depends_on("sundials")
         depends_on("tbb")
 
-    patch("tbb.patch", when="@:00.26")
+    # patch cmake build for v1.0
+    patch("https://github.com/cafana/OscLib/commit/b0aa742ecd8c5604c4ca61a2e9b2015524401f70.patch",
+          sha256="fbd46220e9df966ba355aec4ea565d0a1541e2e26debe3a5206c77a36ed4875d", when="@01.00")
     
     def patch(self):
         # fix numeric version string in CMakeLists.txt
