@@ -28,6 +28,8 @@ class NovaDaq(CMakePackage):
         description="C++ standard",
     )
 
+    depends_on("c", type="build")
+    depends_on("cxx", type="build")
     depends_on("cetmodules", type="build")
 
     depends_on("boost")
