@@ -34,7 +34,8 @@ class NovaReweight(CMakePackage):
     depends_on("nufinder")
     depends_on("root")
 
-    patch("cmake-3.0.16.patch", when="@3.0.16")
+    patch("cmake-3.0.16.patch", when="@3.0.16",
+          sha256="051e15cb85cb5e8e8b61b915b1d0a327999715838128eca86f1eb80909fab31e")
 
     def patch(self):
         filter_file("/src", "/include/GENIE", "cmake/Modules/FindGENIE.cmake")
