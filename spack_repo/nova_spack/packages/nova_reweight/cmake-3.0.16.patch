@@ -1,17 +1,5 @@
-From c877ba9628eb016f24cc527f66c9d275477b0302 Mon Sep 17 00:00:00 2001
-From: v <39996356+vhewes@users.noreply.github.com>
-Date: Fri, 1 Aug 2025 13:27:08 -0500
-Subject: [PATCH] rename NuSimData module to nusimdata (#173)
-
-Co-authored-by: novasoft <novasoft@fnal.gov>
----
- CMakeLists.txt                                             | 3 ++-
- cmake/Modules/{FindNuSimData.cmake => Findnusimdata.cmake} | 2 +-
- 2 files changed, 3 insertions(+), 2 deletions(-)
- rename cmake/Modules/{FindNuSimData.cmake => Findnusimdata.cmake} (98%)
-
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index bf6f785..5985d12 100644
+index bf6f785..83f5d1e 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -20,6 +20,7 @@ set(CMAKE_CXX_FLAGS_RELEASE "${common_flags} -O2")
@@ -22,26 +10,81 @@ index bf6f785..5985d12 100644
  
  # the BUILD_TYPE and UPS_... vars are only used when working with UPS,
  # but that means they're needed in the FindCET.cmake called by some of the external dependencies
-@@ -112,7 +113,7 @@ endif()
+@@ -112,7 +113,16 @@ endif()
  # FNAL NuSimData
  option(NOVARWGT_USE_NUSIMDATA "Build support for FNAL NuSimData?" On)
  if(NOVARWGT_USE_NUSIMDATA)
 -	find_package(NuSimData)
 +	find_package(nusimdata)
++
++	# some things have to be set manually if we're using the config
++	if(NOT USE_NUSIMDATA)
++	    set(USE_NUSIMDATA TRUE)
++		function(link_nusimdata target)
++		    target_link_libraries(${target} PRIVATE nusimdata::SimulationBase)
++		endfunction()
++	endif()
++
  endif()
  
  ###########   source can be installed with build if user desires
-diff --git a/cmake/Modules/FindNuSimData.cmake b/cmake/Modules/Findnusimdata.cmake
-similarity index 98%
-rename from cmake/Modules/FindNuSimData.cmake
-rename to cmake/Modules/Findnusimdata.cmake
-index 8e193b6..f8ae6e5 100644
+diff --git a/cmake/Modules/FindNuSimData.cmake b/cmake/Modules/FindNuSimData.cmake
+deleted file mode 100644
+index 8e193b6..0000000
 --- a/cmake/Modules/FindNuSimData.cmake
-+++ b/cmake/Modules/Findnusimdata.cmake
-@@ -1,4 +1,4 @@
++++ /dev/null
+@@ -1,54 +0,0 @@
 -####  FindNuSimData.cmake:
-+####  Findnusimdata.cmake:
- ####     Locate the NuSimData package via the Fermilab UPS system.
- ####      (NuSimData itself has a number of dependencies which are best resolved via UPS.)
- ####     This requires a lot of shenanigans because the CMake UPS interface assumes
- 
+-####     Locate the NuSimData package via the Fermilab UPS system.
+-####      (NuSimData itself has a number of dependencies which are best resolved via UPS.)
+-####     This requires a lot of shenanigans because the CMake UPS interface assumes
+-####     you want to build your package using CET as well, and we don't.
+-####
+-####   Original author:  J. Wolcott <jwolcott@fnal.gov>
+-####   Date:             Oct. 29, 2018
+-
+-find_package(CET)
+-
+-find_ups_product(nusimdata)
+-
+-set(NUSIMDATA_INC $ENV{NUSIMDATA_INC})
+-set(NUSIMDATA_LIBDIR $ENV{NUSIMDATA_LIB})
+-
+-set(NUSIMDATA_LIB_LIST nusimdata_SimulationBase)
+-
+-if(NUSIMDATA_INC AND NUSIMDATA_LIBDIR)
+-    set(NUSIMDATA_VERSION $ENV{NUSIMDATA_VERSION} )
+-    if(${NUSIMDATA_VERSION} STRLESS "v1_16_04" )
+-        message(WARNING "Found nusimdata version ${NUSIMDATA_VERSION}, but require at least v1_16_04.  Not building nutools interface.")
+-        set(USE_NUSIMDATA FALSE)
+-    else()
+-        message(STATUS "searching for NuSimData libraries in dir: ${NUSIMDATA_LIBDIR}")
+-        set(USE_NUSIMDATA TRUE)
+-    endif()
+-endif()
+-
+-if(USE_NUSIMDATA)
+-    foreach(LIB ${NUSIMDATA_LIB_LIST})
+-        add_library(${LIB} SHARED IMPORTED)
+-        unset(libdir)
+-        unset(libdir CACHE)
+-        find_library(libdir ${LIB} PATHS "${NUSIMDATA_LIBDIR}")
+-#        message(STATUS "  found NuSimData library: ${LIB} at ${libdir}")
+-        set_property(TARGET ${LIB} PROPERTY IMPORTED_LOCATION ${libdir})
+-        set_property(TARGET ${LIB} PROPERTY INTERFACE_LINK_LIBRARIES ${dependency_libs})
+-    endforeach()
+-
+-    set(NUSIMDATA_LIBDIR "$ENV{NUSIMDATA_LIB}")
+-    include_directories(${NUSIMDATA_INC})
+-    set(NUSIMDATA_LIB_LIST nusimdata_SimulationBase)
+-
+-    function(link_nusimdata target)
+-        foreach(lib ${NUSIMDATA_LIB_LIST})
+-            target_link_libraries(${target} PRIVATE ${lib})
+-        endforeach()
+-        #    add_deps("${NUSIMDATA_LIB_LIST}" ${NUSIMDATA_LIBDIR} NOvARwgt)
+-    endfunction()
+-else()
+-    message(STATUS "Missing either $NUSIMDATA_INC or $NUSIMDATA_LIB.  NuSimData extensions disabled.")
+-endif()
+-
