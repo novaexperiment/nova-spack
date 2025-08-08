@@ -3,7 +3,10 @@
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
+from spack_repo.builtin.build_systems.cmake import CMakePackage, generator
 from spack.package import *
+
+from pathlib import Path
 
 
 class Novasoft(CMakePackage):
@@ -59,6 +62,7 @@ class Novasoft(CMakePackage):
     depends_on("nusystematics")
     depends_on("nutools")
     depends_on("opencv +imgcodecs")
+    depends_on("osclib")
     depends_on("postgresql")
     depends_on("ppfx")
     depends_on("protobuf")
@@ -113,7 +117,7 @@ class Novasoft(CMakePackage):
         env.set("NOVARWGT_LIB", self.spec["nova-reweight"].prefix.lib)
 
         # stan
-        env.set("STAN_MATH_INC", self.spec["stan-math"].prefix)
+        env.set("STAN_MATH_INC", self.spec["stan-math"].prefix.include)
         env.set("STAN_INC", self.spec["stan"].prefix.include)
 
         # srproxy

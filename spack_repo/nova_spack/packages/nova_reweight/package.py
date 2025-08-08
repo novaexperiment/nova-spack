@@ -3,6 +3,7 @@
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
+from spack_repo.builtin.build_systems.cmake import CMakePackage
 from spack.package import *
 
 
@@ -14,8 +15,7 @@ class NovaReweight(CMakePackage):
 
     maintainers("vhewes")
 
-    version("3.0.12", tag="v3.0-dev12")
-    version("3.0.6", tag="v3.0-dev6")
+    version("3.0.16", tag="v3.0-dev16")
 
     variant(
         "cxxstd",
@@ -26,10 +26,16 @@ class NovaReweight(CMakePackage):
         description="C++ standard",
     )
 
-    depends_on("root")
-
+    depends_on("c", type="build")
+    depends_on("cxx", type="build")
     depends_on("cetbuildtools", type="build")
     depends_on("cetmodules", type="build")
+
+    depends_on("nufinder")
+    depends_on("root")
+
+    patch("cmake-3.0.16.patch", when="@3.0.16",
+          sha256="26fcb6c9718034a494a536a79ff5b2d64243105a3a2ad7e947dc61c94ef29d0a")
 
     def patch(self):
         filter_file("/src", "/include/GENIE", "cmake/Modules/FindGENIE.cmake")
@@ -59,6 +65,8 @@ class NovaReweight(CMakePackage):
         if self.spec.satisfies("+genie"):
             env.set("PYTHIA6_LIBRARY", self.spec["pythia6"].prefix.lib)
             env.set("GENIE_REWEIGHT", self.spec["genie"].prefix)
+            env.set("LOG4CPP_INC", self.spec["log4cpp"].prefix.include)
+            env.set("LOG4CPP_LIB", self.spec["log4cpp"].prefix.lib)
         if self.spec.satisfies("+nusimdata"):
             nusimdata_version = "v{}".format(self.spec["nusimdata"].version.underscored)
             env.set("NUSIMDATA_VERSION", nusimdata_version)

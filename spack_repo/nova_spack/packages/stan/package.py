@@ -3,7 +3,7 @@
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
-from spack import *
+from spack.package import *
 
 
 class Stan(Package):
@@ -14,6 +14,7 @@ class Stan(Package):
 
     maintainers = ["marc.mengel@gmail.com"]
 
+    version("2.35.0", sha256="88d50e80e04cffdecb870ca20914b23363e52386d1df472661439731c58d6fd2")
     version("2.26.0", sha256="3b6ff0cbeddaa5b0f94692862d7a2266d12c3e7a6833ea0f5c7c20ff7b28907a")
     version("2.25.0", sha256="9c2f936be00f28f95b58e061e95b5a81990b978001eb9df5b03f7803906b1d78")
     version("2.24.0", sha256="f398098eb030036d23b2a8e131598bc89c2e4fa5e85be9ab1d0a8b0d91739f99")
