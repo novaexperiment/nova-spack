@@ -11,13 +11,13 @@ class Osclib(CMakePackage):
     """Neutrino oscillation probability tools."""
 
     homepage = "https://github.com/cafana/OscLib"
-    url = "https://github.com/cafana/OscLib/archive/v01.00.tar.gz"
+    url = "https://github.com/cafana/OscLib/archive/v1.0.1.tar.gz"
     git = "https://github.com/cafana/OscLib"
 
     maintainers("vhewes")
 
     version("main", branch="main")
-    version("01.00", sha256="0e46970f017890727c4c1f38dafc7bc2603cb45a050e3c59732b12768b32d4a4")
+    version("1.0.1", sha256="9a5456e884dc706849dfbfc7dda26f37cab58bc965eec80d4a02b9c5b9a0ec4d")
 
     depends_on("c", type="build")
     depends_on("cxx", type="build")
@@ -31,17 +31,6 @@ class Osclib(CMakePackage):
         depends_on("stan-math")
         depends_on("sundials")
         depends_on("tbb")
-
-    # patch cmake build for v1.0
-    patch("https://github.com/cafana/OscLib/commit/b0aa742ecd8c5604c4ca61a2e9b2015524401f70.patch",
-          sha256="fbd46220e9df966ba355aec4ea565d0a1541e2e26debe3a5206c77a36ed4875d", when="@01.00")
-    
-    def patch(self):
-        # fix numeric version string in CMakeLists.txt
-        if not self.version.isdevelop():
-            filter_file(r"project\(osclib VERSION .+?\)",
-                        f"project(osclib VERSION {self.version})",
-                        "CMakeLists.txt")
 
     variant("stan", default=True, description="Build with Stan dependency")
 
