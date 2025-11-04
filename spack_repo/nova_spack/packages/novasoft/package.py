@@ -145,3 +145,16 @@ class Novasoft(CMakePackage):
         cafanacore_version = "v{}".format(self.spec["cafanacore"].version)
         env.set("CAFANACORE_VERSION", cafanacore_version)
 
+        run_env.prepend_path("CET_PLUGIN_PATH", self.prefix.lib)
+        run_env.prepend_path("PATH", self.prefix.bin)
+        run_env.prepend_path("ROOT_INCLUDE_PATH", self.prefix.include)
+        run_env.append_path("FHICL_FILE_PATH", self.prefix.fcl)
+        run_env.append_path("FW_SEARCH_PATH", self.prefix.gdml)
+
+    def setup_dependent_run_environment(self, run_env, dspec):
+        run_env.prepend_path("CET_PLUGIN_PATH", self.prefix.lib)
+        run_env.prepend_path("PATH", self.prefix.bin)
+        run_env.prepend_path("ROOT_INCLUDE_PATH", self.prefix.include)
+        run_env.append_path("FHICL_FILE_PATH", self.prefix.fcl)
+        run_env.append_path("FW_SEARCH_PATH", self.prefix.gdml)
+
