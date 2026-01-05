@@ -35,7 +35,7 @@ class Osclib(CMakePackage):
 
     variant("stan", default=True, description="Build with Stan dependency")
 
-    patch("osclib.patch", when="1.2.0",
+    patch("osclib.patch", when="@1.2.0",
           sha256="a43ad2d4a4af2bbedf7aabbd42709d3c60ccc9248f88f85957ee0e54def31f26")
 
     def setup_build_environment(self, env):
