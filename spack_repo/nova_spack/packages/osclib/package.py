@@ -17,6 +17,7 @@ class Osclib(CMakePackage):
     maintainers("vhewes")
 
     version("main", branch="main")
+    version("1.2.0", sha256="4a0f4efe20dd50dbe3440bc32862402b7ff3ff3fa0cf856382ff7f2edad85f70")
     version("1.0.1", sha256="9a5456e884dc706849dfbfc7dda26f37cab58bc965eec80d4a02b9c5b9a0ec4d")
 
     depends_on("c", type="build")
@@ -33,6 +34,9 @@ class Osclib(CMakePackage):
         depends_on("tbb")
 
     variant("stan", default=True, description="Build with Stan dependency")
+
+    patch("osclib.patch", when="1.2.0",
+          sha256="a43ad2d4a4af2bbedf7aabbd42709d3c60ccc9248f88f85957ee0e54def31f26")
 
     def setup_build_environment(self, env):
         # need to set up STAN_MATH_INC so Findstan_math.cmake will work as-is
