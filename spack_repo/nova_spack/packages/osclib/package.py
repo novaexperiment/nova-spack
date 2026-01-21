@@ -46,5 +46,5 @@ class Osclib(CMakePackage):
     def cmake_args(self):
         return [
             self.define_from_variant("STAN", "stan"),
-            self.define("TBB_ONEAPI", "intel-tbb-oneapi" in self.spec),
+            self.define("TBB_ONEAPI", "intel-oneapi-tbb" in self.spec),
         ]
