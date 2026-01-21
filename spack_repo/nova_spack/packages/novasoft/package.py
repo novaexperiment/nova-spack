@@ -52,7 +52,7 @@ class Novasoft(CMakePackage):
     depends_on("log4cpp")
     depends_on("nova-env")
     depends_on("nova-daq")
-    depends_on("nova-reweight")
+    depends_on("novarwgt")
     depends_on("nucondb")
     depends_on("nuevdb")
     depends_on("nufinder")
@@ -113,8 +113,8 @@ class Novasoft(CMakePackage):
         env.set("CSTXSD_VERSION", xsd_version)
 
         # novarwgt
-        env.set("NOVARWGT_INC", self.spec["nova-reweight"].prefix.inc)
-        env.set("NOVARWGT_LIB", self.spec["nova-reweight"].prefix.lib)
+        env.set("NOVARWGT_INC", self.spec["novarwgt"].prefix.inc)
+        env.set("NOVARWGT_LIB", self.spec["novarwgt"].prefix.lib)
 
         # stan
         env.set("STAN_MATH_INC", self.spec["stan-math"].prefix.include)

@@ -7,7 +7,7 @@ from spack_repo.builtin.build_systems.cmake import CMakePackage
 from spack.package import *
 
 
-class NovaReweight(CMakePackage):
+class Novarwgt(CMakePackage):
     """NOvA cross-section reweighting toolkit"""
 
     homepage = "https://www.github.com/novaexperiment/novarwgt"
@@ -15,6 +15,8 @@ class NovaReweight(CMakePackage):
 
     maintainers("vhewes")
 
+    version("4.0.4", tag="v4.0-dev4",
+            commit="ac515a3175a02b42eac5892b20f158710d3bb55d")
     version("3.0.16", tag="v3.0-dev16")
 
     variant(
