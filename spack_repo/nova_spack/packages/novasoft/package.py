@@ -46,6 +46,7 @@ class Novasoft(CMakePackage):
         # patch("geant4-11-0-em-instance-counter.patch", when="@11.0")])
     depends_on("geant4reweight experiment=nova")
     depends_on("genie")
+    depends_on("grpc")
     depends_on("ifdh-art")
     depends_on("ifdhc")
     depends_on("libwda")
@@ -83,6 +84,7 @@ class Novasoft(CMakePackage):
     depends_on("py-urllib3")
     depends_on("root+spectrum+tmva+xrootd")
     depends_on("stan")
+    depends_on("triton")
 
     generator("ninja")
 
