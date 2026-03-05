@@ -55,13 +55,22 @@ class Novarwgt(CMakePackage):
     variant("nusimdata", default=True, description="Enable NuSimData dependency")
     depends_on("nusimdata", when="+nusimdata")
 
+    variant("nusystematics", default=True, when="@4:",
+            description="Enable nusystematics dependency")
+    depends_on("nusystematics", when="+nusystematics")
+    depends_on("nuhepmc-cmake-modules", type="build", when="+nusystematics")
+
     def cmake_args(self):
-        return [
+        args = [
             self.define_from_variant("CMAKE_CXX_STANDARD", "cxxstd"),
             self.define_from_variant("NOVARWGT_USE_CETLIB", "cetlib"),
             self.define_from_variant("NOVARWGT_USE_GENIE", "genie"),
             self.define_from_variant("NOVARWGT_USE_NUSIMDATA", "nusimdata"),
+            self.define_from_variant("NOVARWGT_USE_NUSYSTEMATICS", "nusystematics"),
         ]
+        if self.spec.satisfies("+nusystematics"):
+            args += [self.define("CMAKE_MODULE_PATH", self.spec['nuhepmc-cmake-modules'].prefix.cmake)]
+        return args
 
     def setup_build_environment(self, env):
         if self.spec.satisfies("+genie"):
