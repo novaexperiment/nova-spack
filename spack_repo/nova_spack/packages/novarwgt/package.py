@@ -84,6 +84,12 @@ class Novarwgt(CMakePackage):
             env.set("NUSIMDATA_INC", self.spec["nusimdata"].prefix.include)
             env.set("NUSIMDATA_LIB", self.spec["nusimdata"].prefix.lib)
 
+    def setup_dependent_build_environment(self, env, dependent_spec):
+        env.set("NOVARWGT_FCL", self.prefix.cfg)
+
+    def setup_run_environment(self, env):
+        env.set("NOVARWGT_FCL", self.prefix.cfg)
+
     @run_after("install")
     def alias_include_paths(self):
         mkdirp(prefix.inc.StandardRecord) 
