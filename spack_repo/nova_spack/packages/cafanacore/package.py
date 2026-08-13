@@ -16,6 +16,7 @@ class Cafanacore(CMakePackage):
     maintainers("vhewes")
 
     version("02.01", sha256="cb747ef71586bead03233ef58ad038c8e133b7c210971e8e6ba6df0cbef7e1ae")
+    version("01.42", sha256="1cb6843ee20702a34a89da7d1fc8f1a1f0f268ea4ba1f247be653fb7aba1608b")
     version("01.40", sha256="7eafc0f0b7362c30b9d0017286bf1d4548b8fe20f70ab9809242582923fe424f")
 
     variant("stan", default=True, description="Build with Stan Math support")
@@ -39,6 +40,17 @@ class Cafanacore(CMakePackage):
     patch("https://github.com/cafana/CAFAnaCore/commit/c00681908935d440028a3f33a1b9c16440ec4a7e.patch",
           sha256="86a88211ddcb84dc09110435d6eb8b2305c676d2b2b50b01cf52414f58cc7db4", when="@01.40")
 
+    def patch(self):
+        # Release archives do not contain Git metadata, so preserve the
+        # version supplied by the Spack recipe instead of replacing it with
+        # an empty result from `git describe`.
+        filter_file(
+            "execute_process(COMMAND git describe --tags OUTPUT_VARIABLE CAFANACORE_VERSION OUTPUT_STRIP_TRAILING_WHITESPACE)",
+            "if(NOT CAFANACORE_VERSION)\n    execute_process(COMMAND git describe --tags OUTPUT_VARIABLE CAFANACORE_VERSION OUTPUT_STRIP_TRAILING_WHITESPACE)\nendif()",
+            "CMakeLists.txt",
+            string=True,
+        )
+
     def setup_build_environment(self, env):
 
         # stan-math
@@ -60,7 +72,7 @@ class Cafanacore(CMakePackage):
     def cmake_args(self):
         return [
             self.define("SPACK", "YES"),
-            self.define("CAFANACORE_VERSION", self.spec.version),
+            self.define("CAFANACORE_VERSION", "v{}".format(self.spec.version)),
             self.define("NO_IFDHC", self.spec.satisfies("~ifdhc")),
             self.define_from_variant("STAN", "stan"),
             self.define_from_variant("CMAKE_CXX_STANDARD", "cxxstd"),
