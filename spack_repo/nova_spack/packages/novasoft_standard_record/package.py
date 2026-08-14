@@ -25,6 +25,8 @@ class NovasoftStandardRecord(NovasoftPackage):
 
         env.set("ROOT_INC", self.spec["root"].prefix.include)
         env.set("NUFINDER_DIR", self.spec["nufinder"].prefix)
+        env.set("NOVARWGT_INC", self.spec["novarwgt"].prefix.inc)
+        env.set("NOVARWGT_LIB", self.spec["novarwgt"].prefix.lib)
         env.set("SRPROXY_DIR", self.spec["py-srproxy"].prefix)
         env.set("SRPROXY_INC", self.spec["py-srproxy"].prefix.include)
 
