@@ -14,6 +14,7 @@ class NovasoftStandardRecord(NovasoftPackage):
 
     depends_on("art")
     depends_on("genie")
+    depends_on("nufinder", type="build")
     depends_on("novarwgt")
     depends_on("nugen")
     depends_on("py-srproxy")
@@ -23,6 +24,7 @@ class NovasoftStandardRecord(NovasoftPackage):
         super().setup_build_environment(env)
 
         env.set("ROOT_INC", self.spec["root"].prefix.include)
+        env.set("NUFINDER_DIR", self.spec["nufinder"].prefix)
         env.set("SRPROXY_DIR", self.spec["py-srproxy"].prefix)
         env.set("SRPROXY_INC", self.spec["py-srproxy"].prefix.include)
 
