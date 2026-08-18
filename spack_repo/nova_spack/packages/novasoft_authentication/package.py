@@ -13,3 +13,4 @@ class NovasoftAuthentication(NovasoftPackage):
     root_cmakelists_dir = "Authentication"
 
     depends_on("ifdhc")
+    depends_on("tbb")
