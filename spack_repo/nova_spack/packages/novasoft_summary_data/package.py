@@ -18,3 +18,4 @@ class NovasoftSummaryData(NovasoftPackage):
     depends_on("cetlib-except")
     depends_on("messagefacility")
     depends_on("nova-daq")
+    depends_on("root")
