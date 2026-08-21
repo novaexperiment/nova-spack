@@ -16,3 +16,9 @@ class NovasoftFilesystem(NovasoftPackage):
     depends_on("novasoft-authentication")
     depends_on("root")
     depends_on("xrootd")
+
+    def setup_build_environment(self, env):
+        super().setup_build_environment(env)
+
+        env.set("CAFANACORE_FQ_DIR", self.spec["cafanacore"].prefix)
+        env.set("CAFANACORE_INC", self.spec["cafanacore"].prefix.inc)
