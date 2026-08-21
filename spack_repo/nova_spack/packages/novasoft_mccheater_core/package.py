@@ -19,6 +19,7 @@ class NovasoftMccheaterCore(NovasoftPackage):
     )
     depends_on("canvas")
     depends_on("clhep")
+    depends_on("libwda")
     depends_on("messagefacility")
     depends_on("nova-daq")
     depends_on("novasoft-geometry")
@@ -28,7 +29,10 @@ class NovasoftMccheaterCore(NovasoftPackage):
     depends_on("nusimdata")
     depends_on("postgresql")
     depends_on("root")
+    depends_on("xerces-c")
+    depends_on("xsd")
 
     def setup_build_environment(self, env):
         super().setup_build_environment(env)
+        env.set("CSTXSD_FQ_DIR", self.spec["xsd"].prefix)
         env.set("NOVADAQ_INC", self.spec["nova-daq"].prefix.include)
