@@ -16,6 +16,7 @@ class NovasoftSummaryData(NovasoftPackage):
     depends_on("canvas")
     depends_on("cetlib")
     depends_on("cetlib-except")
+    depends_on("fhicl-cpp")
     depends_on("messagefacility")
     depends_on("nova-daq")
     depends_on("root")
