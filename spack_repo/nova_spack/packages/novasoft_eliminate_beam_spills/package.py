@@ -13,6 +13,10 @@ class NovasoftEliminateBeamSpills(NovasoftPackage):
     root_cmakelists_dir = "EliminateBeamSpills"
 
     depends_on("art")
+    depends_on(
+        "boost+date_time+filesystem+iostreams+math+program_options+regex"
+        "+serialization+system+test+thread"
+    )
     depends_on("canvas")
     depends_on("fhicl-cpp")
     depends_on("messagefacility")
