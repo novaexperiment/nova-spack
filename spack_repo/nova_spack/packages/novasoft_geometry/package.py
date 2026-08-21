@@ -24,4 +24,5 @@ class NovasoftGeometry(NovasoftPackage):
     depends_on("novasoft-cmap")
     depends_on("novasoft-geometry-objects")
     depends_on("novasoft-summary-data")
+    depends_on("postgresql")
     depends_on("root")

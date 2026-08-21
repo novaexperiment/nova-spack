@@ -29,5 +29,6 @@ class NovasoftUtilities(NovasoftPackage):
     depends_on("novasoft-geometry-objects")
     depends_on("novasoft-raw-data")
     depends_on("novasoft-utilities-func")
+    depends_on("postgresql")
     depends_on("root")
     depends_on("sqlite")

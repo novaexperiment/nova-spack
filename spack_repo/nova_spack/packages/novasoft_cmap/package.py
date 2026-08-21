@@ -29,6 +29,7 @@ class NovasoftCmap(NovasoftPackage):
     depends_on("novasoft-reco-base-hit")
     depends_on("novasoft-summary-data")
     depends_on("novasoft-utilities-func")
+    depends_on("postgresql")
     depends_on("root")
     depends_on("xerces-c")
     depends_on("xsd")
