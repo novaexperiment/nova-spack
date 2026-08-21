@@ -23,6 +23,7 @@ class NovasoftPhotonTransport(NovasoftPackage):
     depends_on("novasoft-cmap")
     depends_on("postgresql")
     depends_on("root")
+    depends_on("xerces-c")
 
     def setup_build_environment(self, env):
         super().setup_build_environment(env)
