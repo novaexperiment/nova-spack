@@ -14,6 +14,10 @@ class NovasoftCmap(NovasoftPackage):
 
     depends_on("art")
     depends_on("art-root-io")
+    depends_on(
+        "boost+date_time+filesystem+iostreams+math+program_options+regex"
+        "+serialization+system+test+thread"
+    )
     depends_on("canvas")
     depends_on("clhep")
     depends_on("libwda")
