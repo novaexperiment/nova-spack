@@ -18,13 +18,16 @@ class NovasoftPhotonTransport(NovasoftPackage):
         "boost+date_time+filesystem+iostreams+math+program_options+regex"
         "+serialization+system+test+thread"
     )
+    depends_on("libwda")
     depends_on("messagefacility")
     depends_on("nova-daq")
     depends_on("novasoft-cmap")
     depends_on("postgresql")
     depends_on("root")
     depends_on("xerces-c")
+    depends_on("xsd")
 
     def setup_build_environment(self, env):
         super().setup_build_environment(env)
+        env.set("CSTXSD_FQ_DIR", self.spec["xsd"].prefix)
         env.set("NOVADAQ_INC", self.spec["nova-daq"].prefix.include)
