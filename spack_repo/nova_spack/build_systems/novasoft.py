@@ -12,7 +12,7 @@ class NovasoftPackage(CMakePackage):
 
     maintainers("vhewes")
 
-    version("spack-refactor", branch="spack_refactor_rebased")
+    version("spack-refactor", branch="spack_remastered")
 
     variant(
         "cxxstd",
@@ -36,4 +36,3 @@ class NovasoftPackage(CMakePackage):
         # Standalone CMake code generation must read the shared monorepo source,
         # not a previously installed monolithic novasoft prefix.
         env.set("NOVASOFT_DIR", self.stage.source_path)
-

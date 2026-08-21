@@ -10,8 +10,7 @@ from spack.package import *
 class NovasoftUtilitiesFunc(NovasoftPackage):
     """Common mathematical utilities from the novasoft monorepo."""
 
-    root_cmakelists_dir = "UtilitiesFunc"
+    root_cmakelists_dir = "Utilities/func"
 
     depends_on("clhep")
     depends_on("root")
-
