@@ -19,7 +19,10 @@ class NovasoftCalibrator(NovasoftPackage):
         "+serialization+system+test+thread"
     )
     depends_on("canvas")
+    depends_on("cetlib")
+    depends_on("cetlib-except")
     depends_on("clhep")
+    depends_on("fhicl-cpp")
     depends_on("libwda")
     depends_on("messagefacility")
     depends_on("nova-daq")
@@ -39,12 +42,6 @@ class NovasoftCalibrator(NovasoftPackage):
     depends_on("xerces-c")
     depends_on("xsd")
 
-    def cmake_args(self):
-        args = super().cmake_args()
-        args.append(self.define("NOVASOFT_BUILD_CALIBRATOR_FULL", True))
-        return args
-
     def setup_build_environment(self, env):
         super().setup_build_environment(env)
         env.set("CSTXSD_FQ_DIR", self.spec["xsd"].prefix)
-        env.set("NOVADAQ_INC", self.spec["nova-daq"].prefix.include)
