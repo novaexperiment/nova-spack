@@ -10,4 +10,4 @@ from spack.package import *
 class NovasoftNumuEnergyFunc(NovasoftPackage):
     """Muon-neutrino energy fit functions from the novasoft monorepo."""
 
-    root_cmakelists_dir = "NumuEnergyFunc"
+    root_cmakelists_dir = "NumuEnergy/func"
