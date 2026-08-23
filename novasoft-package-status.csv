@@ -45,6 +45,6 @@ novasoft-test-beam,TestBeam,cetmodules_configured,present,built,user_reported_su
 novasoft-test-beam-reco,TestBeamReco,cetmodules_configured,present,built,user_reported_success,
 novasoft-test-beam-sim,TestBeamSim,cetmodules_configured,present,built,user_reported_success,
 novasoft-test-beam-utils,TestBeamUtils,cetmodules_configured,present,built,user_reported_success,
-novasoft-trigger-monitoring,TriggerMonitoring,cetmodules_configured,present,running,current_gpvm_batch,
+novasoft-trigger-monitoring,TriggerMonitoring,cetmodules_configured,present,retest_ready,gpvm_failure_fix_prepared,Rebuild CMap first so Detector_service exports NOVACMAKE
 novasoft-utilities,Utilities,cetmodules_configured,present,built,user_reported_success,
 novasoft-utilities-func,Utilities/func,cetmodules_configured,present,built,user_reported_success,
