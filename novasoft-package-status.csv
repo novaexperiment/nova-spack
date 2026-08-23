@@ -79,7 +79,7 @@ novasoft-lem,LEM,cetmodules_configured,present,ready_for_gpvm,third_reconstructi
 novasoft-nova-sim-mixer,NovaSimMixer,cetmodules_configured,present,ready_for_gpvm,third_reconstruction_batch_prepared,
 novasoft-nus-sandbox,NusSandbox,cetmodules_configured,present,ready_for_gpvm,third_reconstruction_batch_prepared,
 novasoft-track-fit,TrackFit,cetmodules_configured,present,retest_pending,gpvm_missing_dependency_fix_pushed,Added explicit novasoft-mccheater CMake and Spack dependency
-novasoft-vertex-dt,VertexDT,cetmodules_configured,present,ready_for_gpvm,third_reconstruction_batch_prepared,
+novasoft-vertex-dt,VertexDT,cetmodules_configured,present,retest_pending,gpvm_empty_library_fix_pushed,Removed empty VertexDTArt target and linked plugin directly to VertexDTFunc
 novasoft-xnue-pid,XnuePID,cetmodules_configured,present,ready_for_gpvm,third_reconstruction_batch_prepared,
 novasoft-alignment,Alignment,cetmodules_configured,present,ready_for_gpvm,third_reconstruction_batch_prepared,Depends on novasoft-track-fit in this batch
 novasoft-readout-sim,ReadoutSim,cetmodules_configured,present,ready_for_gpvm,third_reconstruction_batch_prepared,
