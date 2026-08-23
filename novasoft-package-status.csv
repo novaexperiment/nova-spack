@@ -5,7 +5,7 @@ novasoft-beamline-reco-base,BeamlineRecoBase,cetmodules_configured,present,built
 novasoft-beamline-sim,BeamlineSim,cetmodules_configured,present,built,user_reported_success,
 novasoft-beamline-sim-base,BeamlineSimBase,cetmodules_configured,present,built,user_reported_success,
 novasoft-beamline-utils,BeamlineUtils,cetmodules_configured,present,built,user_reported_success,Xerces namespace made version-independent
-novasoft-brem-shower-filter,BremShowerFilter,cetmodules_configured,present,ready_for_gpvm,new_batch_prepared,
+novasoft-brem-shower-filter,BremShowerFilter,cetmodules_configured,present,built,user_reported_success,
 novasoft-cal-hit,CalHit,cetmodules_configured,present,built,user_reported_success,
 novasoft-calibration-data-products,CalibrationDataProducts,cetmodules_configured,present,built,user_reported_success,
 novasoft-calibration-func,Calibration/func,cetmodules_configured,present,built,user_reported_success,
@@ -13,13 +13,13 @@ novasoft-calibration-utils,CalibrationUtils,cetmodules_configured,present,built,
 novasoft-calibrator,Calibrator,cetmodules_configured,present,built,user_reported_success,
 novasoft-celestial-locator,CelestialLocator,cetmodules_configured,present,built,user_reported_success,
 novasoft-channel-info,ChannelInfo,cetmodules_configured,present,built,user_reported_success,
-novasoft-cluster-maker-ss,ClusterMakerSS,cetmodules_configured,present,ready_for_gpvm,new_batch_prepared,
+novasoft-cluster-maker-ss,ClusterMakerSS,cetmodules_configured,present,built,user_reported_success,
 novasoft-cmap,CMap,cetmodules_configured,present,built,user_reported_success,
 novasoft-cosmic-exposure-info,CosmicExposureInfo,cetmodules_configured,present,built,user_reported_success,
-novasoft-cosmic-ray-vertex,CosmicRayVertex,cetmodules_configured,present,ready_for_gpvm,new_batch_prepared,
+novasoft-cosmic-ray-vertex,CosmicRayVertex,cetmodules_configured,present,built,user_reported_success,
 novasoft-daq2-raw-digit,DAQ2RawDigit,cetmodules_configured,present,built,user_reported_success,
 novasoft-database,Database,cetmodules_configured,present,built,user_reported_success,
-novasoft-dif-shower-finder,DiFShowerFinder,cetmodules_configured,present,ready_for_gpvm,new_batch_prepared,
+novasoft-dif-shower-finder,DiFShowerFinder,cetmodules_configured,present,built,user_reported_success,
 novasoft-dq-spill-flags,DQSpillFlags,cetmodules_configured,present,built,user_reported_success,
 novasoft-eliminate-beam-spills,EliminateBeamSpills,cetmodules_configured,present,built,user_reported_success,
 novasoft-event-summary,EventSummary,cetmodules_configured,present,built,user_reported_success,
@@ -27,7 +27,7 @@ novasoft-filesystem,Filesystem,cetmodules_configured,present,built,user_reported
 novasoft-filter,Filter,cetmodules_configured,present,built,user_reported_success,
 novasoft-geometry,Geometry,cetmodules_configured,present,built,user_reported_success,
 novasoft-geometry-objects,GeometryObjects,cetmodules_configured,present,built,user_reported_success,
-novasoft-hough-transform,HoughTransform,cetmodules_configured,present,ready_for_gpvm,new_batch_prepared,
+novasoft-hough-transform,HoughTransform,cetmodules_configured,present,built,user_reported_success,
 novasoft-live-geometry,Geometry,cetmodules_configured,present,built,user_reported_success,Uses the live-geometry target in the Geometry component
 novasoft-mccheater,MCCheater,cetmodules_configured,present,built,user_reported_success,
 novasoft-mccheater-core,MCCheaterCore,cetmodules_configured,present,built,user_reported_success,
@@ -53,3 +53,13 @@ novasoft-test-beam-utils,TestBeamUtils,cetmodules_configured,present,built,user_
 novasoft-trigger-monitoring,TriggerMonitoring,cetmodules_configured,present,built,user_reported_success,Detector_service now exports NOVACMAKE
 novasoft-utilities,Utilities,cetmodules_configured,present,built,user_reported_success,
 novasoft-utilities-func,Utilities/func,cetmodules_configured,present,built,user_reported_success,
+novasoft-data-quality,DataQuality,cetmodules_configured,present,ready_for_gpvm,double_batch_prepared,Includes exported DAQHeader and FlasherFinder targets
+novasoft-detector-performance,DetectorPerformance,cetmodules_configured,present,ready_for_gpvm,double_batch_prepared,
+novasoft-dso-result-plotter,DSOResultPlotter,cetmodules_configured,present,ready_for_gpvm,double_batch_prepared,
+novasoft-ifdb-spill-info,IFDBSpillInfo,cetmodules_configured,present,ready_for_gpvm,double_batch_prepared,BUILDTESTBEAM remains off for standalone build
+novasoft-me-finder,MEFinder,cetmodules_configured,present,ready_for_gpvm,double_batch_prepared,
+novasoft-nd-rock-muon,NDRockMuon,cetmodules_configured,present,ready_for_gpvm,double_batch_prepared,
+novasoft-shower-e,ShowerE,cetmodules_configured,present,ready_for_gpvm,double_batch_prepared,
+novasoft-supernova,Supernova,cetmodules_configured,present,ready_for_gpvm,double_batch_prepared,Depends on novasoft-data-quality for FlasherFinder
+novasoft-timing-fit,TimingFit,cetmodules_configured,present,ready_for_gpvm,double_batch_prepared,
+novasoft-vertex-finder,VertexFinder,cetmodules_configured,present,ready_for_gpvm,double_batch_prepared,
