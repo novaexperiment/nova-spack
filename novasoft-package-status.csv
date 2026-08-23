@@ -53,13 +53,23 @@ novasoft-test-beam-utils,TestBeamUtils,cetmodules_configured,present,built,user_
 novasoft-trigger-monitoring,TriggerMonitoring,cetmodules_configured,present,built,user_reported_success,Detector_service now exports NOVACMAKE
 novasoft-utilities,Utilities,cetmodules_configured,present,built,user_reported_success,
 novasoft-utilities-func,Utilities/func,cetmodules_configured,present,built,user_reported_success,
-novasoft-data-quality,DataQuality,cetmodules_configured,present,ready_for_gpvm,double_batch_prepared,Includes exported DAQHeader and FlasherFinder targets
-novasoft-detector-performance,DetectorPerformance,cetmodules_configured,present,ready_for_gpvm,double_batch_prepared,
-novasoft-dso-result-plotter,DSOResultPlotter,cetmodules_configured,present,ready_for_gpvm,double_batch_prepared,
-novasoft-ifdb-spill-info,IFDBSpillInfo,cetmodules_configured,present,ready_for_gpvm,double_batch_prepared,BUILDTESTBEAM remains off for standalone build
-novasoft-me-finder,MEFinder,cetmodules_configured,present,ready_for_gpvm,double_batch_prepared,
-novasoft-nd-rock-muon,NDRockMuon,cetmodules_configured,present,ready_for_gpvm,double_batch_prepared,
-novasoft-shower-e,ShowerE,cetmodules_configured,present,ready_for_gpvm,double_batch_prepared,
-novasoft-supernova,Supernova,cetmodules_configured,present,ready_for_gpvm,double_batch_prepared,Depends on novasoft-data-quality for FlasherFinder
-novasoft-timing-fit,TimingFit,cetmodules_configured,present,ready_for_gpvm,double_batch_prepared,
-novasoft-vertex-finder,VertexFinder,cetmodules_configured,present,ready_for_gpvm,double_batch_prepared,
+novasoft-data-quality,DataQuality,cetmodules_configured,present,built,user_reported_success,Includes exported DAQHeader and FlasherFinder targets
+novasoft-detector-performance,DetectorPerformance,cetmodules_configured,present,built,user_reported_success,
+novasoft-dso-result-plotter,DSOResultPlotter,cetmodules_configured,present,built,user_reported_success,
+novasoft-ifdb-spill-info,IFDBSpillInfo,cetmodules_configured,present,built,user_reported_success,BUILDTESTBEAM remains off for standalone build
+novasoft-me-finder,MEFinder,cetmodules_configured,present,built,user_reported_success,
+novasoft-nd-rock-muon,NDRockMuon,cetmodules_configured,present,built,user_reported_success,
+novasoft-shower-e,ShowerE,cetmodules_configured,present,built,user_reported_success,
+novasoft-supernova,Supernova,cetmodules_configured,present,built,user_reported_success,Depends on novasoft-data-quality for FlasherFinder
+novasoft-timing-fit,TimingFit,cetmodules_configured,present,built,user_reported_success,
+novasoft-vertex-finder,VertexFinder,cetmodules_configured,present,built,user_reported_success,
+novasoft-air-shower,AirShower,cetmodules_configured,present,ready_for_gpvm,next_double_batch_prepared,
+novasoft-elastic-arms,ElasticArms,cetmodules_configured,present,ready_for_gpvm,next_double_batch_prepared,
+novasoft-fuzzy-k-vertex,FuzzyKVertex,cetmodules_configured,present,ready_for_gpvm,next_double_batch_prepared,
+novasoft-hough-track,HoughTrack,cetmodules_configured,present,ready_for_gpvm,next_double_batch_prepared,
+novasoft-hough-vertex,HoughVertex,cetmodules_configured,present,ready_for_gpvm,next_double_batch_prepared,
+novasoft-light-model,LightModel,cetmodules_configured,present,ready_for_gpvm,next_double_batch_prepared,
+novasoft-michel-e-filter,MichelEFilter,cetmodules_configured,present,ready_for_gpvm,next_double_batch_prepared,
+novasoft-nue-sandbox,NueSandbox,cetmodules_configured,present,ready_for_gpvm,next_double_batch_prepared,
+novasoft-rec-var-pid,RecVarPID,cetmodules_configured,present,ready_for_gpvm,next_double_batch_prepared,
+novasoft-slicer,Slicer,cetmodules_configured,present,ready_for_gpvm,next_double_batch_prepared,
