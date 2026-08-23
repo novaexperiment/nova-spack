@@ -74,7 +74,7 @@ novasoft-nue-sandbox,NueSandbox,cetmodules_configured,present,built,user_reporte
 novasoft-rec-var-pid,RecVarPID,cetmodules_configured,present,built,user_reported_success,
 novasoft-slicer,Slicer,cetmodules_configured,present,built,user_reported_success,
 novasoft-discrete-tracker,DiscreteTracker,cetmodules_configured,present,ready_for_gpvm,third_reconstruction_batch_prepared,
-novasoft-genie-snova,GenieSNova,cetmodules_configured,present,retest_pending,gpvm_install_failure_fix_pushed,cetmodules absolute-transitive check explicitly waived for immutable legacy dependency paths in the Spack DAG
+novasoft-genie-snova,GenieSNova,cetmodules_configured,present,retest_pending,gpvm_install_failure_fix_pushed,cetmodules project-scoped absolute-transitive override verified against version 3.27.03 source
 novasoft-lem,LEM,cetmodules_configured,present,ready_for_gpvm,third_reconstruction_batch_prepared,
 novasoft-nova-sim-mixer,NovaSimMixer,cetmodules_configured,present,ready_for_gpvm,third_reconstruction_batch_prepared,
 novasoft-nus-sandbox,NusSandbox,cetmodules_configured,present,ready_for_gpvm,third_reconstruction_batch_prepared,
