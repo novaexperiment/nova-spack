@@ -11,3 +11,9 @@ class NovasoftNovaSimMixer(NovasoftPackage):
                 "novasoft-reco-base", "novasoft-reco-base-hit", "novasoft-simulation", "novasoft-summary-data",
                 "novasoft-utilities", "nugen", "nusimdata", "root"):
         depends_on(dep)
+
+    depends_on("nufinder", type="build")
+
+    def setup_build_environment(self, env):
+        super().setup_build_environment(env)
+        env.set("NUFINDER_DIR", self.spec["nufinder"].prefix)
