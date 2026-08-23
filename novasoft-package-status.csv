@@ -74,7 +74,7 @@ novasoft-nue-sandbox,NueSandbox,cetmodules_configured,present,built,user_reporte
 novasoft-rec-var-pid,RecVarPID,cetmodules_configured,present,built,user_reported_success,
 novasoft-slicer,Slicer,cetmodules_configured,present,built,user_reported_success,
 novasoft-discrete-tracker,DiscreteTracker,cetmodules_configured,present,ready_for_gpvm,third_reconstruction_batch_prepared,
-novasoft-genie-snova,GenieSNova,cetmodules_configured,present,retest_pending,gpvm_configure_failure_fix_pushed,GENIE LHAPDF log4cpp and Pythia6 discovered directly from their Spack prefixes when CMake package configs are unavailable
+novasoft-genie-snova,GenieSNova,cetmodules_configured,present,retest_pending,gpvm_compile_failure_fix_pushed,Legacy dependency discovery added with both GENIE include roots required by its mixed include convention
 novasoft-lem,LEM,cetmodules_configured,present,ready_for_gpvm,third_reconstruction_batch_prepared,
 novasoft-nova-sim-mixer,NovaSimMixer,cetmodules_configured,present,ready_for_gpvm,third_reconstruction_batch_prepared,
 novasoft-nus-sandbox,NusSandbox,cetmodules_configured,present,ready_for_gpvm,third_reconstruction_batch_prepared,
