@@ -76,7 +76,7 @@ novasoft-slicer,Slicer,cetmodules_configured,present,built,user_reported_success
 novasoft-discrete-tracker,DiscreteTracker,cetmodules_configured,present,ready_for_gpvm,third_reconstruction_batch_prepared,
 novasoft-genie-snova,GenieSNova,cetmodules_configured,present,retest_pending,gpvm_link_failure_fix_pushed,Executables explicitly link legacy libraries; clean stage required to apply corrected cetmodules cache variable
 novasoft-lem,LEM,cetmodules_configured,present,ready_for_gpvm,third_reconstruction_batch_prepared,
-novasoft-nova-sim-mixer,NovaSimMixer,cetmodules_configured,present,ready_for_gpvm,third_reconstruction_batch_prepared,
+novasoft-nova-sim-mixer,NovaSimMixer,cetmodules_configured,present,retest_pending,gpvm_dk2nu_package_fix_pushed,Replaced nonexistent dk2nu package with explicit dk2nudata and dk2nugenie dependencies
 novasoft-nus-sandbox,NusSandbox,cetmodules_configured,present,ready_for_gpvm,third_reconstruction_batch_prepared,
 novasoft-track-fit,TrackFit,cetmodules_configured,present,retest_pending,gpvm_missing_dependency_fix_pushed,Added explicit novasoft-mccheater CMake and Spack dependency
 novasoft-vertex-dt,VertexDT,cetmodules_configured,present,retest_pending,gpvm_empty_library_fix_pushed,Removed empty VertexDTArt target and linked plugin directly to VertexDTFunc

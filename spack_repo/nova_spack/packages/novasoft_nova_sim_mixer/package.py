@@ -5,6 +5,7 @@ class NovasoftNovaSimMixer(NovasoftPackage):
     """NOvA simulated-event mixing modules."""
     root_cmakelists_dir = "NovaSimMixer"
     for dep in ("art", "art-root-io", "canvas", "cetlib", "cetlib-except", "clhep", "dk2nudata",
+                "dk2nugenie",
                 "fhicl-cpp", "messagefacility", "nova-daq", "novasoft-calibrator", "novasoft-cmap",
                 "novasoft-geometry", "novasoft-mccheater", "novasoft-metadata", "novasoft-raw-data",
                 "novasoft-reco-base", "novasoft-reco-base-hit", "novasoft-simulation", "novasoft-summary-data",
