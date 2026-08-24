@@ -96,8 +96,8 @@ novasoft-break-point-fitter,BreakPointFitter,cetmodules_configured,present,ready
 novasoft-calibration,Calibration,cetmodules_configured,present,ready_for_gpvm,sixth_batch_prepared,Uses separately packaged CalibrationFunc target in standalone mode
 novasoft-event-display,EventDisplay,cetmodules_configured,present,ready_for_gpvm,sixth_batch_prepared,
 novasoft-flat-maker,FlatMaker,cetmodules_configured,present,retest_pending,gpvm_generated_header_layout_fix_prepared,Generator output is staged under build/FlatMaker and build root is on include path; imported executable aliases and standalone version also fixed
-novasoft-g4-rwgt,G4Rwgt,cetmodules_configured,present,ready_for_gpvm,sixth_batch_prepared,
-novasoft-mc-reweight,MCReweight,cetmodules_configured,present,ready_for_gpvm,sixth_batch_prepared,
+novasoft-g4-rwgt,G4Rwgt,cetmodules_configured,present,retest_pending,gpvm_missing_finddk2nudata,Recipe now supplies NUFINDER_DIR and its Finddk2nudata module
+novasoft-mc-reweight,MCReweight,cetmodules_configured,present,retest_pending,gpvm_missing_finddk2nudata,Recipe now supplies NUFINDER_DIR and its Finddk2nudata module
 novasoft-mc-check-out,MCCheckOut,cetmodules_configured,present,ready_for_gpvm,sixth_batch_prepared,Depends on novasoft-mc-reweight in the same batch
 novasoft-reco-jm-shower,RecoJMShower,cetmodules_configured,present,ready_for_gpvm,sixth_batch_prepared,Reusable core enabled; ShowerLID-dependent modules deferred
 novasoft-tensorflow-handler,TensorFlowHandler,cetmodules_configured,present,ready_for_gpvm,sixth_batch_prepared,

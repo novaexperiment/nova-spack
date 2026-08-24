@@ -31,3 +31,8 @@ class NovasoftG4Rwgt(NovasoftPackage):
         depends_on(dep)
 
     depends_on("geant4reweight experiment=nova")
+    depends_on("nufinder", type="build")
+
+    def setup_build_environment(self, env):
+        super().setup_build_environment(env)
+        env.set("NUFINDER_DIR", self.spec["nufinder"].prefix)
