@@ -101,4 +101,4 @@ novasoft-mc-reweight,MCReweight,cetmodules_configured,present,ready_for_gpvm,six
 novasoft-mc-check-out,MCCheckOut,cetmodules_configured,present,ready_for_gpvm,sixth_batch_prepared,Depends on novasoft-mc-reweight in the same batch
 novasoft-reco-jm-shower,RecoJMShower,cetmodules_configured,present,ready_for_gpvm,sixth_batch_prepared,Reusable core enabled; ShowerLID-dependent modules deferred
 novasoft-tensorflow-handler,TensorFlowHandler,cetmodules_configured,present,ready_for_gpvm,sixth_batch_prepared,
-novasoft-g4nova,g4nova,cetmodules_configured,present,ready_for_gpvm,sixth_batch_prepared,
+novasoft-g4nova,g4nova,cetmodules_configured,present,retest_pending,gpvm_missing_transitive_novadaq_include,GeometryObjects public headers require a public novadaq target interface
