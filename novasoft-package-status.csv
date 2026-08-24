@@ -51,7 +51,7 @@ novasoft-test-beam-reco,TestBeamReco,cetmodules_configured,present,built,user_re
 novasoft-test-beam-sim,TestBeamSim,cetmodules_configured,present,built,user_reported_success,
 novasoft-test-beam-utils,TestBeamUtils,cetmodules_configured,present,built,user_reported_success,
 novasoft-trigger-monitoring,TriggerMonitoring,cetmodules_configured,present,built,user_reported_success,Detector_service now exports NOVACMAKE
-novasoft-utilities,Utilities,cetmodules_configured,present,built,user_reported_success,
+novasoft-utilities,Utilities,cetmodules_configured,present,retest_pending,downstream_invalid_install_include,Exported target include interface changed from an absolute monorepo path to relocatable build/install interfaces
 novasoft-utilities-func,Utilities/func,cetmodules_configured,present,built,user_reported_success,
 novasoft-data-quality,DataQuality,cetmodules_configured,present,built,user_reported_success,Includes exported DAQHeader and FlasherFinder targets
 novasoft-detector-performance,DetectorPerformance,cetmodules_configured,present,built,user_reported_success,
@@ -96,7 +96,7 @@ novasoft-break-point-fitter,BreakPointFitter,cetmodules_configured,present,ready
 novasoft-calibration,Calibration,cetmodules_configured,present,ready_for_gpvm,sixth_batch_prepared,Uses separately packaged CalibrationFunc target in standalone mode
 novasoft-event-display,EventDisplay,cetmodules_configured,present,ready_for_gpvm,sixth_batch_prepared,
 novasoft-flat-maker,FlatMaker,cetmodules_configured,present,retest_pending,gpvm_generated_header_layout_fix_prepared,Generator output is staged under build/FlatMaker and build root is on include path; imported executable aliases and standalone version also fixed
-novasoft-g4-rwgt,G4Rwgt,cetmodules_configured,present,retest_pending,gpvm_missing_finddk2nudata,Recipe now supplies NUFINDER_DIR and its Finddk2nudata module
+novasoft-g4-rwgt,G4Rwgt,cetmodules_configured,present,retest_pending,gpvm_missing_dk2nu_genie_target,Top-level config and recipe now declare dk2nugenie; rebuild Utilities first for its corrected exported include interface
 novasoft-mc-reweight,MCReweight,cetmodules_configured,present,retest_pending,gpvm_missing_standard_record_proxy,Consumes exported novasoft StandardRecordNOvARwgt target; directory-wide source include removed
 novasoft-mc-check-out,MCCheckOut,cetmodules_configured,present,ready_for_gpvm,sixth_batch_prepared,Depends on novasoft-mc-reweight in the same batch
 novasoft-reco-jm-shower,RecoJMShower,cetmodules_configured,present,ready_for_gpvm,sixth_batch_prepared,Reusable core enabled; ShowerLID-dependent modules deferred

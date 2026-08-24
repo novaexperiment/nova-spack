@@ -14,6 +14,7 @@ class NovasoftG4Rwgt(NovasoftPackage):
         "cetlib",
         "cetlib-except",
         "dk2nudata",
+        "dk2nugenie",
         "fhicl-cpp",
         "messagefacility",
         "nova-daq",
