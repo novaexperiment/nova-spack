@@ -73,13 +73,18 @@ novasoft-michel-e-filter,MichelEFilter,cetmodules_configured,present,built,user_
 novasoft-nue-sandbox,NueSandbox,cetmodules_configured,present,built,user_reported_success,
 novasoft-rec-var-pid,RecVarPID,cetmodules_configured,present,built,user_reported_success,
 novasoft-slicer,Slicer,cetmodules_configured,present,built,user_reported_success,
-novasoft-discrete-tracker,DiscreteTracker,cetmodules_configured,present,ready_for_gpvm,third_reconstruction_batch_prepared,
+novasoft-discrete-tracker,DiscreteTracker,cetmodules_configured,present,built,user_reported_success,
 novasoft-genie-snova,GenieSNova,cetmodules_configured,present,built,user_reported_success,Explicit legacy executable links validated on GPVM
-novasoft-lem,LEM,cetmodules_configured,present,ready_for_gpvm,third_reconstruction_batch_prepared,
-novasoft-nova-sim-mixer,NovaSimMixer,cetmodules_configured,present,retest_pending,gpvm_nufinder_wiring_fix_pushed,Added nufinder build dependency and module path for dk2nudata and dk2nugenie discovery
-novasoft-nus-sandbox,NusSandbox,cetmodules_configured,present,ready_for_gpvm,third_reconstruction_batch_prepared,
-novasoft-track-fit,TrackFit,cetmodules_configured,present,retest_pending,gpvm_missing_dependency_fix_pushed,Added explicit novasoft-mccheater CMake and Spack dependency
-novasoft-vertex-dt,VertexDT,cetmodules_configured,present,retest_pending,gpvm_empty_library_fix_pushed,Removed empty VertexDTArt target and linked plugin directly to VertexDTFunc
-novasoft-xnue-pid,XnuePID,cetmodules_configured,present,retest_pending,gpvm_dictionary_name_fix_pushed,Restored explicit XnuePID dictionary target and library dependency
-novasoft-alignment,Alignment,cetmodules_configured,present,ready_for_gpvm,third_reconstruction_batch_prepared,Depends on novasoft-track-fit in this batch
-novasoft-readout-sim,ReadoutSim,cetmodules_configured,present,ready_for_gpvm,third_reconstruction_batch_prepared,
+novasoft-lem,LEM,cetmodules_configured,present,built,user_reported_success,
+novasoft-nova-sim-mixer,NovaSimMixer,cetmodules_configured,present,built,user_reported_success,
+novasoft-nus-sandbox,NusSandbox,cetmodules_configured,present,built,user_reported_success,
+novasoft-track-fit,TrackFit,cetmodules_configured,present,built,user_reported_success,
+novasoft-vertex-dt,VertexDT,cetmodules_configured,present,built,user_reported_success,
+novasoft-xnue-pid,XnuePID,cetmodules_configured,present,built,user_reported_success,
+novasoft-alignment,Alignment,cetmodules_configured,present,built,user_reported_success,
+novasoft-readout-sim,ReadoutSim,cetmodules_configured,present,built,user_reported_success,
+novasoft-ddt-prescale-offline,DDTPrescaleOffline,cetmodules_configured,present,ready_for_gpvm,fourth_reconstruction_batch_prepared,
+novasoft-demo,Demo,cetmodules_configured,present,ready_for_gpvm,fourth_reconstruction_batch_prepared,
+novasoft-fast-monopole,FastMonopole,cetmodules_configured,present,ready_for_gpvm,fourth_reconstruction_batch_prepared,
+novasoft-commissioning,Commissioning,cetmodules_configured,present,ready_for_gpvm,fourth_reconstruction_batch_prepared,
+novasoft-test-beam-commissioning,TestBeamCommissioning,cetmodules_configured,present,ready_for_gpvm,fourth_reconstruction_batch_prepared,
