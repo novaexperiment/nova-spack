@@ -88,7 +88,7 @@ novasoft-demo,Demo,cetmodules_configured,present,built,user_reported_success,
 novasoft-fast-monopole,FastMonopole,cetmodules_configured,present,built,user_reported_success,
 novasoft-commissioning,Commissioning,cetmodules_configured,present,built,user_reported_success,
 novasoft-test-beam-commissioning,TestBeamCommissioning,cetmodules_configured,present,built,user_reported_success,
-novasoft-cvn,CVN,cetmodules_configured,present,ready_for_gpvm,fifth_foundational_batch_prepared,FANN-dependent art modules disabled for standalone build
-novasoft-event-display-services,EventDisplayServices,cetmodules_configured,present,ready_for_gpvm,fifth_foundational_batch_prepared,
-novasoft-event-generator,EventGenerator,cetmodules_configured,present,ready_for_gpvm,fifth_foundational_batch_prepared,
+novasoft-cvn,CVN,cetmodules_configured,present,built,user_reported_success,FANN-dependent art modules disabled for standalone build
+novasoft-event-display-services,EventDisplayServices,cetmodules_configured,present,retest_pending,gpvm_include_root_fix_prepared,Standalone build now exposes the monorepo source root for EventDisplayServices-prefixed includes
+novasoft-event-generator,EventGenerator,cetmodules_configured,present,built,user_reported_success,
 novasoft-covariance-matrix-fit,CovarianceMatrixFit,cetmodules_configured,present,built,gpvm_build_passed,Built successfully after adding SUNDIALS::kinsol_shared compatibility target required by osclib
