@@ -101,4 +101,4 @@ novasoft-mc-reweight,MCReweight,cetmodules_configured,present,retest_pending,gpv
 novasoft-mc-check-out,MCCheckOut,cetmodules_configured,present,ready_for_gpvm,sixth_batch_prepared,Depends on novasoft-mc-reweight in the same batch
 novasoft-reco-jm-shower,RecoJMShower,cetmodules_configured,present,ready_for_gpvm,sixth_batch_prepared,Reusable core enabled; ShowerLID-dependent modules deferred
 novasoft-tensorflow-handler,TensorFlowHandler,cetmodules_configured,present,ready_for_gpvm,sixth_batch_prepared,
-novasoft-g4nova,g4nova,cetmodules_configured,present,retest_pending,gpvm_missing_transitive_novadaq_include,GeometryObjects now exports both the novadaq link interface and NOVACMAKE header-layout definition
+novasoft-g4nova,g4nova,cetmodules_configured,present,retest_pending,gpvm_missing_finddk2nudata,Recipe now supplies NUFINDER_DIR; GeometryObjects also exports novadaq and NOVACMAKE interfaces
