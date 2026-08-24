@@ -89,6 +89,16 @@ novasoft-fast-monopole,FastMonopole,cetmodules_configured,present,built,user_rep
 novasoft-commissioning,Commissioning,cetmodules_configured,present,built,user_reported_success,
 novasoft-test-beam-commissioning,TestBeamCommissioning,cetmodules_configured,present,built,user_reported_success,
 novasoft-cvn,CVN,cetmodules_configured,present,built,user_reported_success,FANN-dependent art modules disabled for standalone build
-novasoft-event-display-services,EventDisplayServices,cetmodules_configured,present,retest_pending,gpvm_include_root_fix_prepared,Standalone build now exposes the monorepo source root for EventDisplayServices-prefixed includes
+novasoft-event-display-services,EventDisplayServices,cetmodules_configured,present,built,user_reported_success,Standalone build exposes the monorepo source root for EventDisplayServices-prefixed includes
 novasoft-event-generator,EventGenerator,cetmodules_configured,present,built,user_reported_success,
 novasoft-covariance-matrix-fit,CovarianceMatrixFit,cetmodules_configured,present,built,gpvm_build_passed,Built successfully after adding SUNDIALS::kinsol_shared compatibility target required by osclib
+novasoft-break-point-fitter,BreakPointFitter,cetmodules_configured,present,ready_for_gpvm,sixth_batch_prepared,Reusable func and data-product targets enabled; cyclic NumuEnergy and MuonRemove modules deferred
+novasoft-calibration,Calibration,cetmodules_configured,present,ready_for_gpvm,sixth_batch_prepared,Uses separately packaged CalibrationFunc target in standalone mode
+novasoft-event-display,EventDisplay,cetmodules_configured,present,ready_for_gpvm,sixth_batch_prepared,
+novasoft-flat-maker,FlatMaker,cetmodules_configured,present,ready_for_gpvm,sixth_batch_prepared,Generated FlatRecord headers installed from the build tree
+novasoft-g4-rwgt,G4Rwgt,cetmodules_configured,present,ready_for_gpvm,sixth_batch_prepared,
+novasoft-mc-reweight,MCReweight,cetmodules_configured,present,ready_for_gpvm,sixth_batch_prepared,
+novasoft-mc-check-out,MCCheckOut,cetmodules_configured,present,ready_for_gpvm,sixth_batch_prepared,Depends on novasoft-mc-reweight in the same batch
+novasoft-reco-jm-shower,RecoJMShower,cetmodules_configured,present,ready_for_gpvm,sixth_batch_prepared,Reusable core enabled; ShowerLID-dependent modules deferred
+novasoft-tensorflow-handler,TensorFlowHandler,cetmodules_configured,present,ready_for_gpvm,sixth_batch_prepared,
+novasoft-g4nova,g4nova,cetmodules_configured,present,ready_for_gpvm,sixth_batch_prepared,
