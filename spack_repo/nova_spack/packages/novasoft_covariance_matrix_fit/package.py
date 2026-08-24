@@ -23,9 +23,12 @@ class NovasoftCovarianceMatrixFit(NovasoftPackage):
         "osclib",
         "root",
         "stan-math",
+        "sundials",
+        "tbb",
     ):
         depends_on(dep)
 
     def setup_build_environment(self, env):
         super().setup_build_environment(env)
         env.set("STAN_MATH_INC", self.spec["stan-math"].prefix.include)
+        env.set("SUNDIALS_INC", self.spec["sundials"].prefix.include)
