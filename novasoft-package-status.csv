@@ -74,12 +74,12 @@ novasoft-nue-sandbox,NueSandbox,cetmodules_configured,present,built,user_reporte
 novasoft-rec-var-pid,RecVarPID,cetmodules_configured,present,built,user_reported_success,
 novasoft-slicer,Slicer,cetmodules_configured,present,built,user_reported_success,
 novasoft-discrete-tracker,DiscreteTracker,cetmodules_configured,present,ready_for_gpvm,third_reconstruction_batch_prepared,
-novasoft-genie-snova,GenieSNova,cetmodules_configured,present,retest_pending,gpvm_link_failure_fix_pushed,Executables explicitly link legacy libraries; clean stage required to apply corrected cetmodules cache variable
+novasoft-genie-snova,GenieSNova,cetmodules_configured,present,built,user_reported_success,Explicit legacy executable links validated on GPVM
 novasoft-lem,LEM,cetmodules_configured,present,ready_for_gpvm,third_reconstruction_batch_prepared,
 novasoft-nova-sim-mixer,NovaSimMixer,cetmodules_configured,present,retest_pending,gpvm_nufinder_wiring_fix_pushed,Added nufinder build dependency and module path for dk2nudata and dk2nugenie discovery
 novasoft-nus-sandbox,NusSandbox,cetmodules_configured,present,ready_for_gpvm,third_reconstruction_batch_prepared,
 novasoft-track-fit,TrackFit,cetmodules_configured,present,retest_pending,gpvm_missing_dependency_fix_pushed,Added explicit novasoft-mccheater CMake and Spack dependency
 novasoft-vertex-dt,VertexDT,cetmodules_configured,present,retest_pending,gpvm_empty_library_fix_pushed,Removed empty VertexDTArt target and linked plugin directly to VertexDTFunc
-novasoft-xnue-pid,XnuePID,cetmodules_configured,present,ready_for_gpvm,third_reconstruction_batch_prepared,
+novasoft-xnue-pid,XnuePID,cetmodules_configured,present,retest_pending,gpvm_dictionary_name_fix_pushed,Restored explicit XnuePID dictionary target and library dependency
 novasoft-alignment,Alignment,cetmodules_configured,present,ready_for_gpvm,third_reconstruction_batch_prepared,Depends on novasoft-track-fit in this batch
 novasoft-readout-sim,ReadoutSim,cetmodules_configured,present,ready_for_gpvm,third_reconstruction_batch_prepared,
