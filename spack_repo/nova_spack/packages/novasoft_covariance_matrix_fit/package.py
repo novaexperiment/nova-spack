@@ -17,6 +17,7 @@ class NovasoftCovarianceMatrixFit(NovasoftPackage):
         "cetlib-except",
         "eigen",
         "fhicl-cpp",
+        "gsl",
         "messagefacility",
         "nusimdata",
         "osclib",
