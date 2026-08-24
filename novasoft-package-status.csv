@@ -91,4 +91,4 @@ novasoft-test-beam-commissioning,TestBeamCommissioning,cetmodules_configured,pre
 novasoft-cvn,CVN,cetmodules_configured,present,ready_for_gpvm,fifth_foundational_batch_prepared,FANN-dependent art modules disabled for standalone build
 novasoft-event-display-services,EventDisplayServices,cetmodules_configured,present,ready_for_gpvm,fifth_foundational_batch_prepared,
 novasoft-event-generator,EventGenerator,cetmodules_configured,present,ready_for_gpvm,fifth_foundational_batch_prepared,
-novasoft-covariance-matrix-fit,CovarianceMatrixFit,cetmodules_configured,present,retest_pending,gpvm_osclib_gsl_fix_prepared,CAFAna and MINOS optional modules disabled; GSL loaded before osclib
+novasoft-covariance-matrix-fit,CovarianceMatrixFit,cetmodules_configured,present,retest_pending,gpvm_osclib_stan_math_fix_prepared,CAFAna and MINOS optional modules disabled; GSL and stan_math loaded before osclib
