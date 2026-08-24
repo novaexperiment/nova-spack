@@ -7,9 +7,9 @@ novasoft-beamline-sim-base,BeamlineSimBase,cetmodules_configured,present,built,u
 novasoft-beamline-utils,BeamlineUtils,cetmodules_configured,present,built,user_reported_success,Xerces namespace made version-independent
 novasoft-brem-shower-filter,BremShowerFilter,cetmodules_configured,present,built,user_reported_success,
 novasoft-cal-hit,CalHit,cetmodules_configured,present,built,user_reported_success,
-novasoft-calibration-data-products,CalibrationDataProducts,cetmodules_configured,present,built,user_reported_success,
-novasoft-calibration-func,Calibration/func,cetmodules_configured,present,built,user_reported_success,
-novasoft-calibration-utils,CalibrationUtils,cetmodules_configured,present,built,user_reported_success,
+novasoft-calibration-data-products,CalibrationDataProducts,cetmodules_configured,present,retest_pending,downstream_invalid_install_include,Exported target now uses relocatable build/install include interfaces
+novasoft-calibration-func,Calibration/func,cetmodules_configured,present,retest_pending,downstream_invalid_install_include,Exported target now uses relocatable build/install include interfaces
+novasoft-calibration-utils,CalibrationUtils,cetmodules_configured,present,retest_pending,downstream_invalid_install_include,Exported target now uses relocatable build/install include interfaces
 novasoft-calibrator,Calibrator,cetmodules_configured,present,built,user_reported_success,
 novasoft-celestial-locator,CelestialLocator,cetmodules_configured,present,built,user_reported_success,
 novasoft-channel-info,ChannelInfo,cetmodules_configured,present,built,user_reported_success,
@@ -18,7 +18,7 @@ novasoft-cmap,CMap,cetmodules_configured,present,built,user_reported_success,
 novasoft-cosmic-exposure-info,CosmicExposureInfo,cetmodules_configured,present,built,user_reported_success,
 novasoft-cosmic-ray-vertex,CosmicRayVertex,cetmodules_configured,present,built,user_reported_success,
 novasoft-daq2-raw-digit,DAQ2RawDigit,cetmodules_configured,present,built,user_reported_success,
-novasoft-database,Database,cetmodules_configured,present,built,user_reported_success,
+novasoft-database,Database,cetmodules_configured,present,retest_pending,downstream_invalid_install_include,NovasoftDatabase now exports relocatable include interfaces while preserving both generated-source build roots
 novasoft-dif-shower-finder,DiFShowerFinder,cetmodules_configured,present,built,user_reported_success,
 novasoft-dq-spill-flags,DQSpillFlags,cetmodules_configured,present,built,user_reported_success,
 novasoft-eliminate-beam-spills,EliminateBeamSpills,cetmodules_configured,present,built,user_reported_success,
@@ -37,7 +37,7 @@ novasoft-numu-energy-func,NumuEnergy/func,cetmodules_configured,present,built,us
 novasoft-photon-transport,PhotonTransport,cetmodules_configured,present,built,user_reported_success,
 novasoft-product-morgue,ProductMorgue,cetmodules_configured,present,built,user_reported_success,Header/config-only package; legacy library and dictionary remain disabled
 novasoft-raw-data,RawData,cetmodules_configured,present,built,user_reported_success,
-novasoft-reco-base,RecoBase,cetmodules_configured,present,built,user_reported_success,
+novasoft-reco-base,RecoBase,cetmodules_configured,present,retest_pending,downstream_invalid_install_include,Exported target now uses relocatable build/install include interfaces
 novasoft-reco-base-hit,RecoBaseHit,cetmodules_configured,present,built,user_reported_success,
 novasoft-run-history,RunHistory,cetmodules_configured,present,built,user_reported_success,
 novasoft-simulation,Simulation,cetmodules_configured,present,built,user_reported_success,
@@ -93,7 +93,7 @@ novasoft-event-display-services,EventDisplayServices,cetmodules_configured,prese
 novasoft-event-generator,EventGenerator,cetmodules_configured,present,built,user_reported_success,
 novasoft-covariance-matrix-fit,CovarianceMatrixFit,cetmodules_configured,present,built,gpvm_build_passed,Built successfully after adding SUNDIALS::kinsol_shared compatibility target required by osclib
 novasoft-break-point-fitter,BreakPointFitter,cetmodules_configured,present,ready_for_gpvm,sixth_batch_prepared,Reusable func and data-product targets enabled; cyclic NumuEnergy and MuonRemove modules deferred
-novasoft-calibration,Calibration,cetmodules_configured,present,ready_for_gpvm,sixth_batch_prepared,Uses separately packaged CalibrationFunc target in standalone mode
+novasoft-calibration,Calibration,cetmodules_configured,present,retest_pending,gpvm_invalid_provider_install_includes,Five provider exports corrected; overwrite providers before retrying Calibration
 novasoft-event-display,EventDisplay,cetmodules_configured,present,ready_for_gpvm,sixth_batch_prepared,
 novasoft-flat-maker,FlatMaker,cetmodules_configured,present,retest_pending,gpvm_generated_header_layout_fix_prepared,Generator output is staged under build/FlatMaker and build root is on include path; imported executable aliases and standalone version also fixed
 novasoft-g4-rwgt,G4Rwgt,cetmodules_configured,present,retest_pending,gpvm_missing_dk2nu_genie_target,Top-level config and recipe now declare dk2nugenie; rebuild Utilities first for its corrected exported include interface
