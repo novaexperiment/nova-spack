@@ -19,6 +19,7 @@ class NovasoftMcReweight(NovasoftPackage):
         "messagefacility",
         "novarwgt",
         "novasoft-reco-base",
+        "novasoft-standard-record",
         "novasoft-utilities-func",
         "nugen",
         "nusimdata",
