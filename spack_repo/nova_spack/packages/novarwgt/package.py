@@ -85,6 +85,8 @@ class Novarwgt(CMakePackage):
             env.set("NUSIMDATA_LIB", self.spec["nusimdata"].prefix.lib)
 
     def setup_dependent_build_environment(self, env, dependent_spec):
+        env.set("NOVARWGT_INC", self.prefix.inc)
+        env.set("NOVARWGT_LIB", self.prefix.lib)
         env.set("NOVARWGT_FCL", self.prefix.cfg)
 
     def setup_run_environment(self, env):
