@@ -15,6 +15,7 @@ class NovasoftTensorflowHandler(NovasoftPackage):
         "grpc",
         "novasoft-cvn",
         "protobuf",
+        "python",
         "py-tensorflow",
         "triton",
     ):
