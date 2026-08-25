@@ -40,7 +40,7 @@ class Novarwgt(CMakePackage):
           sha256="26fcb6c9718034a494a536a79ff5b2d64243105a3a2ad7e947dc61c94ef29d0a")
 
     patch("genie3-target-4.0.4.patch", when="@4.0.4",
-          sha256="b09f28e6f13172e1bc24571cf512f8bd758a6bdad33ceaea1c3bb594e0df88b1")
+          sha256="e5656ffac0f72040b91ec9e73a95c4b11b8f6628e9893a73225fc48ae2697dbf")
 
     def patch(self):
         filter_file("/src", "/include/GENIE", "cmake/Modules/FindGENIE.cmake")

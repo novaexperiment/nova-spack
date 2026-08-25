@@ -10,3 +10,16 @@ diff --git a/src/NOvARwgt/CMakeLists.txt b/src/NOvARwgt/CMakeLists.txt
  	link_genie(NOvARwgt)
  endif()
  if(USE_NUSIMDATA)
+diff --git a/src/NOvARwgt/test/CMakeLists.txt b/src/NOvARwgt/test/CMakeLists.txt
+--- a/src/NOvARwgt/test/CMakeLists.txt
++++ b/src/NOvARwgt/test/CMakeLists.txt
+@@ -36,3 +36,3 @@ if(USE_GENIE)
+     # only the FindGENIE.cmake from CMakeModules inherited via NuSystematics sets this var.
+-    if (GENIE_FOUND)
++    if (TARGET GENIE3::All)
+         target_link_libraries(genie_test PUBLIC GENIE3::All)
+@@ -52,3 +52,3 @@ if(USE_NUSYSTEMATICS)
+     target_link_libraries(nusystematics_test PUBLIC nusyst::all)
+-    if (GENIE_FOUND)
++    if (TARGET GENIE3::All)
+         target_link_libraries(nusystematics_test PUBLIC GENIE3::All)
