@@ -8,3 +8,4 @@ class Nusystematics(FnalNusystematics):
     """NuSystematics with dependencies required by current releases."""
 
     depends_on("eigen@3.4:")
+    depends_on("lhapdf")
