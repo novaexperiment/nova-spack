@@ -1,0 +1,12 @@
+diff --git a/src/NOvARwgt/CMakeLists.txt b/src/NOvARwgt/CMakeLists.txt
+--- a/src/NOvARwgt/CMakeLists.txt
++++ b/src/NOvARwgt/CMakeLists.txt
+@@ -248,7 +248,7 @@ foreach(LIB ${CETLIB_LIBRARIES})
+ endforeach()
+ 
+ # 'GENIE_FOUND' is set by the FindGENIE.cmake that comes via CMakeModules by include NuSystematics
+-if(USE_GENIE AND NOT GENIE_FOUND)
++if(USE_GENIE AND NOT TARGET GENIE3::All)
+ 	link_genie(NOvARwgt)
+ endif()
+ if(USE_NUSIMDATA)
