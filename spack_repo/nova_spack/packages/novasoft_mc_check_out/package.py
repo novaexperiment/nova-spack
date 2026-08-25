@@ -26,6 +26,7 @@ class NovasoftMcCheckOut(NovasoftPackage):
         "novasoft-simulation",
         "novasoft-standard-record",
         "novasoft-summary-data",
+        "novarwgt",
         "nusimdata",
         "root",
     ):
