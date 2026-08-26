@@ -82,7 +82,7 @@ class Cafanacore(CMakePackage):
         # The NOvASoft legacy Findcafanacore.cmake probes these variables
         # when the installed CAFAnaCore release has no CMake package config.
         env.set("CAFANACORE_FQ_DIR", self.prefix)
-        env.set("CAFANACORE_INC", self.prefix.include)
+        env.set("CAFANACORE_INC", self.prefix.include.CAFAnaCore)
 
     @run_after("install")
     def alias_include_paths(self):
