@@ -36,3 +36,9 @@ class NovasoftPackage(CMakePackage):
         # Standalone CMake code generation must read the shared monorepo source,
         # not a previously installed monolithic novasoft prefix.
         env.set("NOVASOFT_DIR", self.stage.source_path)
+
+        # External dependencies do not run their dependent-environment hooks.
+        # Supply the variables required by the legacy NOvASoft finder here.
+        if "cafanacore" in self.spec:
+            env.set("CAFANACORE_FQ_DIR", self.spec["cafanacore"].prefix)
+            env.set("CAFANACORE_INC", self.spec["cafanacore"].prefix.include)
