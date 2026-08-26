@@ -92,13 +92,13 @@ novasoft-cvn,CVN,cetmodules_configured,present,built,user_reported_success,FANN-
 novasoft-event-display-services,EventDisplayServices,cetmodules_configured,present,built,user_reported_success,Standalone build exposes the monorepo source root for EventDisplayServices-prefixed includes
 novasoft-event-generator,EventGenerator,cetmodules_configured,present,built,user_reported_success,
 novasoft-covariance-matrix-fit,CovarianceMatrixFit,cetmodules_configured,present,built,gpvm_build_passed,Built successfully after adding SUNDIALS::kinsol_shared compatibility target required by osclib
-novasoft-break-point-fitter,BreakPointFitter,cetmodules_configured,present,ready_for_gpvm,sixth_batch_prepared,Reusable func and data-product targets enabled; cyclic NumuEnergy and MuonRemove modules deferred
+novasoft-break-point-fitter,BreakPointFitter,cetmodules_configured,present,built,user_reported_success,Reusable func and data-product targets validated; cyclic NumuEnergy and MuonRemove modules remain deferred
 novasoft-calibration,Calibration,cetmodules_configured,present,built,user_reported_success,Standalone build passed after correcting cstxsd discovery and enabling NOVACMAKE
-novasoft-event-display,EventDisplay,cetmodules_configured,present,ready_for_gpvm,sixth_batch_prepared,
-novasoft-flat-maker,FlatMaker,cetmodules_configured,present,retest_pending,gpvm_generated_header_layout_fix_prepared,Generator output is staged under build/FlatMaker and build root is on include path; imported executable aliases and standalone version also fixed
-novasoft-g4-rwgt,G4Rwgt,cetmodules_configured,present,retest_pending,gpvm_missing_dk2nu_genie_target,Top-level config and recipe now declare dk2nugenie; rebuild Utilities first for its corrected exported include interface
-novasoft-mc-reweight,MCReweight,cetmodules_configured,present,retest_pending,gpvm_package_config_name_mismatch,Provider project renamed to novasoft_mc_reweight and exported library/service interfaces explicitly corrected
-novasoft-mc-check-out,MCCheckOut,cetmodules_configured,present,retest_pending,gpvm_missing_mc_reweight_config,Retry after overwriting MCReweight with its corrected package-config name
-novasoft-reco-jm-shower,RecoJMShower,cetmodules_configured,present,retest_pending,gpvm_invalid_recobase_install_include,RecoBase now explicitly replaces the cetmodules-generated include interface; overwrite RecoBase before retrying
-novasoft-tensorflow-handler,TensorFlowHandler,cetmodules_configured,present,ready_for_gpvm,sixth_batch_prepared,
-novasoft-g4nova,g4nova,cetmodules_configured,present,retest_pending,gpvm_missing_finddk2nudata,Recipe now supplies NUFINDER_DIR; GeometryObjects also exports novadaq and NOVACMAKE interfaces
+novasoft-event-display,EventDisplay,cetmodules_configured,present,built,user_reported_success,Installed exact pilot-environment hash stgbwtv
+novasoft-flat-maker,FlatMaker,cetmodules_configured,present,built,user_reported_success,Generated-header build layout and imported executable aliases validated
+novasoft-g4-rwgt,G4Rwgt,cetmodules_configured,present,built,user_reported_success,dk2nugenie dependency and corrected Utilities interface validated at exact hash p6ydaov
+novasoft-mc-reweight,MCReweight,cetmodules_configured,present,built,user_reported_success,Corrected novasoft_mc_reweight package config consumed successfully
+novasoft-mc-check-out,MCCheckOut,cetmodules_configured,present,built,user_reported_success,novarwgt and MCReweight package discovery validated
+novasoft-reco-jm-shower,RecoJMShower,cetmodules_configured,present,built,user_reported_success,Corrected RecoBase installed include interface consumed successfully
+novasoft-tensorflow-handler,TensorFlowHandler,cetmodules_configured,present,built,user_reported_success,TensorFlow and Triton protobuf implementations isolated and validated
+novasoft-g4nova,g4nova,cetmodules_configured,present,built,user_reported_success,NUFINDER_DIR and GeometryObjects exported dependency interfaces validated
