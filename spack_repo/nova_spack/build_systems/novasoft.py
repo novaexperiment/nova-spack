@@ -41,4 +41,4 @@ class NovasoftPackage(CMakePackage):
         # Supply the variables required by the legacy NOvASoft finder here.
         if "cafanacore" in self.spec:
             env.set("CAFANACORE_FQ_DIR", self.spec["cafanacore"].prefix)
-            env.set("CAFANACORE_INC", self.spec["cafanacore"].prefix.include.CAFAnaCore)
+            env.set("CAFANACORE_INC", self.spec["cafanacore"].prefix.inc)
