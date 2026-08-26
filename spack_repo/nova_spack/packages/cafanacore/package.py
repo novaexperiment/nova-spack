@@ -78,6 +78,12 @@ class Cafanacore(CMakePackage):
             self.define_from_variant("CMAKE_CXX_STANDARD", "cxxstd"),
         ]
 
+    def setup_dependent_build_environment(self, env, dependent_spec):
+        # The NOvASoft legacy Findcafanacore.cmake probes these variables
+        # when the installed CAFAnaCore release has no CMake package config.
+        env.set("CAFANACORE_FQ_DIR", self.prefix)
+        env.set("CAFANACORE_INC", self.prefix.include)
+
     @run_after("install")
     def alias_include_paths(self):
         mkdir(prefix.inc.CAFAnaCore) 
