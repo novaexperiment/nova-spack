@@ -9,7 +9,7 @@ class NovasoftCafana(NovasoftPackage):
 
     for dep in (
         "boost",
-        "cafanacore",
+        "cafanacore@01.42",
         "eigen",
         "genie",
         "gsl",
@@ -33,3 +33,12 @@ class NovasoftCafana(NovasoftPackage):
         "tbb",
     ):
         depends_on(dep)
+
+    def cmake_args(self):
+        args = super().cmake_args()
+        args.append(
+            self.define(
+                "CAFANACORE_VERSION", "v{}".format(self.spec["cafanacore"].version)
+            )
+        )
+        return args
