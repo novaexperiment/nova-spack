@@ -20,6 +20,7 @@ class NovasoftShowerLid(NovasoftPackage):
         "nova-daq",
         "novasoft-calibrator",
         "novasoft-geometry",
+        "novasoft-live-geometry",
         "novasoft-geometry-objects",
         "novasoft-reco-base",
         "novasoft-utilities",

@@ -16,6 +16,7 @@ class NovasoftSliceLid(NovasoftPackage):
         "messagefacility",
         "nova-daq",
         "novasoft-geometry",
+        "novasoft-live-geometry",
         "novasoft-reco-base",
         "novasoft-shower-lid",
         "root",

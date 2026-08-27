@@ -19,6 +19,7 @@ class NovasoftHmatrixE(NovasoftPackage):
         "novasoft-calibrator",
         "novasoft-cmap",
         "novasoft-geometry",
+        "novasoft-live-geometry",
         "novasoft-geometry-objects",
         "novasoft-mccheater",
         "novasoft-raw-data",
