@@ -12,6 +12,7 @@ class NovasoftPisces(NovasoftPackage):
         "cafanacore",
         "eigen",
         "genie",
+        "gsl",
         "ifdhc",
         "novasoft-cafana",
         "novasoft-standard-record",
