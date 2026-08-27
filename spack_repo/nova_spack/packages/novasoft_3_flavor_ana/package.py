@@ -11,6 +11,7 @@ class Novasoft3FlavorAna(NovasoftPackage):
         "boost",
         "cafanacore",
         "eigen",
+        "genie",
         "gsl",
         "novarwgt",
         "nugen",
