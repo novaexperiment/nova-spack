@@ -102,8 +102,11 @@ novasoft-mc-check-out,MCCheckOut,cetmodules_configured,present,built,user_report
 novasoft-reco-jm-shower,RecoJMShower,cetmodules_configured,present,built,user_reported_success,Corrected RecoBase installed include interface consumed successfully
 novasoft-tensorflow-handler,TensorFlowHandler,cetmodules_configured,present,built,user_reported_success,TensorFlow and Triton protobuf implementations isolated and validated
 novasoft-g4nova,g4nova,cetmodules_configured,present,built,user_reported_success,NUFINDER_DIR and GeometryObjects exported dependency interfaces validated
-novasoft-ncid-func,NCID/func,cetmodules_configured,present,not_tested,recipe_added,Standalone function split added; pending GPVM validation
-novasoft-cafana,CAFAna,cetmodules_configured,present,not_tested,recipe_added,Full standalone CAFAna recipe; standalone PISCES link remains disabled
-novasoft-pisces,PISCES,cetmodules_configured,present,not_tested,recipe_added,Core-only standalone default; higher layers remain gated
-novasoft-3-flavor-ana,3FlavorAna,cetmodules_configured,present,not_tested,recipe_added,Vars and Cuts standalone default; higher layers remain gated
-novasoft-bnb-ana,BNBAna,cetmodules_configured,present,not_tested,recipe_added,Vars Cuts and Weights standalone package
+novasoft-ncid-func,NCID/func,cetmodules_configured,present,built,user_reported_success,Standalone function split validated with CAFAna analysis batch
+novasoft-cafana,CAFAna,cetmodules_configured,present,built,user_reported_success,Validated after CAFAnaCore 01.42 and standalone finder fixes
+novasoft-pisces,PISCES,cetmodules_configured,present,built,user_reported_success,Core-only standalone default validated after SUNDIALS and GSL fixes
+novasoft-3-flavor-ana,3FlavorAna,cetmodules_configured,present,built,user_reported_success,Vars and Cuts standalone default validated after GSL and GENIE dependency fixes
+novasoft-bnb-ana,BNBAna,cetmodules_configured,present,built,user_reported_success,Vars Cuts and Weights standalone package validated with combined analysis install
+novasoft-hmatrix-e,HMatrixE,cetmodules_configured,present,not_tested,recipe_added,Next batch; depends only on already-built reconstruction and art stack packages
+novasoft-shower-lid,ShowerLID,cetmodules_configured,present,not_tested,recipe_added,Next batch; standalone default builds core ShowerLID and leaves TensorFlow/art extras disabled
+novasoft-slice-lid,SliceLID,cetmodules_configured,present,not_tested,recipe_added,Next batch; depends on ShowerLID plus already-built reconstruction packages
