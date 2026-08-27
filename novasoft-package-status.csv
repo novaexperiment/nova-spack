@@ -107,6 +107,13 @@ novasoft-cafana,CAFAna,cetmodules_configured,present,built,user_reported_success
 novasoft-pisces,PISCES,cetmodules_configured,present,built,user_reported_success,Core-only standalone default validated after SUNDIALS and GSL fixes
 novasoft-3-flavor-ana,3FlavorAna,cetmodules_configured,present,built,user_reported_success,Vars and Cuts standalone default validated after GSL and GENIE dependency fixes
 novasoft-bnb-ana,BNBAna,cetmodules_configured,present,built,user_reported_success,Vars Cuts and Weights standalone package validated with combined analysis install
-novasoft-hmatrix-e,HMatrixE,cetmodules_configured,present,not_tested,recipe_added,Next batch; depends only on already-built reconstruction and art stack packages
-novasoft-shower-lid,ShowerLID,cetmodules_configured,present,not_tested,recipe_added,Next batch; standalone default builds core ShowerLID and leaves TensorFlow/art extras disabled
-novasoft-slice-lid,SliceLID,cetmodules_configured,present,not_tested,recipe_added,Next batch; depends on ShowerLID plus already-built reconstruction packages
+novasoft-hmatrix-e,HMatrixE,cetmodules_configured,present,built,user_reported_success,Standalone HMatrixE build validated after enabling NOVACMAKE for DAQ headers
+novasoft-shower-lid,ShowerLID,cetmodules_configured,present,built,user_reported_success,Standalone default builds core ShowerLID and leaves TensorFlow/art extras disabled
+novasoft-slice-lid,SliceLID,cetmodules_configured,present,built,user_reported_success,Standalone SliceLID build validated after enabling NOVACMAKE for DAQ headers
+novasoft-qe-event-finder,QEEventFinder,cetmodules_configured,present,not_tested,recipe_added,Next batch; standalone default builds the core PID library and defers NumuEnergy/ReMId art modules
+novasoft-re-mid,ReMId,cetmodules_configured,present,not_tested,recipe_added,Next batch; standalone default builds the core ReMId library and defers MuonRemove/NumuEnergy art modules
+novasoft-muon-id,MuonID,cetmodules_configured,present,not_tested,recipe_added,Next batch; standalone default builds the core MuonID library and defers TrackInfo-dependent art module
+novasoft-nd-reco,NDReco,cetmodules_configured,present,not_tested,recipe_added,Next batch; depends on ReMId plus already-built reconstruction packages
+novasoft-lstme,LSTME,cetmodules_configured,present,not_tested,recipe_added,Next batch; depends on SliceLID VarDict and RecoBase
+novasoft-nd-ana,NDAna,cetmodules_configured,present,not_tested,recipe_added,Next batch; builds Classifiers layer against CAFAna and StandardRecord
+novasoft-xsec-reco,XSecReco,cetmodules_configured,present,not_tested,recipe_added,Next batch; builds XSecReco art libraries against ReMId and existing shower/track dependencies
