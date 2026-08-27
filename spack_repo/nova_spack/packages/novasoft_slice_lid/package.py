@@ -22,3 +22,7 @@ class NovasoftSliceLid(NovasoftPackage):
         "root",
     ):
         depends_on(dep)
+
+    def setup_build_environment(self, env):
+        super().setup_build_environment(env)
+        env.set("NOVADAQ_INC", self.spec["nova-daq"].prefix.include)
