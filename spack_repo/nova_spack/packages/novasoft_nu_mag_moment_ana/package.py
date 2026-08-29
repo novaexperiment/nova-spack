@@ -9,10 +9,14 @@ class NovasoftNuMagMomentAna(NovasoftPackage):
 
     for dep in (
         "cafanacore",
+        "eigen",
         "novasoft-cafana",
         "novasoft-nd-ana",
         "novasoft-standard-record",
         "py-srproxy",
         "root",
+        "stan-math",
+        "sundials",
+        "tbb",
     ):
         depends_on(dep)
