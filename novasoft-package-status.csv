@@ -117,10 +117,15 @@ novasoft-nd-reco,NDReco,cetmodules_configured,present,built,user_reported_succes
 novasoft-lstme,LSTME,cetmodules_configured,present,built,user_reported_success,depends on SliceLID VarDict and RecoBase
 novasoft-nd-ana,NDAna,cetmodules_configured,present,built,user_reported_success,builds Classifiers layer against CAFAna and StandardRecord
 novasoft-xsec-reco,XSecReco,cetmodules_configured,present,built,user_reported_success,builds XSecReco art libraries against ReMId and existing shower/track dependencies
-novasoft-cos-rej,CosRej,cetmodules_configured,present,not_tested,recipe_added,Next batch; Core-only standalone default; art modules deferred because they pull ShowerLID and extra validation surfaces
-novasoft-preselection,Preselection,cetmodules_configured,present,not_tested,recipe_added,Next batch; Core-only standalone default; art modules deferred until CosRej/Numu stack is validated
-novasoft-track-info,TrackInfo,cetmodules_configured,present,not_tested,recipe_added,Next batch; Core-only standalone default; art module deferred because it pulls ShowerLID
-novasoft-numu-sandbox,NumuSandbox,cetmodules_configured,present,not_tested,recipe_added,Next batch; Core-only standalone default; FillSandbox module deferred because it depends on NumuEnergy
-novasoft-muon-remove,MuonRemove,cetmodules_configured,present,not_tested,recipe_added,Next batch; Core MuonRemoveart standalone default; NumuEnergy-dependent modules and geant plugin deferred
-novasoft-numu-energy,NumuEnergy,cetmodules_configured,present,not_tested,recipe_added,Next batch; Core-only standalone default; consumes installed NumuEnergyFunc and MuonRemoveart
-novasoft-ncid,NCID,cetmodules_configured,present,not_tested,recipe_added,Next batch; Core plus NCIDFunc standalone default; NCID analysis modules remain deferred
+novasoft-cos-rej,CosRej,cetmodules_configured,present,built,user_reported_success,Standalone CosRej core/art package validated in combined Numu/Cosmic batch
+novasoft-preselection,Preselection,cetmodules_configured,present,built,user_reported_success,Standalone Preselection package validated in combined Numu/Cosmic batch
+novasoft-track-info,TrackInfo,cetmodules_configured,present,built,user_reported_success,Standalone TrackInfo package validated after BreakPointFitter package-name fix
+novasoft-numu-sandbox,NumuSandbox,cetmodules_configured,present,built,user_reported_success,Standalone NumuSandbox package validated in combined Numu/Cosmic batch
+novasoft-muon-remove,MuonRemove,cetmodules_configured,present,built,user_reported_success,Standalone MuonRemoveart package validated with geant and cyclic modules deferred
+novasoft-numu-energy,NumuEnergy,cetmodules_configured,present,built,user_reported_success,Standalone NumuEnergy core package validated against MuonRemoveart and NumuEnergyFunc
+novasoft-ncid,NCID,cetmodules_configured,present,built,user_reported_success,Standalone NCID package validated in combined Numu/Cosmic batch
+novasoft-cosmic-studies,CosmicStudies,cetmodules_configured,present,not_tested,recipe_added,Next batch; Full standalone package; builds CosmicStudies library plus cosmic art modules
+novasoft-neutron-mc-ana,NeutronMCAna,cetmodules_configured,present,not_tested,recipe_added,Next batch; Standalone art module package; depends on validated ReMId and NumuEnergy
+novasoft-tridents,Tridents,cetmodules_configured,present,not_tested,recipe_added,Next batch; Standalone Tridents library and art modules; depends on BreakPointFitter and SummaryData
+novasoft-low-e-nue,LowENue,cetmodules_configured,present,not_tested,recipe_added,Next batch; Standalone LowENue core classifier package; Training helpers deferred because 3FlavorAnaPlotting is not in the default standalone 3FlavorAna install
+novasoft-nu-mag-moment-ana,NuMagMomentAna,cetmodules_configured,present,not_tested,recipe_added,"Next batch; Standalone CAFAna analysis package; depends on CAFAna, StandardRecord, and NDAnaClassifiers"
