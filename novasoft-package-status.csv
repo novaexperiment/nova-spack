@@ -41,7 +41,7 @@ novasoft-reco-base,RecoBase,cetmodules_configured,present,built,user_reported_su
 novasoft-reco-base-hit,RecoBaseHit,cetmodules_configured,present,built,user_reported_success,
 novasoft-run-history,RunHistory,cetmodules_configured,present,built,user_reported_success,
 novasoft-simulation,Simulation,cetmodules_configured,present,built,user_reported_success,
-novasoft-standard-record,StandardRecord,cetmodules_configured,present,built,user_reported_success,
+novasoft-standard-record,StandardRecord,cetmodules_configured,present,built,user_reported_success,GENIE aggregate target export fix added after downstream MCReweight failure
 novasoft-summary-data,SummaryData,cetmodules_configured,present,built,user_reported_success,
 novasoft-supernova-utilities,SupernovaUtilities,cetmodules_configured,present,built,user_reported_success,
 novasoft-tdslicer,TDSlicer,cetmodules_configured,present,built,user_reported_success,
@@ -97,7 +97,7 @@ novasoft-calibration,Calibration,cetmodules_configured,present,built,user_report
 novasoft-event-display,EventDisplay,cetmodules_configured,present,built,user_reported_success,Installed exact pilot-environment hash stgbwtv
 novasoft-flat-maker,FlatMaker,cetmodules_configured,present,built,user_reported_success,Generated-header build layout and imported executable aliases validated
 novasoft-g4-rwgt,G4Rwgt,cetmodules_configured,present,built,user_reported_success,dk2nugenie dependency and corrected Utilities interface validated at exact hash p6ydaov
-novasoft-mc-reweight,MCReweight,cetmodules_configured,present,built,user_reported_success,Corrected novasoft_mc_reweight package config consumed successfully
+novasoft-mc-reweight,MCReweight,cetmodules_configured,present,built,user_reported_success,GENIE aggregate target fix added for direct MCReweight links and exported StandardRecordNOvARwgt
 novasoft-mc-check-out,MCCheckOut,cetmodules_configured,present,built,user_reported_success,novarwgt and MCReweight package discovery validated
 novasoft-reco-jm-shower,RecoJMShower,cetmodules_configured,present,built,user_reported_success,Corrected RecoBase installed include interface consumed successfully
 novasoft-tensorflow-handler,TensorFlowHandler,cetmodules_configured,present,built,user_reported_success,TensorFlow and Triton protobuf implementations isolated and validated
