@@ -124,8 +124,12 @@ novasoft-numu-sandbox,NumuSandbox,cetmodules_configured,present,built,user_repor
 novasoft-muon-remove,MuonRemove,cetmodules_configured,present,built,user_reported_success,Standalone MuonRemoveart package validated with geant and cyclic modules deferred
 novasoft-numu-energy,NumuEnergy,cetmodules_configured,present,built,user_reported_success,Standalone NumuEnergy core package validated against MuonRemoveart and NumuEnergyFunc
 novasoft-ncid,NCID,cetmodules_configured,present,built,user_reported_success,Standalone NCID package validated in combined Numu/Cosmic batch
-novasoft-cosmic-studies,CosmicStudies,cetmodules_configured,present,not_tested,recipe_added,Next batch; Full standalone package; builds CosmicStudies library plus cosmic art modules
-novasoft-neutron-mc-ana,NeutronMCAna,cetmodules_configured,present,not_tested,recipe_added,Next batch; Standalone art module package; depends on validated ReMId and NumuEnergy
-novasoft-tridents,Tridents,cetmodules_configured,present,not_tested,recipe_added,Next batch; Standalone Tridents library and art modules; depends on BreakPointFitter and SummaryData
-novasoft-low-e-nue,LowENue,cetmodules_configured,present,not_tested,recipe_added,Next batch; Standalone LowENue core classifier package; Training helpers deferred because 3FlavorAnaPlotting is not in the default standalone 3FlavorAna install
-novasoft-nu-mag-moment-ana,NuMagMomentAna,cetmodules_configured,present,not_tested,recipe_added,"Next batch; Standalone CAFAna analysis package; explicitly carries CAFAna public header deps (novarwgt, nugen, GENIE plus Stan/TBB/Eigen)"
+novasoft-cosmic-studies,CosmicStudies,cetmodules_configured,present,built,user_reported_success,Standalone CosmicStudies library and art modules validated in analysis follow-on batch
+novasoft-neutron-mc-ana,NeutronMCAna,cetmodules_configured,present,built,user_reported_success,Standalone NeutronMCAna art module package validated in analysis follow-on batch
+novasoft-tridents,Tridents,cetmodules_configured,present,built,user_reported_success,Standalone Tridents library and art modules validated in analysis follow-on batch
+novasoft-low-e-nue,LowENue,cetmodules_configured,present,built,user_reported_success,Standalone LowENue core classifier package validated with training helpers deferred
+novasoft-nu-mag-moment-ana,NuMagMomentAna,cetmodules_configured,present,built,user_reported_success,Standalone NuMagMomentAna CAFAna analysis package validated after Stan/TBB/novarwgt/nugen/GENIE fixes
+novasoft-test-beam-ana,TestBeamAna,cetmodules_configured,present,not_tested,recipe_added,Next batch; standalone placeholder currently installs only package config because Analysis is disabled upstream
+novasoft-caf-reweight,CAFReweight,cetmodules_configured,present,not_tested,recipe_added,Next batch; standalone CAF reweighting library with explicit StandardRecord nugen GENIE and art dependencies
+novasoft-cell-hit-time-ana,CellHitTimeAna,cetmodules_configured,present,not_tested,recipe_added,Next batch; standalone cell-hit timing art module against 3FlavorAna Cuts/Vars and reconstruction dependencies
+novasoft-validation,Validation,cetmodules_configured,present,not_tested,recipe_added,Next batch; standalone validation art/misc modules with explicit raw reco geometry simulation CVN and RunHistory dependencies
