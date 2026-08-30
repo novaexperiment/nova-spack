@@ -13,6 +13,7 @@ class NovasoftNuMagMomentAna(NovasoftPackage):
         "novasoft-cafana",
         "novasoft-nd-ana",
         "novasoft-standard-record",
+        "novarwgt",
         "py-srproxy",
         "root",
         "stan-math",
