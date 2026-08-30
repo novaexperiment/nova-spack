@@ -9,11 +9,13 @@ class NovasoftNuMagMomentAna(NovasoftPackage):
 
     for dep in (
         "cafanacore",
+        "genie",
         "eigen",
         "novasoft-cafana",
         "novasoft-nd-ana",
         "novasoft-standard-record",
         "novarwgt",
+        "nugen",
         "py-srproxy",
         "root",
         "stan-math",

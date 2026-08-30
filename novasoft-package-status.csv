@@ -128,4 +128,4 @@ novasoft-cosmic-studies,CosmicStudies,cetmodules_configured,present,not_tested,r
 novasoft-neutron-mc-ana,NeutronMCAna,cetmodules_configured,present,not_tested,recipe_added,Next batch; Standalone art module package; depends on validated ReMId and NumuEnergy
 novasoft-tridents,Tridents,cetmodules_configured,present,not_tested,recipe_added,Next batch; Standalone Tridents library and art modules; depends on BreakPointFitter and SummaryData
 novasoft-low-e-nue,LowENue,cetmodules_configured,present,not_tested,recipe_added,Next batch; Standalone LowENue core classifier package; Training helpers deferred because 3FlavorAnaPlotting is not in the default standalone 3FlavorAna install
-novasoft-nu-mag-moment-ana,NuMagMomentAna,cetmodules_configured,present,not_tested,recipe_added,"Next batch; Standalone CAFAna analysis package; explicitly carries CAFAna public header deps (novarwgt plus Stan/TBB/Eigen)"
+novasoft-nu-mag-moment-ana,NuMagMomentAna,cetmodules_configured,present,not_tested,recipe_added,"Next batch; Standalone CAFAna analysis package; explicitly carries CAFAna public header deps (novarwgt, nugen, GENIE plus Stan/TBB/Eigen)"
