@@ -41,7 +41,7 @@ novasoft-reco-base,RecoBase,cetmodules_configured,present,built,user_reported_su
 novasoft-reco-base-hit,RecoBaseHit,cetmodules_configured,present,built,user_reported_success,
 novasoft-run-history,RunHistory,cetmodules_configured,present,built,user_reported_success,
 novasoft-simulation,Simulation,cetmodules_configured,present,built,user_reported_success,
-novasoft-standard-record,StandardRecord,cetmodules_configured,present,built,user_reported_success,GENIE aggregate target export fix added after downstream MCReweight failure
+novasoft-standard-record,StandardRecord,cetmodules_configured,present,built,user_reported_success,Uses and installs novasoft FindGENIE so StandardRecordNOvARwgt export resolves GENIE::GENIE
 novasoft-summary-data,SummaryData,cetmodules_configured,present,built,user_reported_success,
 novasoft-supernova-utilities,SupernovaUtilities,cetmodules_configured,present,built,user_reported_success,
 novasoft-tdslicer,TDSlicer,cetmodules_configured,present,built,user_reported_success,
