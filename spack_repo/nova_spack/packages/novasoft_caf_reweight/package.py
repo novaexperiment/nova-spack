@@ -14,6 +14,7 @@ class NovasoftCafReweight(NovasoftPackage):
         "cetlib-except",
         "fhicl-cpp",
         "genie",
+        "libxml2",
         "log4cpp",
         "messagefacility",
         "novasoft-standard-record",
@@ -21,3 +22,8 @@ class NovasoftCafReweight(NovasoftPackage):
         "root",
     ):
         depends_on(dep)
+
+    def setup_build_environment(self, env):
+        super().setup_build_environment(env)
+        env.set("LOG4CPP_INC", self.spec["log4cpp"].prefix.include)
+        env.set("LOG4CPP_LIB", self.spec["log4cpp"].prefix.lib)
