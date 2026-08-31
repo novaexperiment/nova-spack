@@ -7,6 +7,8 @@ class Novasoft3FlavorAna(NovasoftPackage):
 
     root_cmakelists_dir = "3FlavorAna"
 
+    variant("full", default=False, description="Build all 3FlavorAna analysis libraries")
+
     for dep in (
         "boost",
         "cafanacore",
@@ -27,3 +29,12 @@ class Novasoft3FlavorAna(NovasoftPackage):
         "tbb",
     ):
         depends_on(dep)
+
+    def cmake_args(self):
+        args = super().cmake_args()
+        args.append(
+            self.define(
+                "NOVASOFT_BUILD_3FLAVORANA_FULL", self.spec.satisfies("+full")
+            )
+        )
+        return args

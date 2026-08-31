@@ -129,7 +129,11 @@ novasoft-neutron-mc-ana,NeutronMCAna,cetmodules_configured,present,built,user_re
 novasoft-tridents,Tridents,cetmodules_configured,present,built,user_reported_success,Standalone Tridents library and art modules validated in analysis follow-on batch
 novasoft-low-e-nue,LowENue,cetmodules_configured,present,built,user_reported_success,Standalone LowENue core classifier package validated with training helpers deferred
 novasoft-nu-mag-moment-ana,NuMagMomentAna,cetmodules_configured,present,built,user_reported_success,Standalone NuMagMomentAna CAFAna analysis package validated after Stan/TBB/novarwgt/nugen/GENIE fixes
-novasoft-test-beam-ana,TestBeamAna,cetmodules_configured,present,not_tested,recipe_added,Next batch; standalone placeholder currently installs only package config because Analysis is disabled upstream
-novasoft-caf-reweight,CAFReweight,cetmodules_configured,present,not_tested,recipe_added,Next batch; standalone CAF reweighting library with explicit StandardRecord nugen GENIE and art dependencies
-novasoft-cell-hit-time-ana,CellHitTimeAna,cetmodules_configured,present,not_tested,recipe_added,Next batch; standalone cell-hit timing art module against 3FlavorAna Cuts/Vars and reconstruction dependencies
-novasoft-validation,Validation,cetmodules_configured,present,not_tested,recipe_added,Next batch; standalone validation art/misc modules with explicit raw reco geometry simulation CVN and RunHistory dependencies
+novasoft-test-beam-ana,TestBeamAna,cetmodules_configured,present,built,user_reported_success,Standalone placeholder package installed successfully with Analysis disabled upstream
+novasoft-caf-reweight,CAFReweight,cetmodules_configured,present,built,user_reported_success,Standalone CAF reweighting library installed successfully after StandardRecord and GENIE port
+novasoft-cell-hit-time-ana,CellHitTimeAna,cetmodules_configured,present,built,user_reported_success,Standalone cell-hit timing art module installed successfully after CAFAna and 3FlavorAna compatibility fixes
+novasoft-validation,Validation,cetmodules_configured,present,built,user_reported_success,Standalone validation art and misc modules installed successfully
+novasoft-caf-maker,CAFMaker,cetmodules_configured,present,not_tested,recipe_added,Next batch; CAF production module against reconstruction test-beam and analysis data products
+novasoft-nux-ana,NuXAna,cetmodules_configured,present,not_tested,recipe_added,Next batch; requires full 3FlavorAna and PISCES libraries
+novasoft-tensorflow-evaluator,TensorFlowEvaluator,cetmodules_configured,present,not_tested,recipe_added,Next batch; TensorFlow CVN SliceLID and LSTME art modules
+novasoft-reco-validation,RecoValidation,cetmodules_configured,present,not_tested,recipe_added,Next batch; reconstruction-validation modules against NuXAna and analysis libraries

@@ -7,6 +7,12 @@ class NovasoftPisces(NovasoftPackage):
 
     root_cmakelists_dir = "PISCES"
 
+    variant(
+        "full",
+        default=False,
+        description="Build PISCES Experiment, Plot, and Systs libraries",
+    )
+
     for dep in (
         "boost",
         "cafanacore",
@@ -24,3 +30,10 @@ class NovasoftPisces(NovasoftPackage):
         "tbb",
     ):
         depends_on(dep)
+
+    def cmake_args(self):
+        args = super().cmake_args()
+        args.append(
+            self.define("NOVASOFT_BUILD_PISCES_FULL", self.spec.satisfies("+full"))
+        )
+        return args
