@@ -31,6 +31,8 @@ class NovasoftPisces(NovasoftPackage):
     ):
         depends_on(dep)
 
+    depends_on("novasoft-3-flavor-ana+full", when="+full")
+
     def cmake_args(self):
         args = super().cmake_args()
         args.append(
