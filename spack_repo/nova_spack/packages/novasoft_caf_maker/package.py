@@ -18,6 +18,7 @@ class NovasoftCafMaker(NovasoftPackage):
         "ifdh-art",
         "ifdhc",
         "messagefacility",
+        "nova-daq",
         "novasoft-beamline-reco-base",
         "novasoft-beamline-sim-base",
         "novasoft-break-point-fitter",
