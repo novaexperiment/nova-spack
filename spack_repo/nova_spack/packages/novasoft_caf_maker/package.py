@@ -15,6 +15,7 @@ class NovasoftCafMaker(NovasoftPackage):
         "cetlib-except",
         "eigen",
         "fhicl-cpp",
+        "ifdh-art",
         "ifdhc",
         "messagefacility",
         "novasoft-beamline-reco-base",
