@@ -137,6 +137,6 @@ novasoft-caf-maker,CAFMaker,cetmodules_configured,present,built,user_reported_su
 novasoft-nux-ana,NuXAna,cetmodules_configured,present,built,user_reported_success,Full NuXAna standalone package validated after CAFAna PISCES ROOT Stan and TBB dependency fixes
 novasoft-tensorflow-evaluator,TensorFlowEvaluator,cetmodules_configured,present,built,user_reported_success,TensorFlow CVN SliceLID and LSTME art modules validated with explicit legacy component imports
 novasoft-reco-validation,RecoValidation,cetmodules_configured,present,built,user_reported_success,Reconstruction-validation library and art modules validated after framework nova-daq and source-root fixes
-novasoft-analysis-skimmer,AnalysisSkimmer,cetmodules_configured,present,not_tested,recipe_added,Next batch; configurable analysis skimming libraries and art modules
-novasoft-pytorch-handler,PyTorchHandler,cetmodules_configured,present,not_tested,recipe_added,Next batch; LibTorch inference handler against the validated CVN function library
-novasoft-pytorch-evaluator,PyTorchEvaluator,cetmodules_configured,present,not_tested,recipe_added,Next batch; TransformerCVN and TransformerEE LibTorch modules
+novasoft-analysis-skimmer,AnalysisSkimmer,cetmodules_configured,present,built,user_reported_success,Standalone analysis skimming libraries and art modules validated after current art association and product-retrieval API fixes
+novasoft-pytorch-handler,PyTorchHandler,cetmodules_configured,present,built,user_reported_success,LibTorch inference handler validated against the CVN function library
+novasoft-pytorch-evaluator,PyTorchEvaluator,cetmodules_configured,present,built,user_reported_success,TransformerCVN and TransformerEE LibTorch modules validated
