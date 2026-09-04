@@ -140,3 +140,15 @@ novasoft-reco-validation,RecoValidation,cetmodules_configured,present,built,user
 novasoft-analysis-skimmer,AnalysisSkimmer,cetmodules_configured,present,built,user_reported_success,Standalone analysis skimming libraries and art modules validated after current art association and product-retrieval API fixes
 novasoft-pytorch-handler,PyTorchHandler,cetmodules_configured,present,built,user_reported_success,LibTorch inference handler validated against the CVN function library
 novasoft-pytorch-evaluator,PyTorchEvaluator,cetmodules_configured,present,built,user_reported_success,TransformerCVN and TransformerEE LibTorch modules validated
+novasoft-ddt-analysis,DDTAnalysis,cmake_present,missing,not_tested,source_tree_audit,Not included by the top-level CMake build and requires novaddt
+novasoft-ddt-converters,DDTConverters,cmake_present,missing,not_tested,source_tree_audit,Disabled in the top-level CMake build and requires novaddt
+novasoft-ddt-event-display,DDTEventDisplay,cmake_present,missing,not_tested,source_tree_audit,Not included by the top-level CMake build and requires novaddt
+novasoft-ddt-monopole,DDTMonopole,cmake_present,missing,not_tested,source_tree_audit,Disabled in the top-level CMake build and requires novaddt and DDTTools
+novasoft-ddt-tools,DDTTools,cmake_present,missing,not_tested,source_tree_audit,Disabled in the top-level CMake build and requires novaddt
+novasoft-g4-standalone,G4StandAlone,cmake_present,missing,not_tested,source_tree_audit,Independent legacy CMake project not included by the top-level build
+novasoft-hdf5-maker,HDF5Maker,standalone_bootstrap_present,missing,not_tested,source_tree_audit,Option-gated by BUILDHDF5MAKER which defaults off
+novasoft-monopole,Monopole,cmake_present,missing,not_tested,source_tree_audit,Disabled in the top-level CMake build and requires novaddt
+novasoft-monopole-mc,MonopoleMC,cmake_present,missing,not_tested,source_tree_audit,Not included by the top-level CMake build and requires novaddt and DDTTools
+novasoft-neut-regen,NEUTRegen,cmake_present,missing,not_tested,source_tree_audit,Not included by the top-level CMake build and requires legacy NEUT and CERNLIB interfaces
+novasoft-online-monitoring,OnlineMonitoring,cmake_present,missing,not_tested,source_tree_audit,Disabled in the top-level CMake build
+novasoft-up-mu,UpMu,cmake_present,missing,not_tested,source_tree_audit,Not included by the top-level CMake build and requires novaddt data products
