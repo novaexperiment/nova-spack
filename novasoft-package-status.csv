@@ -145,10 +145,10 @@ novasoft-ddt-converters,DDTConverters,cmake_present,missing,not_tested,source_tr
 novasoft-ddt-event-display,DDTEventDisplay,cmake_present,missing,not_tested,source_tree_audit,Not included by the top-level CMake build and requires novaddt
 novasoft-ddt-monopole,DDTMonopole,cmake_present,missing,not_tested,source_tree_audit,Disabled in the top-level CMake build and requires novaddt and DDTTools
 novasoft-ddt-tools,DDTTools,cmake_present,missing,not_tested,source_tree_audit,Disabled in the top-level CMake build and requires novaddt
-novasoft-g4-standalone,G4StandAlone,cmake_present,missing,not_tested,source_tree_audit,Independent legacy CMake project not included by the top-level build
-novasoft-hdf5-maker,HDF5Maker,standalone_bootstrap_present,missing,not_tested,source_tree_audit,Option-gated by BUILDHDF5MAKER which defaults off
+novasoft-g4-standalone,G4StandAlone,modern_cmake_configured,present,not_tested,recipe_added,Modernized standalone ROOT Geant4 and CLHEP discovery
+novasoft-hdf5-maker,HDF5Maker,cetmodules_configured,present,not_tested,recipe_added,Standalone code generation and explicit HDF5 hep-hpc StandardRecord and Metadata discovery added
 novasoft-monopole,Monopole,cmake_present,missing,not_tested,source_tree_audit,Disabled in the top-level CMake build and requires novaddt
 novasoft-monopole-mc,MonopoleMC,cmake_present,missing,not_tested,source_tree_audit,Not included by the top-level CMake build and requires novaddt and DDTTools
 novasoft-neut-regen,NEUTRegen,cmake_present,missing,not_tested,source_tree_audit,Not included by the top-level CMake build and requires legacy NEUT and CERNLIB interfaces
-novasoft-online-monitoring,OnlineMonitoring,cmake_present,missing,not_tested,source_tree_audit,Disabled in the top-level CMake build
+novasoft-online-monitoring,OnlineMonitoring,cetmodules_configured,present,not_tested,recipe_added,Standalone monitoring libraries tools viewer and art module prepared
 novasoft-up-mu,UpMu,cmake_present,missing,not_tested,source_tree_audit,Not included by the top-level CMake build and requires novaddt data products
