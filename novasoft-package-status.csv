@@ -133,7 +133,10 @@ novasoft-test-beam-ana,TestBeamAna,cetmodules_configured,present,built,user_repo
 novasoft-caf-reweight,CAFReweight,cetmodules_configured,present,built,user_reported_success,Standalone CAF reweighting library installed successfully after StandardRecord and GENIE port
 novasoft-cell-hit-time-ana,CellHitTimeAna,cetmodules_configured,present,built,user_reported_success,Standalone cell-hit timing art module installed successfully after CAFAna and 3FlavorAna compatibility fixes
 novasoft-validation,Validation,cetmodules_configured,present,built,user_reported_success,Standalone validation art and misc modules installed successfully
-novasoft-caf-maker,CAFMaker,cetmodules_configured,present,not_tested,recipe_added,Next batch; CAF production module against reconstruction test-beam and analysis data products
-novasoft-nux-ana,NuXAna,cetmodules_configured,present,not_tested,recipe_added,Next batch; requires full 3FlavorAna and PISCES libraries
-novasoft-tensorflow-evaluator,TensorFlowEvaluator,cetmodules_configured,present,not_tested,recipe_added,Next batch; TensorFlow CVN SliceLID and LSTME art modules
-novasoft-reco-validation,RecoValidation,cetmodules_configured,present,not_tested,recipe_added,Next batch; reconstruction-validation modules against NuXAna and analysis libraries
+novasoft-caf-maker,CAFMaker,cetmodules_configured,present,built,user_reported_success,Standalone CAF production library and art module validated after explicit framework and nova-daq dependency fixes
+novasoft-nux-ana,NuXAna,cetmodules_configured,present,built,user_reported_success,Full NuXAna standalone package validated after CAFAna PISCES ROOT Stan and TBB dependency fixes
+novasoft-tensorflow-evaluator,TensorFlowEvaluator,cetmodules_configured,present,built,user_reported_success,TensorFlow CVN SliceLID and LSTME art modules validated with explicit legacy component imports
+novasoft-reco-validation,RecoValidation,cetmodules_configured,present,built,user_reported_success,Reconstruction-validation library and art modules validated after framework nova-daq and source-root fixes
+novasoft-analysis-skimmer,AnalysisSkimmer,cetmodules_configured,present,not_tested,recipe_added,Next batch; configurable analysis skimming libraries and art modules
+novasoft-pytorch-handler,PyTorchHandler,cetmodules_configured,present,not_tested,recipe_added,Next batch; LibTorch inference handler against the validated CVN function library
+novasoft-pytorch-evaluator,PyTorchEvaluator,cetmodules_configured,present,not_tested,recipe_added,Next batch; TransformerCVN and TransformerEE LibTorch modules
