@@ -145,7 +145,7 @@ novasoft-ddt-converters,DDTConverters,cmake_present,missing,not_tested,source_tr
 novasoft-ddt-event-display,DDTEventDisplay,cmake_present,missing,not_tested,source_tree_audit,Not included by the top-level CMake build and requires novaddt
 novasoft-ddt-monopole,DDTMonopole,cmake_present,missing,not_tested,source_tree_audit,Disabled in the top-level CMake build and requires novaddt and DDTTools
 novasoft-ddt-tools,DDTTools,cmake_present,missing,not_tested,source_tree_audit,Disabled in the top-level CMake build and requires novaddt
-novasoft-g4-standalone,G4StandAlone,modern_cmake_configured,present,not_tested,recipe_added,Modernized standalone ROOT Geant4 and CLHEP discovery
+novasoft-g4-standalone,G4StandAlone,modern_cmake_configured,present,retest_required,fix_pushed,Use Geant4 11 reference physics-list factory and current visualization API
 novasoft-hdf5-maker,HDF5Maker,cetmodules_configured,present,not_tested,recipe_added,Standalone code generation and explicit HDF5 hep-hpc StandardRecord and Metadata discovery added
 novasoft-monopole,Monopole,cmake_present,missing,not_tested,source_tree_audit,Disabled in the top-level CMake build and requires novaddt
 novasoft-monopole-mc,MonopoleMC,cmake_present,missing,not_tested,source_tree_audit,Not included by the top-level CMake build and requires novaddt and DDTTools
