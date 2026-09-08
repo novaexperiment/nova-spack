@@ -150,5 +150,5 @@ novasoft-hdf5-maker,HDF5Maker,cetmodules_configured,present,not_tested,recipe_ad
 novasoft-monopole,Monopole,cmake_present,missing,not_tested,source_tree_audit,Disabled in the top-level CMake build and requires novaddt
 novasoft-monopole-mc,MonopoleMC,cmake_present,missing,not_tested,source_tree_audit,Not included by the top-level CMake build and requires novaddt and DDTTools
 novasoft-neut-regen,NEUTRegen,cmake_present,missing,not_tested,source_tree_audit,Not included by the top-level CMake build and requires legacy NEUT and CERNLIB interfaces
-novasoft-online-monitoring,OnlineMonitoring,cetmodules_configured,present,not_tested,recipe_added,Standalone monitoring libraries tools viewer and art module prepared
+novasoft-online-monitoring,OnlineMonitoring,cetmodules_configured,present,retest_required,fix_pushed,Define NOVACMAKE and export NOVADAQ_INC for standalone DAQ nested includes
 novasoft-up-mu,UpMu,cmake_present,missing,not_tested,source_tree_audit,Not included by the top-level CMake build and requires novaddt data products
