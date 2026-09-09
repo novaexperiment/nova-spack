@@ -10,6 +10,7 @@ class NovasoftHdf5Maker(NovasoftPackage):
     for dep in (
         "art",
         "art-root-io",
+        "cafanacore",
         "canvas",
         "cetlib",
         "cetlib-except",
