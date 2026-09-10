@@ -15,6 +15,7 @@ class NovasoftPytorchEvaluator(NovasoftPackage):
     root_cmakelists_dir = "PyTorchEvaluator"
 
     depends_on("art")
+    depends_on("art-root-io")
     depends_on("canvas")
     depends_on("cetlib")
     depends_on("cetlib-except")
