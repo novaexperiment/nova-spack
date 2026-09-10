@@ -18,6 +18,7 @@ class NovasoftMcCheckOut(NovasoftPackage):
     depends_on("cetlib")
     depends_on("cetlib-except")
     depends_on("fhicl-cpp")
+    depends_on("genie")
     depends_on("messagefacility")
     depends_on("novasoft-cmap")
     depends_on("novasoft-geometry")
