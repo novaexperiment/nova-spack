@@ -1,3 +1,8 @@
+# Copyright 2013-2024 Lawrence Livermore National Security, LLC and other
+# Spack Project Developers. See the top-level COPYRIGHT file for details.
+#
+# SPDX-License-Identifier: (Apache-2.0 OR MIT)
+
 from spack_repo.nova_spack.build_systems.novasoft import NovasoftPackage
 from spack.package import *
 
@@ -7,21 +12,18 @@ class NovasoftCafReweight(NovasoftPackage):
 
     root_cmakelists_dir = "CAFReweight"
 
-    for dep in (
-        "art",
-        "canvas",
-        "cetlib",
-        "cetlib-except",
-        "fhicl-cpp",
-        "genie",
-        "libxml2",
-        "log4cpp",
-        "messagefacility",
-        "novasoft-standard-record",
-        "nugen",
-        "root",
-    ):
-        depends_on(dep)
+    depends_on("art")
+    depends_on("canvas")
+    depends_on("cetlib")
+    depends_on("cetlib-except")
+    depends_on("fhicl-cpp")
+    depends_on("genie")
+    depends_on("libxml2")
+    depends_on("log4cpp")
+    depends_on("messagefacility")
+    depends_on("novasoft-standard-record")
+    depends_on("nugen")
+    depends_on("root")
 
     def setup_build_environment(self, env):
         super().setup_build_environment(env)

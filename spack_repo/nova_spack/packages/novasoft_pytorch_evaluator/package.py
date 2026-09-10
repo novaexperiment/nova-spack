@@ -1,3 +1,8 @@
+# Copyright 2013-2024 Lawrence Livermore National Security, LLC and other
+# Spack Project Developers. See the top-level COPYRIGHT file for details.
+#
+# SPDX-License-Identifier: (Apache-2.0 OR MIT)
+
 from pathlib import Path
 
 from spack_repo.nova_spack.build_systems.novasoft import NovasoftPackage
@@ -9,28 +14,25 @@ class NovasoftPytorchEvaluator(NovasoftPackage):
 
     root_cmakelists_dir = "PyTorchEvaluator"
 
-    for dep in (
-        "art",
-        "canvas",
-        "cetlib",
-        "cetlib-except",
-        "fhicl-cpp",
-        "messagefacility",
-        "nova-daq",
-        "novasoft-cvn",
-        "novasoft-geometry",
-        "novasoft-lstme",
-        "novasoft-mccheater",
-        "novasoft-pytorch-handler",
-        "novasoft-reco-base",
-        "novasoft-slice-lid",
-        "novasoft-summary-data",
-        "novasoft-utilities",
-        "novasoft-utilities-func",
-        "py-torch",
-        "python",
-    ):
-        depends_on(dep)
+    depends_on("art")
+    depends_on("canvas")
+    depends_on("cetlib")
+    depends_on("cetlib-except")
+    depends_on("fhicl-cpp")
+    depends_on("messagefacility")
+    depends_on("nova-daq")
+    depends_on("novasoft-cvn")
+    depends_on("novasoft-geometry")
+    depends_on("novasoft-lstme")
+    depends_on("novasoft-mccheater")
+    depends_on("novasoft-pytorch-handler")
+    depends_on("novasoft-reco-base")
+    depends_on("novasoft-slice-lid")
+    depends_on("novasoft-summary-data")
+    depends_on("novasoft-utilities")
+    depends_on("novasoft-utilities-func")
+    depends_on("py-torch")
+    depends_on("python")
 
     def cmake_args(self):
         site_packages = Path(python_platlib).relative_to(self.prefix)

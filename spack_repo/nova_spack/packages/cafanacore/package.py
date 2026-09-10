@@ -37,16 +37,23 @@ class Cafanacore(CMakePackage):
     depends_on("ifdhc", when="+ifdhc")
 
     # link against SUNDIALS target
-    patch("https://github.com/cafana/CAFAnaCore/commit/c00681908935d440028a3f33a1b9c16440ec4a7e.patch",
-          sha256="86a88211ddcb84dc09110435d6eb8b2305c676d2b2b50b01cf52414f58cc7db4", when="@01.40")
+    patch(
+        "https://github.com/cafana/CAFAnaCore/commit/c00681908935d440028a3f33a1b9c16440ec4a7e.patch",
+        sha256="86a88211ddcb84dc09110435d6eb8b2305c676d2b2b50b01cf52414f58cc7db4",
+        when="@01.40",
+    )
 
     def patch(self):
         # Release archives do not contain Git metadata, so preserve the
         # version supplied by the Spack recipe instead of replacing it with
         # an empty result from `git describe`.
         filter_file(
-            "execute_process(COMMAND git describe --tags OUTPUT_VARIABLE CAFANACORE_VERSION OUTPUT_STRIP_TRAILING_WHITESPACE)",
-            "if(NOT CAFANACORE_VERSION)\n    execute_process(COMMAND git describe --tags OUTPUT_VARIABLE CAFANACORE_VERSION OUTPUT_STRIP_TRAILING_WHITESPACE)\nendif()",
+            "execute_process(COMMAND git describe --tags "
+            "OUTPUT_VARIABLE CAFANACORE_VERSION OUTPUT_STRIP_TRAILING_WHITESPACE)",
+            "if(NOT CAFANACORE_VERSION)\n"
+            "    execute_process(COMMAND git describe --tags OUTPUT_VARIABLE "
+            "CAFANACORE_VERSION OUTPUT_STRIP_TRAILING_WHITESPACE)\n"
+            "endif()",
             "CMakeLists.txt",
             string=True,
         )
@@ -86,5 +93,5 @@ class Cafanacore(CMakePackage):
 
     @run_after("install")
     def alias_include_paths(self):
-        mkdir(prefix.inc.CAFAnaCore) 
+        mkdir(prefix.inc.CAFAnaCore)
         symlink("../CAFAna", prefix.inc.CAFAnaCore.CAFAna)

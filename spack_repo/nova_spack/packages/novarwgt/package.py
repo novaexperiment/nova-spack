@@ -72,7 +72,11 @@ class Novarwgt(CMakePackage):
             self.define_from_variant("NOVARWGT_USE_NUSYSTEMATICS", "nusystematics"),
         ]
         if self.spec.satisfies("+nusystematics"):
-            args += [self.define("CMAKE_MODULE_PATH", self.spec['nuhepmc-cmake-modules'].prefix.cmake)]
+            args += [
+                self.define(
+                    "CMAKE_MODULE_PATH", self.spec["nuhepmc-cmake-modules"].prefix.cmake
+                )
+            ]
         return args
 
     def setup_build_environment(self, env):
@@ -97,5 +101,5 @@ class Novarwgt(CMakePackage):
 
     @run_after("install")
     def alias_include_paths(self):
-        mkdirp(prefix.inc.StandardRecord) 
+        mkdirp(prefix.inc.StandardRecord)
         symlink("../NOvARwgt", prefix.inc.StandardRecord.NOvARwgt)

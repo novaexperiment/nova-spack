@@ -1,3 +1,8 @@
+# Copyright 2013-2024 Lawrence Livermore National Security, LLC and other
+# Spack Project Developers. See the top-level COPYRIGHT file for details.
+#
+# SPDX-License-Identifier: (Apache-2.0 OR MIT)
+
 from spack_repo.nova_spack.build_systems.novasoft import NovasoftPackage
 from spack.package import *
 
@@ -7,26 +12,23 @@ class NovasoftMcReweight(NovasoftPackage):
 
     root_cmakelists_dir = "MCReweight"
 
-    for dep in (
-        "art",
-        "art-root-io",
-        "canvas",
-        "cetlib",
-        "cetlib-except",
-        "dk2nudata",
-        "fhicl-cpp",
-        "genie",
-        "messagefacility",
-        "novarwgt",
-        "novasoft-reco-base",
-        "novasoft-standard-record",
-        "novasoft-utilities-func",
-        "nugen",
-        "nusimdata",
-        "ppfx",
-        "root",
-    ):
-        depends_on(dep)
+    depends_on("art")
+    depends_on("art-root-io")
+    depends_on("canvas")
+    depends_on("cetlib")
+    depends_on("cetlib-except")
+    depends_on("dk2nudata")
+    depends_on("fhicl-cpp")
+    depends_on("genie")
+    depends_on("messagefacility")
+    depends_on("novarwgt")
+    depends_on("novasoft-reco-base")
+    depends_on("novasoft-standard-record")
+    depends_on("novasoft-utilities-func")
+    depends_on("nugen")
+    depends_on("nusimdata")
+    depends_on("ppfx")
+    depends_on("root")
 
     depends_on("nufinder", type="build")
 

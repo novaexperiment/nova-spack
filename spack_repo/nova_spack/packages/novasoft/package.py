@@ -41,9 +41,7 @@ class Novasoft(CMakePackage):
     depends_on("art")
     depends_on("boost+iostreams+math+serialization")
     depends_on("cafanacore@01.42")
-    depends_on("geant4")#, patches=[
-        # patch("geant4-11-0-carbon-excitation-energy.patch", when="@11.0"),
-        # patch("geant4-11-0-em-instance-counter.patch", when="@11.0")])
+    depends_on("geant4")
     depends_on("geant4reweight experiment=nova")
     depends_on("genie")
     depends_on("grpc")
@@ -141,7 +139,7 @@ class Novasoft(CMakePackage):
         # pytorch
         torch_dir = self.spec["py-torch"].prefix.join(site_packages).torch
         env.set("LIBTORCH_INC", torch_dir.include)
-    
+
     def setup_run_environment(self, env):
         env.set("NOVASOFT_DIR", self.prefix)
         cafanacore_version = "v{}".format(self.spec["cafanacore"].version)

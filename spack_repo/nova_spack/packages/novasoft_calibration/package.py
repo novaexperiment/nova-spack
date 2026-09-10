@@ -1,3 +1,8 @@
+# Copyright 2013-2024 Lawrence Livermore National Security, LLC and other
+# Spack Project Developers. See the top-level COPYRIGHT file for details.
+#
+# SPDX-License-Identifier: (Apache-2.0 OR MIT)
+
 from spack_repo.nova_spack.build_systems.novasoft import NovasoftPackage
 from spack.package import *
 
@@ -7,37 +12,34 @@ class NovasoftCalibration(NovasoftPackage):
 
     root_cmakelists_dir = "Calibration"
 
-    for dep in (
-        "art",
-        "art-root-io",
-        "canvas",
-        "cetlib",
-        "cetlib-except",
-        "fhicl-cpp",
-        "messagefacility",
-        "nova-daq",
-        "novasoft-calibration-data-products",
-        "novasoft-calibration-func",
-        "novasoft-calibration-utils",
-        "novasoft-calibrator",
-        "novasoft-channel-info",
-        "novasoft-cmap",
-        "novasoft-database",
-        "novasoft-geometry",
-        "novasoft-geometry-objects",
-        "novasoft-live-geometry",
-        "novasoft-mccheater",
-        "novasoft-me-finder",
-        "novasoft-photon-transport",
-        "novasoft-raw-data",
-        "novasoft-reco-base",
-        "novasoft-run-history",
-        "novasoft-simulation",
-        "novasoft-summary-data",
-        "novasoft-utilities",
-        "novasoft-utilities-func",
-        "nusimdata",
-        "root",
-        "sqlite",
-    ):
-        depends_on(dep)
+    depends_on("art")
+    depends_on("art-root-io")
+    depends_on("canvas")
+    depends_on("cetlib")
+    depends_on("cetlib-except")
+    depends_on("fhicl-cpp")
+    depends_on("messagefacility")
+    depends_on("nova-daq")
+    depends_on("novasoft-calibration-data-products")
+    depends_on("novasoft-calibration-func")
+    depends_on("novasoft-calibration-utils")
+    depends_on("novasoft-calibrator")
+    depends_on("novasoft-channel-info")
+    depends_on("novasoft-cmap")
+    depends_on("novasoft-database")
+    depends_on("novasoft-geometry")
+    depends_on("novasoft-geometry-objects")
+    depends_on("novasoft-live-geometry")
+    depends_on("novasoft-mccheater")
+    depends_on("novasoft-me-finder")
+    depends_on("novasoft-photon-transport")
+    depends_on("novasoft-raw-data")
+    depends_on("novasoft-reco-base")
+    depends_on("novasoft-run-history")
+    depends_on("novasoft-simulation")
+    depends_on("novasoft-summary-data")
+    depends_on("novasoft-utilities")
+    depends_on("novasoft-utilities-func")
+    depends_on("nusimdata")
+    depends_on("root")
+    depends_on("sqlite")

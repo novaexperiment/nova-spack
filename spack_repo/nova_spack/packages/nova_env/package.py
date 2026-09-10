@@ -53,8 +53,14 @@ class NovaEnv(BundlePackage):
         env.set("NOVAHWDBQEURL", "https://dbdata0vm.fnal.gov:9443/QE/hw/app/SQ/")
         env.set("NOVADBNAME", "nova_prod")
         env.set("NOVADBUSER", "nova_reader")
-        env.set("NOVADBPWDFILE", "/cvmfs/nova-development.opensciencegrid.org/novasoft/config/nova_reader_pwd")
-        env.set("NOVADBGRIDPWDFILE", "/cvmfs/nova-development.opensciencegrid.org/novasoft/config/nova_grid_pwd")
+        env.set(
+            "NOVADBPWDFILE",
+            "/cvmfs/nova-development.opensciencegrid.org/novasoft/config/nova_reader_pwd",
+        )
+        env.set(
+            "NOVADBGRIDPWDFILE",
+            "/cvmfs/nova-development.opensciencegrid.org/novasoft/config/nova_grid_pwd",
+        )
         env.set("NOVADBWSPWDFILE", "/exp/nova/app/db/nova_devdbws_pwd")
         env.set("NOVADBPORT", "5433")
         env.set("NOVAHWDBHOST", "ifdb12.fnal.gov")

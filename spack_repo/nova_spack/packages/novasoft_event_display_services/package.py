@@ -1,3 +1,8 @@
+# Copyright 2013-2024 Lawrence Livermore National Security, LLC and other
+# Spack Project Developers. See the top-level COPYRIGHT file for details.
+#
+# SPDX-License-Identifier: (Apache-2.0 OR MIT)
+
 from spack_repo.nova_spack.build_systems.novasoft import NovasoftPackage
 from spack.package import *
 
@@ -7,17 +12,14 @@ class NovasoftEventDisplayServices(NovasoftPackage):
 
     root_cmakelists_dir = "EventDisplayServices"
 
-    for dep in (
-        "art",
-        "canvas",
-        "fhicl-cpp",
-        "nuevdb",
-        "novasoft-geometry",
-        "novasoft-geometry-objects",
-        "novasoft-mccheater",
-        "novasoft-me-finder",
-        "novasoft-reco-base",
-        "nusimdata",
-        "root",
-    ):
-        depends_on(dep)
+    depends_on("art")
+    depends_on("canvas")
+    depends_on("fhicl-cpp")
+    depends_on("nuevdb")
+    depends_on("novasoft-geometry")
+    depends_on("novasoft-geometry-objects")
+    depends_on("novasoft-mccheater")
+    depends_on("novasoft-me-finder")
+    depends_on("novasoft-reco-base")
+    depends_on("nusimdata")
+    depends_on("root")

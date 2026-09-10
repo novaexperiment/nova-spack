@@ -16,7 +16,9 @@ class NovaProduction(NovaprodPackage):
 
     def install(self, spec, prefix):
         """nova-production installer"""
-        ignore = lambda a: a in ("lib", "fcl", "ups") or "CMakeLists.txt" in a or "GNUmakefile" in a
+        ignore = lambda a: (
+            a in ("lib", "fcl", "ups") or "CMakeLists.txt" in a or "GNUmakefile" in a
+        )
         copy_tree("novaproduction", prefix, ignore=ignore)
 
         # python libraries

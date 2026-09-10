@@ -1,3 +1,8 @@
+# Copyright 2013-2024 Lawrence Livermore National Security, LLC and other
+# Spack Project Developers. See the top-level COPYRIGHT file for details.
+#
+# SPDX-License-Identifier: (Apache-2.0 OR MIT)
+
 from pathlib import Path
 
 from spack_repo.nova_spack.build_systems.novasoft import NovasoftPackage
@@ -9,17 +14,14 @@ class NovasoftTensorflowHandler(NovasoftPackage):
 
     root_cmakelists_dir = "TensorFlowHandler"
 
-    for dep in (
-        "eigen",
-        "fhicl-cpp",
-        "grpc",
-        "novasoft-cvn",
-        "protobuf",
-        "python",
-        "py-tensorflow",
-        "triton",
-    ):
-        depends_on(dep)
+    depends_on("eigen")
+    depends_on("fhicl-cpp")
+    depends_on("grpc")
+    depends_on("novasoft-cvn")
+    depends_on("protobuf")
+    depends_on("python")
+    depends_on("py-tensorflow")
+    depends_on("triton")
 
     def setup_build_environment(self, env):
         super().setup_build_environment(env)
