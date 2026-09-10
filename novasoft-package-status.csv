@@ -145,10 +145,10 @@ novasoft-ddt-converters,DDTConverters,cmake_present,missing,not_tested,source_tr
 novasoft-ddt-event-display,DDTEventDisplay,cmake_present,missing,not_tested,source_tree_audit,Not included by the top-level CMake build and requires novaddt
 novasoft-ddt-monopole,DDTMonopole,cmake_present,missing,not_tested,source_tree_audit,Disabled in the top-level CMake build and requires novaddt and DDTTools
 novasoft-ddt-tools,DDTTools,cmake_present,missing,not_tested,source_tree_audit,Disabled in the top-level CMake build and requires novaddt
-novasoft-g4-standalone,G4StandAlone,modern_cmake_configured,present,retest_required,fix_pushed,Use Geant4 11 reference physics-list factory current visualization API and explicit CLHEP unit namespaces
-novasoft-hdf5-maker,HDF5Maker,cetmodules_configured,present,not_tested,recipe_added,Standalone code generation and explicit HDF5 hep-hpc StandardRecord and Metadata discovery added
+novasoft-g4-standalone,G4StandAlone,modern_cmake_configured,present,built,user_reported_success,Use Geant4 11 reference physics-list factory current visualization API and explicit CLHEP unit namespaces
+novasoft-hdf5-maker,HDF5Maker,cetmodules_configured,present,built,user_reported_success,Standalone code generation and explicit HDF5 hep-hpc StandardRecord and Metadata discovery added
 novasoft-monopole,Monopole,cmake_present,missing,not_tested,source_tree_audit,Disabled in the top-level CMake build and requires novaddt
 novasoft-monopole-mc,MonopoleMC,cmake_present,missing,not_tested,source_tree_audit,Not included by the top-level CMake build and requires novaddt and DDTTools
 novasoft-neut-regen,NEUTRegen,cmake_present,missing,not_tested,source_tree_audit,Not included by the top-level CMake build and requires legacy NEUT and CERNLIB interfaces
-novasoft-online-monitoring,OnlineMonitoring,cetmodules_configured,present,retest_required,fix_pushed,Define NOVACMAKE and export NOVADAQ_INC for standalone DAQ nested includes
+novasoft-online-monitoring,OnlineMonitoring,cetmodules_configured,present,built,user_reported_success,Define NOVACMAKE and export NOVADAQ_INC for standalone DAQ nested includes
 novasoft-up-mu,UpMu,cmake_present,missing,not_tested,source_tree_audit,Not included by the top-level CMake build and requires novaddt data products
