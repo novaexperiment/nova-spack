@@ -1,0 +1,653 @@
+spack:
+
+  config:
+    deprecated: true
+
+    install_tree:
+      root: /exp/nova/app/users/rnjames/spack-novasoft-workspace/spack-store/baseline-spack-develop
+    source_cache: /exp/nova/app/users/rnjames/spack-novasoft-workspace/spack-cache/baseline-spack-develop/source
+    misc_cache: /exp/nova/app/users/rnjames/spack-novasoft-workspace/spack-cache/baseline-spack-develop/misc
+  include:
+
+  # NOvA
+  - git: https://github.com/novaexperiment/nova-release-configs
+    branch: main
+    paths:
+    - included_yaml/nova-packages.yaml
+    - included_yaml/nova-specs.yaml
+
+  # Art
+  - git: https://github.com/art-framework-suite/art-release-configs
+    tag: art-3.14.04
+    paths:
+    - included_yaml/gcc-12-toolchain.yaml
+    - included_yaml/packages-art.yaml
+    - included_yaml/specs-art.yaml
+
+  # FIFE
+  - git: https://github.com/fnal-fife/fife-release-configs
+    branch: main
+    paths:
+    - included_yaml/fife_packages.yaml
+
+  definitions:
+  - specs_nova_split:
+    - novasoft-utilities-func %build_compiler
+    - novasoft-geometry-objects %build_compiler
+    - novasoft-standard-record %build_compiler
+    - py-ipykernel %build_compiler
+    - fife-utils %build_compiler
+    - nova-fcl %build_compiler
+    - nova-production %build_compiler
+  specs:
+  - $specs_nova_split
+  - $specs_art
+
+  - novasoft-raw-data %gcc@12.5.0
+  - novasoft-authentication %gcc@12.5.0
+  - novasoft-summary-data %gcc@12.5.0
+  - novasoft-reco-base-hit %gcc@12.5.0
+  - novasoft-database %gcc@12.5.0
+  - novasoft-filesystem %gcc@12.5.0
+  - novasoft-cosmic-exposure-info %gcc@12.5.0
+  - novasoft-eliminate-beam-spills %gcc@12.5.0
+  - novasoft-supernova-utilities %gcc@12.5.0
+  - novasoft-tensorflow-products %gcc@12.5.0
+  - novasoft-numu-energy-func %gcc@12.5.0
+  - novasoft-cmap@spack-refactor %gcc@12.5.0
+  - novasoft-geometry@spack-refactor %gcc@12.5.0
+  - novasoft-utilities@spack-refactor %gcc@12.5.0
+  - novasoft-simulation@spack-refactor %gcc@12.5.0
+  - novasoft-run-history@spack-refactor %gcc@12.5.0
+  - novasoft-channel-info@spack-refactor %gcc@12.5.0
+  - novasoft-live-geometry@spack-refactor %gcc@12.5.0
+  - novasoft-calibration-utils@spack-refactor %gcc@12.5.0
+  - novasoft-mccheater-core@spack-refactor %gcc@12.5.0
+  - novasoft-photon-transport@spack-refactor %gcc@12.5.0
+  - novasoft-calibration-func@spack-refactor %gcc@12.5.0
+  - novasoft-calibrator@spack-refactor %gcc@12.5.0
+  - novasoft-reco-base@spack-refactor %gcc@12.5.0
+  - novasoft-mccheater@spack-refactor %gcc@12.5.0
+  - novasoft-cal-hit@spack-refactor %gcc@12.5.0
+  - novasoft-beamline-utils@spack-refactor
+  - novasoft-beamline-reco-base@spack-refactor
+  - novasoft-beamline-sim-base@spack-refactor
+  - novasoft-beamline-reco@spack-refactor
+  - novasoft-beamline-sim@spack-refactor
+  - novasoft-metadata@spack-refactor
+  - novasoft-test-beam-utils@spack-refactor
+  - novasoft-test-beam-reco@spack-refactor
+  - novasoft-test-beam-sim@spack-refactor
+  - novasoft-test-beam@spack-refactor
+  - novasoft-calibration-data-products@spack-refactor
+  - novasoft-daq2-raw-digit@spack-refactor
+  - novasoft-dq-spill-flags@spack-refactor
+  - novasoft-event-summary@spack-refactor
+  - novasoft-filter@spack-refactor
+  - novasoft-celestial-locator@spack-refactor
+  - novasoft-mock-data-daq@spack-refactor
+  - novasoft-product-morgue@spack-refactor
+  - novasoft-tdslicer@spack-refactor
+  - novasoft-trigger-monitoring@spack-refactor
+  - novasoft-brem-shower-filter@spack-refactor
+  - novasoft-cosmic-ray-vertex@spack-refactor
+  - novasoft-dif-shower-finder@spack-refactor
+  - novasoft-hough-transform@spack-refactor
+  - novasoft-cluster-maker-ss@spack-refactor
+  - novasoft-data-quality@spack-refactor
+  - novasoft-detector-performance@spack-refactor
+  - novasoft-dso-result-plotter@spack-refactor
+  - novasoft-ifdb-spill-info@spack-refactor
+  - novasoft-me-finder@spack-refactor
+  - novasoft-nd-rock-muon@spack-refactor
+  - novasoft-shower-e@spack-refactor
+  - novasoft-supernova@spack-refactor
+  - novasoft-timing-fit@spack-refactor
+  - novasoft-vertex-finder@spack-refactor
+  - novasoft-air-shower@spack-refactor
+  - novasoft-elastic-arms@spack-refactor
+  - novasoft-fuzzy-k-vertex@spack-refactor
+  - novasoft-hough-track@spack-refactor
+  - novasoft-hough-vertex@spack-refactor
+  - novasoft-light-model@spack-refactor
+  - novasoft-michel-e-filter@spack-refactor
+  - novasoft-nue-sandbox@spack-refactor
+  - novasoft-rec-var-pid@spack-refactor
+  - novasoft-slicer@spack-refactor
+  - novasoft-discrete-tracker@spack-refactor
+  - novasoft-genie-snova@spack-refactor
+  - novasoft-lem@spack-refactor
+  - novasoft-nova-sim-mixer@spack-refactor
+  - novasoft-nus-sandbox@spack-refactor
+  - novasoft-track-fit@spack-refactor
+  - novasoft-vertex-dt@spack-refactor
+  - novasoft-xnue-pid@spack-refactor
+  - novasoft-alignment@spack-refactor
+  - novasoft-readout-sim@spack-refactor
+  - novasoft-ddt-prescale-offline@spack-refactor
+  - novasoft-demo@spack-refactor
+  - novasoft-fast-monopole@spack-refactor
+  - novasoft-commissioning@spack-refactor
+  - novasoft-test-beam-commissioning@spack-refactor
+  - novasoft-cvn@spack-refactor
+  - novasoft-event-generator@spack-refactor
+  - novasoft-event-display-services@spack-refactor
+  - novasoft-covariance-matrix-fit@spack-refactor
+  - novasoft-break-point-fitter@spack-refactor
+  - novasoft-calibration@spack-refactor
+  - novasoft-event-display@spack-refactor
+  - novasoft-flat-maker@spack-refactor
+  - novasoft-g4-rwgt@spack-refactor
+  - novasoft-mc-reweight@spack-refactor
+  - novasoft-mc-check-out@spack-refactor
+  - novasoft-reco-jm-shower@spack-refactor
+  - novasoft-tensorflow-handler@spack-refactor
+  - novasoft-g4nova@spack-refactor
+  - novasoft-ncid-func@spack-refactor
+  - novasoft-cafana@spack-refactor
+  - novasoft-3-flavor-ana@spack-refactor
+  - novasoft-pisces@spack-refactor
+  - novasoft-bnb-ana@spack-refactor
+  - novasoft-hmatrix-e@spack-refactor %gcc@12.5.0
+  - novasoft-shower-lid@spack-refactor %gcc@12.5.0
+  - novasoft-slice-lid@spack-refactor %gcc@12.5.0
+  - novasoft-qe-event-finder@spack-refactor %gcc@12.5.0
+  - novasoft-re-mid@spack-refactor %gcc@12.5.0
+  - novasoft-muon-id@spack-refactor %gcc@12.5.0
+  - novasoft-nd-reco@spack-refactor %gcc@12.5.0
+  - novasoft-lstme@spack-refactor %gcc@12.5.0
+  - novasoft-nd-ana@spack-refactor %gcc@12.5.0
+  - novasoft-xsec-reco@spack-refactor %gcc@12.5.0
+  - novasoft-cos-rej@spack-refactor %gcc@12.5.0
+  - novasoft-preselection@spack-refactor %gcc@12.5.0
+  - novasoft-track-info@spack-refactor %gcc@12.5.0
+  - novasoft-numu-sandbox@spack-refactor %gcc@12.5.0
+  - novasoft-muon-remove@spack-refactor %gcc@12.5.0
+  - novasoft-numu-energy@spack-refactor %gcc@12.5.0
+  - novasoft-ncid@spack-refactor %gcc@12.5.0
+  - novasoft-cosmic-studies@spack-refactor %gcc@12.5.0
+  - novasoft-neutron-mc-ana@spack-refactor %gcc@12.5.0
+  - novasoft-tridents@spack-refactor %gcc@12.5.0
+  - novasoft-low-e-nue@spack-refactor %gcc@12.5.0
+  - novasoft-nu-mag-moment-ana@spack-refactor %gcc@12.5.0
+  - novasoft-test-beam-ana@=spack-refactor
+  - novasoft-caf-reweight@=spack-refactor
+  - novasoft-cell-hit-time-ana@=spack-refactor
+  - novasoft-validation@=spack-refactor
+  - novasoft-caf-maker@spack-refactor
+  - novasoft-nux-ana@spack-refactor
+  - novasoft-tensorflow-evaluator@spack-refactor
+  - novasoft-reco-validation@spack-refactor
+  - novasoft-analysis-skimmer@spack-refactor
+  - novasoft-pytorch-handler@spack-refactor
+  - novasoft-pytorch-evaluator@spack-refactor
+  - novasoft-g4-standalone@spack-refactor
+  - novasoft-hdf5-maker@spack-refactor
+  - novasoft-online-monitoring@spack-refactor
+  upstreams:
+    cvmfs-larsoft:
+      install_tree: /cvmfs/larsoft.opensciencegrid.org/spack-fnal-v1.1.0/spack_env/opt/spack
+
+  concretizer:
+    unify: true
+    reuse:
+      from:
+      - type: environment
+        path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/test-envs/baseline-spack-develop
+      - type: environment
+        path: /cvmfs/larsoft.opensciencegrid.org/spack-fnal-v1.1.0/spack_env/var/spack/environments/larsoft-v10_11_01-unified-cuda-python-3_9-trimmed
+
+  packages:
+    all:
+      providers:
+        libc:
+        - glibc
+        'zlib-api:':
+        - zlib
+      variants:
+      - generator=ninja
+      - build_type=Release
+      - cxxstd=17
+      target:
+      - x86_64_v3
+  develop:
+    novasoft:
+      spec: novasoft@=spack-develop
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-utilities-func:
+      spec: novasoft-utilities-func@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-geometry-objects:
+      spec: novasoft-geometry-objects@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-standard-record:
+      spec: novasoft-standard-record@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-raw-data:
+      spec: novasoft-raw-data@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-authentication:
+      spec: novasoft-authentication@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-summary-data:
+      spec: novasoft-summary-data@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-reco-base-hit:
+      spec: novasoft-reco-base-hit@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-database:
+      spec: novasoft-database@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-filesystem:
+      spec: novasoft-filesystem@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-cosmic-exposure-info:
+      spec: novasoft-cosmic-exposure-info@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-eliminate-beam-spills:
+      spec: novasoft-eliminate-beam-spills@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-supernova-utilities:
+      spec: novasoft-supernova-utilities@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-tensorflow-products:
+      spec: novasoft-tensorflow-products@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-numu-energy-func:
+      spec: novasoft-numu-energy-func@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-cmap:
+      spec: novasoft-cmap@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-geometry:
+      spec: novasoft-geometry@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-utilities:
+      spec: novasoft-utilities@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-simulation:
+      spec: novasoft-simulation@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-run-history:
+      spec: novasoft-run-history@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-channel-info:
+      spec: novasoft-channel-info@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-live-geometry:
+      spec: novasoft-live-geometry@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-calibration-utils:
+      spec: novasoft-calibration-utils@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-mccheater-core:
+      spec: novasoft-mccheater-core@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-photon-transport:
+      spec: novasoft-photon-transport@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-calibration-func:
+      spec: novasoft-calibration-func@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-calibrator:
+      spec: novasoft-calibrator@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-reco-base:
+      spec: novasoft-reco-base@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-mccheater:
+      spec: novasoft-mccheater@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-cal-hit:
+      spec: novasoft-cal-hit@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-beamline-utils:
+      spec: novasoft-beamline-utils@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-beamline-reco-base:
+      spec: novasoft-beamline-reco-base@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-beamline-sim-base:
+      spec: novasoft-beamline-sim-base@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-beamline-reco:
+      spec: novasoft-beamline-reco@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-beamline-sim:
+      spec: novasoft-beamline-sim@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-metadata:
+      spec: novasoft-metadata@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-test-beam-utils:
+      spec: novasoft-test-beam-utils@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-test-beam-reco:
+      spec: novasoft-test-beam-reco@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-test-beam-sim:
+      spec: novasoft-test-beam-sim@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-test-beam:
+      spec: novasoft-test-beam@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-calibration-data-products:
+      spec: novasoft-calibration-data-products@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-daq2-raw-digit:
+      spec: novasoft-daq2-raw-digit@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-dq-spill-flags:
+      spec: novasoft-dq-spill-flags@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-event-summary:
+      spec: novasoft-event-summary@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-filter:
+      spec: novasoft-filter@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-celestial-locator:
+      spec: novasoft-celestial-locator@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-mock-data-daq:
+      spec: novasoft-mock-data-daq@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-product-morgue:
+      spec: novasoft-product-morgue@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-tdslicer:
+      spec: novasoft-tdslicer@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-trigger-monitoring:
+      spec: novasoft-trigger-monitoring@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-brem-shower-filter:
+      spec: novasoft-brem-shower-filter@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-cosmic-ray-vertex:
+      spec: novasoft-cosmic-ray-vertex@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-dif-shower-finder:
+      spec: novasoft-dif-shower-finder@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-hough-transform:
+      spec: novasoft-hough-transform@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-cluster-maker-ss:
+      spec: novasoft-cluster-maker-ss@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-data-quality:
+      spec: novasoft-data-quality@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-detector-performance:
+      spec: novasoft-detector-performance@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-dso-result-plotter:
+      spec: novasoft-dso-result-plotter@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-ifdb-spill-info:
+      spec: novasoft-ifdb-spill-info@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-me-finder:
+      spec: novasoft-me-finder@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-nd-rock-muon:
+      spec: novasoft-nd-rock-muon@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-shower-e:
+      spec: novasoft-shower-e@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-supernova:
+      spec: novasoft-supernova@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-timing-fit:
+      spec: novasoft-timing-fit@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-vertex-finder:
+      spec: novasoft-vertex-finder@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-air-shower:
+      spec: novasoft-air-shower@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-elastic-arms:
+      spec: novasoft-elastic-arms@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-fuzzy-k-vertex:
+      spec: novasoft-fuzzy-k-vertex@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-hough-track:
+      spec: novasoft-hough-track@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-hough-vertex:
+      spec: novasoft-hough-vertex@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-light-model:
+      spec: novasoft-light-model@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-michel-e-filter:
+      spec: novasoft-michel-e-filter@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-nue-sandbox:
+      spec: novasoft-nue-sandbox@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-rec-var-pid:
+      spec: novasoft-rec-var-pid@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-slicer:
+      spec: novasoft-slicer@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-discrete-tracker:
+      spec: novasoft-discrete-tracker@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-genie-snova:
+      spec: novasoft-genie-snova@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-lem:
+      spec: novasoft-lem@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-nova-sim-mixer:
+      spec: novasoft-nova-sim-mixer@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-nus-sandbox:
+      spec: novasoft-nus-sandbox@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-track-fit:
+      spec: novasoft-track-fit@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-vertex-dt:
+      spec: novasoft-vertex-dt@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-xnue-pid:
+      spec: novasoft-xnue-pid@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-alignment:
+      spec: novasoft-alignment@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-readout-sim:
+      spec: novasoft-readout-sim@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-ddt-prescale-offline:
+      spec: novasoft-ddt-prescale-offline@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-demo:
+      spec: novasoft-demo@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-fast-monopole:
+      spec: novasoft-fast-monopole@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-commissioning:
+      spec: novasoft-commissioning@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-test-beam-commissioning:
+      spec: novasoft-test-beam-commissioning@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-cvn:
+      spec: novasoft-cvn@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-event-generator:
+      spec: novasoft-event-generator@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-event-display-services:
+      spec: novasoft-event-display-services@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-covariance-matrix-fit:
+      spec: novasoft-covariance-matrix-fit@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-break-point-fitter:
+      spec: novasoft-break-point-fitter@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-calibration:
+      spec: novasoft-calibration@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-event-display:
+      spec: novasoft-event-display@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-flat-maker:
+      spec: novasoft-flat-maker@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-g4-rwgt:
+      spec: novasoft-g4-rwgt@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-mc-reweight:
+      spec: novasoft-mc-reweight@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-mc-check-out:
+      spec: novasoft-mc-check-out@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-reco-jm-shower:
+      spec: novasoft-reco-jm-shower@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-tensorflow-handler:
+      spec: novasoft-tensorflow-handler@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-g4nova:
+      spec: novasoft-g4nova@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-ncid-func:
+      spec: novasoft-ncid-func@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-cafana:
+      spec: novasoft-cafana@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-3-flavor-ana:
+      spec: novasoft-3-flavor-ana@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-pisces:
+      spec: novasoft-pisces@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-bnb-ana:
+      spec: novasoft-bnb-ana@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-hmatrix-e:
+      spec: novasoft-hmatrix-e@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-shower-lid:
+      spec: novasoft-shower-lid@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-slice-lid:
+      spec: novasoft-slice-lid@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-qe-event-finder:
+      spec: novasoft-qe-event-finder@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-re-mid:
+      spec: novasoft-re-mid@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-muon-id:
+      spec: novasoft-muon-id@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-nd-reco:
+      spec: novasoft-nd-reco@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-lstme:
+      spec: novasoft-lstme@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-nd-ana:
+      spec: novasoft-nd-ana@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-xsec-reco:
+      spec: novasoft-xsec-reco@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-cos-rej:
+      spec: novasoft-cos-rej@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-preselection:
+      spec: novasoft-preselection@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-track-info:
+      spec: novasoft-track-info@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-numu-sandbox:
+      spec: novasoft-numu-sandbox@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-muon-remove:
+      spec: novasoft-muon-remove@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-numu-energy:
+      spec: novasoft-numu-energy@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-ncid:
+      spec: novasoft-ncid@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-cosmic-studies:
+      spec: novasoft-cosmic-studies@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-neutron-mc-ana:
+      spec: novasoft-neutron-mc-ana@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-tridents:
+      spec: novasoft-tridents@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-low-e-nue:
+      spec: novasoft-low-e-nue@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-nu-mag-moment-ana:
+      spec: novasoft-nu-mag-moment-ana@=spack-refactor %gcc@12.5.0
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-test-beam-ana:
+      spec: novasoft-test-beam-ana@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-caf-reweight:
+      spec: novasoft-caf-reweight@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-cell-hit-time-ana:
+      spec: novasoft-cell-hit-time-ana@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-validation:
+      spec: novasoft-validation@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-caf-maker:
+      spec: novasoft-caf-maker@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-nux-ana:
+      spec: novasoft-nux-ana@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-tensorflow-evaluator:
+      spec: novasoft-tensorflow-evaluator@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-reco-validation:
+      spec: novasoft-reco-validation@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-analysis-skimmer:
+      spec: novasoft-analysis-skimmer@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-pytorch-handler:
+      spec: novasoft-pytorch-handler@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-pytorch-evaluator:
+      spec: novasoft-pytorch-evaluator@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-g4-standalone:
+      spec: novasoft-g4-standalone@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-hdf5-maker:
+      spec: novasoft-hdf5-maker@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+    novasoft-online-monitoring:
+      spec: novasoft-online-monitoring@=spack-refactor
+      path: /exp/nova/app/users/rnjames/spack-novasoft-workspace/novasoft
+  bootstrap:
+    root: /exp/nova/app/users/rnjames/spack-novasoft-workspace/spack-cache/baseline-spack-develop/bootstrap
+  repos:
+    nova_spack: /exp/nova/app/users/rnjames/spack-novasoft-workspace/nova-spack/spack_repo/nova_spack
+  view: false
