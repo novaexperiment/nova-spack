@@ -140,6 +140,19 @@ class Novasoft(CMakePackage):
         torch_dir = self.spec["py-torch"].prefix.join(site_packages).torch
         env.set("LIBTORCH_INC", torch_dir.include)
 
+        # UPS-style variables read by the monorepo's find modules
+        # (Findgrpc.cmake and friends). The split recipes set the same ones.
+        env.set("GRPC_INC", self.spec["grpc"].prefix.include)
+        env.set("GRPC_LIB", self.spec["grpc"].prefix.lib)
+        env.set("TRITON_INC", self.spec["triton"].prefix.include)
+        env.set("TRITON_LIB", self.spec["triton"].prefix.lib)
+        env.set("LOG4CPP_INC", self.spec["log4cpp"].prefix.include)
+        env.set("LOG4CPP_LIB", self.spec["log4cpp"].prefix.lib)
+        env.set("NOVADAQ_FQ_DIR", self.spec["nova-daq"].prefix)
+        env.set("NOVADAQ_INC", self.spec["nova-daq"].prefix.include)
+        env.set("NUFINDER_DIR", self.spec["nufinder"].prefix)
+        env.set("SUNDIALS_INC", self.spec["sundials"].prefix.include)
+
     def setup_run_environment(self, env):
         env.set("NOVASOFT_DIR", self.prefix)
         cafanacore_version = "v{}".format(self.spec["cafanacore"].version)
@@ -150,6 +163,10 @@ class Novasoft(CMakePackage):
         env.prepend_path("ROOT_INCLUDE_PATH", self.prefix.include)
         env.append_path("FHICL_FILE_PATH", self.prefix.fcl)
         env.append_path("FW_SEARCH_PATH", self.prefix.gdml)
+        # Data and DB-table XML files (Calibrator shape tables, RunHistory tables) are looked up
+        # as "<Pkg>/<file>" through FW_SEARCH_PATH, as in the UPS setup.
+        env.append_path("FW_SEARCH_PATH", self.prefix.data)
+        env.append_path("FW_SEARCH_PATH", self.prefix.xml)
 
     def setup_dependent_run_environment(self, env, dspec):
         env.prepend_path("CET_PLUGIN_PATH", self.prefix.lib)
@@ -157,4 +174,8 @@ class Novasoft(CMakePackage):
         env.prepend_path("ROOT_INCLUDE_PATH", self.prefix.include)
         env.append_path("FHICL_FILE_PATH", self.prefix.fcl)
         env.append_path("FW_SEARCH_PATH", self.prefix.gdml)
+        # Data and DB-table XML files (Calibrator shape tables, RunHistory tables) are looked up
+        # as "<Pkg>/<file>" through FW_SEARCH_PATH, as in the UPS setup.
+        env.append_path("FW_SEARCH_PATH", self.prefix.data)
+        env.append_path("FW_SEARCH_PATH", self.prefix.xml)
 
