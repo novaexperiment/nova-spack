@@ -19,6 +19,7 @@ class NovasoftNuxAna(NovasoftPackage):
     depends_on("gsl")
     depends_on("ifdhc")
     depends_on("novasoft-3-flavor-ana+full")
+    depends_on("novasoft-bnb-ana")
     depends_on("novasoft-cafana")
     depends_on("novasoft-nu-mag-moment-ana")
     depends_on("novasoft-numu-energy-func")
