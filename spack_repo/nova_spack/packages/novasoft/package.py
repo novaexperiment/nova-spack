@@ -44,6 +44,10 @@ class Novasoft(CMakePackage):
     depends_on("geant4")
     depends_on("geant4reweight experiment=nova")
     depends_on("genie")
+    # Cross-section splines and GENIE_XSEC_* at run time, as UPS novasoft sets
+    # up genie_xsec v3_06_00 -q e1000:N2420i0211b:k250. novarwgt's
+    # NuSystematics setup needs GENIE_XSEC_TUNE when CAFAna loads.
+    depends_on("genie-xsec@3.06.00 tune_name=N2420i0211b-k250-e1000", type="run")
     depends_on("grpc")
     depends_on("ifdh-art")
     depends_on("ifdhc")
