@@ -15,6 +15,10 @@ class Novarwgt(CMakePackage):
 
     maintainers("vhewes")
 
+    # The version UPS novasoft sets up (ups/product_deps). Over v4.0-dev4 it
+    # adds RadCorr weight files and two diquark PDG codes; no build changes.
+    version("4.0.6", tag="v4.0-dev6",
+            commit="750332375e63808ed29e5c967c8103727876aab0")
     version("4.0.4", tag="v4.0-dev4",
             commit="ac515a3175a02b42eac5892b20f158710d3bb55d")
     version("3.0.16", tag="v3.0-dev16")
@@ -39,7 +43,7 @@ class Novarwgt(CMakePackage):
     patch("cmake-3.0.16.patch", when="@3.0.16",
           sha256="26fcb6c9718034a494a536a79ff5b2d64243105a3a2ad7e947dc61c94ef29d0a")
 
-    patch("genie3-target-4.0.4.patch", when="@4.0.4",
+    patch("genie3-target-4.0.4.patch", when="@4.0.4:4.0.6",
           sha256="e5656ffac0f72040b91ec9e73a95c4b11b8f6628e9893a73225fc48ae2697dbf")
 
     def patch(self):
@@ -61,6 +65,8 @@ class Novarwgt(CMakePackage):
     variant("nusystematics", default=True, when="@4:",
             description="Enable nusystematics dependency")
     depends_on("nusystematics", when="+nusystematics")
+    # As in the UPS table of v4.0-dev6.
+    depends_on("nusystematics@02.00.07:", when="@4.0.6: +nusystematics")
     depends_on("nuhepmc-cmake-modules", type="build", when="+nusystematics")
 
     def cmake_args(self):
