@@ -29,6 +29,11 @@ class Novasoft(CMakePackage):
         sticky=True,
         description="C++ standard",
     )
+    variant(
+        "python_dicts",
+        default=True,
+        description="Build the ROOT dictionaries that CAFAna's Python macros (cafe x.py) load",
+    )
 
     depends_on("c", type="build")
     depends_on("cxx", type="build")
@@ -95,6 +100,7 @@ class Novasoft(CMakePackage):
         return [
             self.define_from_variant("CMAKE_CXX_STANDARD", "cxxstd"),
             self.define("CAFANACORE_VERSION", cafanacore_version),
+            self.define_from_variant("NOVASOFT_BUILD_PYTHON_DICTS", "python_dicts"),
         ]
 
     def setup_build_environment(self, env):
